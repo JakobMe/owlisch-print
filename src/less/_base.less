@@ -10,6 +10,7 @@
  @page {
     size: A4 portrait;
     margin: @margin-page-v @margin-page-h;
+    margin-bottom: @margin-page-h;
     counter-reset: _countH1;
 
     // Kopfzeile Rechts: Seitenzahl
@@ -57,6 +58,17 @@ cite {
         margin-top: @font-size-edge;
         &:before { display: none; }
     }
+}
+
+// Seiten-Umbruch
+.page-break {
+    visibility: hidden;
+    page-break-after: always;
+}
+
+// Abschnitte
+.reset-page {
+    counter-reset: page 1;
 }
 
 // Body

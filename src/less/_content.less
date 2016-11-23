@@ -53,7 +53,17 @@ ul {
 .cols {
     overflow: hidden;
     clear: both;
-    margin-bottom: @gap-paragraph;
+    width: 100%;
+    margin: @gap-cols 0;
+
+    // Spalten Unten
+    &.cols-bottom {
+        page-break-after: always;
+        position: absolute;
+        margin: 0;
+        bottom: 0;
+        left: 0;
+    }
 
     // Spalte
     .col {
