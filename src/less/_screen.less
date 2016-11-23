@@ -1,0 +1,31 @@
+/*
+ * Modul: Screen.
+ * Definiert zusätzliche Styles für die Anzeige im Browser.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Screen
+@media screen {
+
+    // Body
+    body {
+        margin: 0;
+        background: @color-pale;
+        padding: 5vw;
+    }
+
+    // Abschnitt
+    section {
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 7.5vw;
+        max-width: 900px;
+        background: @color-background;
+        box-shadow: 0 20px 20px 0 fade(@color-text, 20%);
+
+        // Abstand Unten
+        &:not(:last-child) { margin-bottom: 2.5vw; }
+    }
+}
