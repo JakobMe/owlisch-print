@@ -16,6 +16,20 @@ gulp.task("default", ["watch"]);
 gulp.task("watch", function() {
     gulp.watch("src/kit/**/*.kit", ["pdf-kit"]);
     gulp.watch("src/less/**/*.less", ["pdf-less"]);
+    gulp.watch("src/fonts/**/*", ["fonts"]);
+    gulp.watch("src/img/**/*", ["img"]);
+});
+
+// Fonts-Task
+gulp.task("fonts", function() {
+    return gulp.src("src/fonts/**/*")
+        .pipe(gulp.dest("out/fonts/"));
+});
+
+// Image-Task
+gulp.task("img", function() {
+    return gulp.src("src/img/**/*")
+        .pipe(gulp.dest("out/img/"));
 });
 
 // LESS-Task
