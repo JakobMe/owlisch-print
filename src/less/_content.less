@@ -10,20 +10,20 @@
 body {
     color: @color-text;
     font-size: @font-size-text;
-    line-height: (@line-height-normal * @font-size-text);
+    line-height: @line-height-normal;
 }
 
 // Absätze
 p {
     text-align: justify;
-    margin: 0 0 (@font-size-text * @line-height-normal);
+    margin: 0 0 @gap-paragraph 0;
     page-break-inside: avoid;
 }
 
 // Listen
 ul {
     padding: 0;
-    margin: 0 0 (@font-size-text * @line-height-normal) 0;
+    margin: 0 0 @gap-paragraph 0;
     list-style-type: none;
     text-align: left;
     page-break-inside: avoid;
@@ -47,4 +47,23 @@ ul {
         // Letztes Element
         &:last-child { margin-bottom: 0; }
     }
+}
+
+// Spalten
+.cols {
+    overflow: hidden;
+    clear: both;
+    margin-bottom: @gap-paragraph;
+
+    // Spalte
+    .col {
+        display: block;
+        float: left;
+    }
+
+    // Spalten-Varianten
+    &.cols-1 .col { width: (100% / 1); }
+    &.cols-2 .col { width: (100% / 2); }
+    &.cols-3 .col { width: (100% / 3); }
+    &.cols-4 .col { width: (100% / 4); }
 }

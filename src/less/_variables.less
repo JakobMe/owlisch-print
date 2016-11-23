@@ -12,9 +12,14 @@
 @margin-edge-v:                2.0cm;
 @margin-title-h:               0.5cm;
 @margin-count-h:               0.2cm;
+@margin-figure-v:              1.5cm;
+@margin-figure-h:              1.0cm;
 
 // Größen
 @size-line:                    1pt;
+
+// Bildgrößen
+@figure-size-wireframe:        9.75cm;
 
 // Fonts
 @font-name-main:               "Lato";
@@ -32,11 +37,15 @@
 @font-size-h3:                 14pt;
 @font-size-text:               12pt;
 @font-size-edge:               10pt;
-@font-size-caption:            10pt;
+@font-size-figure:             10pt;
 
 // Strings
 @delimeter-chapter:            ".";
 @delimeter-title:              ": ";
 @string-page:                  "Seite ";
 @string-chapter:               "Kapitel ";
+@string-figure:                "Abb. ";
 @string-bullet:                "•";
+
+// Berechnete Abstände
+@gap-paragraph:                (@line-height-normal * @font-size-text);

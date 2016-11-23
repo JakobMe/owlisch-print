@@ -1,0 +1,53 @@
+/*
+ * Modul: Figure.
+ * Definiert das Layout von Abbildungen.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Abbildung
+figure {
+    page-break-inside: avoid;
+    clear: both;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    // Bild
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+        max-width: 100%;
+
+        // Bild-Typen
+        &.figure-wireframe { height: @figure-size-wireframe; }
+    }
+
+    // Titel
+    figcaption {
+        display: block;
+        text-align: center;
+        color: @color-pale;
+        font-size: @font-size-figure;
+        padding: 0 @margin-figure-h;
+        margin-top: @font-size-figure;
+        line-height: @line-height-small;
+
+        // Nummer
+        &:before {
+            font-weight: bold;
+            counter-increment: _countFig;
+            content: @string-figure counter(_countFig) @delimeter-title;
+        }
+    }
+
+    // Auf Absatz folgend
+    p + &, ul + & {
+        margin-top: @margin-figure-v;
+    }
+}
