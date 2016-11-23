@@ -24,7 +24,7 @@ h1, h2, h3 {
 // Titel Erste Ebene
 h1 {
     font-size: @font-size-h1;
-    line-height: (@font-line-height * @font-size-h1);
+    line-height: (@line-height-normal * @font-size-h1);
     counter-reset: _countH2 _countH3;
     counter-increment: _countH1;
     string-set: _titleH1 content();
@@ -39,7 +39,7 @@ h1 {
 // Titel Zweite Ebene
 h2 {
     font-size: @font-size-h2;
-    line-height: (@font-line-height * @font-size-h2);
+    line-height: (@line-height-normal * @font-size-h2);
     padding-left: @margin-title-h;
     counter-reset: _countH3;
     counter-increment: _countH2;
@@ -54,7 +54,7 @@ h2 {
 // Titel Dritte Ebene
 h3 {
     font-size: @font-size-h3;
-    line-height: (@font-line-height * @font-size-h3);
+    line-height: (@line-height-normal * @font-size-h3);
     padding-left: (@margin-title-h * 2);
     counter-increment: _countH3;
 

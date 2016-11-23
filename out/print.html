@@ -23,13 +23,13 @@
         
         <h2 id="chapter-1-1">Vorgeschichte & Motivation</h2>
         <p>
-            Im Zuge des Seminars Mobile Learning im Wintersemester 2015/16 an
-            der Universität Bielefeld unter Leitung von Paul John war ich,
-            zusammen mit sieben weiteren Studierenden, an der Konzeption,
+            Im Zuge des Seminars <i>Mobile Learning</i> im Wintersemester
+            2015/16 an der Universität Bielefeld unter Leitung von Paul John war
+            ich, zusammen mit sieben weiteren Studierenden, an der Konzeption,
             Gestaltung und Umsetzung einer Lern-App für Dialektwörter aus
             Ostwestfalen-Lippe beteiligt. Dabei entstand ein erster
-            funktionsfähiger Prototyp der App OWLisch, an dessen Programmierung
-            ich maßgeblich mitgewirkt habe.
+            funktionsfähiger Prototyp der App <i>OWLisch</i>, an dessen
+            Programmierung ich maßgeblich mitgewirkt habe.
         </p>
         <p>
             Bereits beim Entwickeln dieser ersten rudimentären Version habe ich
@@ -45,20 +45,20 @@
         <h2 id="chapter-1-2">Zielsetzung</h2>
         <p>
             Das Ziel dieser Arbeit war es, eine lauffähige iOS-Version von
-            OWLisch zu entwickeln. Dabei sollte die App von Grund auf neu
+            <i>OWLisch</i> zu entwickeln. Dabei sollte die App von Grund auf neu
             programmiert werden; ich entschied mich allerdings dazu, die App
-            nicht in der von Apple kreierten Programmiersprache Swift zu
+            nicht in der von Apple kreierten Programmiersprache <i>Swift</i> zu
             entwickeln, sondern einen Hybrid-Ansatz zu wählen, um größtmögliche
             Flexibilität zu erreichen.
         </p>
         <p>
             Dabei wollte ich auf etablierte Web-Technologien wie JavaScript,
-            HTML und CSS zurückgreifen und diese mit dem Framework Apache
-            Cordova kombinieren. Dies erlaubt es, eine so erstellte App nicht
-            nur in jedem modernen Web-Browser auszuführen, sondern diese auch
-            mit geringem Aufwand zu einer nativen iOS- oder sogar Android-App
-            zu konvertieren, ohne den Programmcode für jede Plattform neu
-            schreiben zu müssen.
+            HTML und CSS zurückgreifen und diese mit dem Framework <i>Apache
+            Cordova</i> kombinieren. Dies erlaubt es, eine so erstellte App
+            nicht nur in jedem modernen Web-Browser auszuführen, sondern diese
+            auch mit geringem Aufwand zu einer nativen iOS- oder sogar
+            Android-App zu konvertieren, ohne den Programmcode für jede
+            Plattform neu schreiben zu müssen.
         </p>
         <p>
             Der eigentliche Inhalt und das Konzept des bestehenden Prototyps
@@ -72,10 +72,10 @@
         <p>
             Diese Arbeit beschäftigt sich zunächst mit der grundlegenden Idee,
             der Funktionsweise, dem Aufbau und dem zugrunde liegenden
-            didaktischen Konzept der App OWLisch. Nachfolgend wird die
+            didaktischen Konzept der App <i>OWLisch</i>. Nachfolgend wird die
             grafische Gestaltung der App näher beleuchtet und im Detail
-            beschrieben, wobei ein Vergleich zu den iOS Human Interface
-            Guidelines gezogen und eine erste Verbindung zum dazugehörigen
+            beschrieben, wobei ein Vergleich zu den <i>iOS Human Interface
+            Guidelines</i> gezogen und eine erste Verbindung zum dazugehörigen
             Quellcode hergestellt wird.
         </p>
         <p>
@@ -98,31 +98,32 @@
         
         <h2 id="chapter-2-1">Entstehung der Idee</h2>
         <p>
-            Die Idee für die App OWLisch entstand im Zuge des Seminars Mobile
-            Learning unter Beteiligung folgender Studierenden: Tugba Aksakal,
-            Miriam Belke, Melanie Derksen, Franziska Kluge, Lisa Kottmann,
-            Kai-Frederik Lüking, Jakob Metzger und Philipp Niewöhner. Ziel
-            war es zunächst, ein Konzept für eine Lern-App für Dialektwörter
-            aus Ostwestfalen-Lippe unter Berücksichtigung von didaktischen
-            Erkenntnissen zu entwickeln; zu diesem Zweck wurden während des
-            Seminars interdisziplinäre Gruppen aus verschiedenen Studiengängen
-            gebildet (interdisziplinäre Medienwissenschaften,
+            Die Idee für die App <i>OWLisch</i> entstand im Zuge des Seminars
+            <i>Mobile Learning</i> unter Beteiligung folgender Studierenden:
+            Tugba Aksakal, Miriam Belke, Melanie Derksen, Franziska Kluge,
+            Lisa Kottmann, Kai-Frederik Lüking, Jakob Metzger und Philipp
+            Niewöhner. Ziel war es zunächst, ein Konzept für eine Lern-App für
+            Dialektwörter aus Ostwestfalen-Lippe unter Berücksichtigung von
+            didaktischen Erkenntnissen zu entwickeln; zu diesem Zweck wurden
+            während des Seminars interdisziplinäre Gruppen aus verschiedenen
+            Studiengängen gebildet (interdisziplinäre Medienwissenschaften,
             Erziehungswissenschaften und Medieninformatik & Gestaltung).
         </p>
         <p>
             Als Inspiration für die App dienten in erster Linie die bekannte
-            Spiele-App Quizduell und das althergebrachte Karteikartensystem zum
-            Lernen von Vokabeln. Bei mehreren Gruppendiskussionen wurden diese
-            Beiden Konzepte vereint und konkretisiert.
+            Spiele-App <i>Quizduell</i> und das althergebrachte
+            Karteikartensystem zum Lernen von Vokabeln. Bei mehreren
+            Gruppendiskussionen wurden diese Beiden Konzepte vereint und
+            konkretisiert.
         </p>
         <p>
             Um das Lernen der ostwestfälischen Vokabeln aufzulockern, wurde ein
-            sogenannter Gamification-Ansatz gewählt – das Anwenden spieltypischer
-            Elemente in einem sonst spielfremden Kontext – in Anlehnung an die
-            App Quizduell. Die in der App enthaltenen Begriffe sollten als ein
-            Quiz präsentiert werden, das über mehrere Schwierigkeitsstufen
-            verfügt und den Spieler bei richtigen Antworten mit einem kleinen
-            Erfolg belohnt.
+            sogenannter Gamification-Ansatz gewählt – das Anwenden
+            spieltypischer Elemente in einem sonst spielfremden Kontext – in
+            Anlehnung an die App <i>Quizduell</i>. Die in der App enthaltenen
+            Begriffe sollten als ein Quiz präsentiert werden, das über mehrere
+            Schwierigkeitsstufen verfügt und den Spieler bei richtigen Antworten
+            mit einem kleinen Erfolg belohnt.
         </p>
         <p>
             Im Hintergrund, für den Spieler weitestgehend unsichtbar, sollte
@@ -154,20 +155,20 @@
         <ul>
             <li>
                 Ein ostwestfälischer Begriff mit vier hochdeutschen Begriffen
-                als Antwortmöglichkeit (z.B. „Was heißt Pinneken?“).
+                als Antwortmöglichkeit (z.B. „<i>Was heißt Pinneken?</i>“).
             </li>
             <li>
                 Ein hochdeutscher Begriff mit vier ostwestfälischen Begriffen
-                als Antwortmöglichkeit (z.B. „Was heißt Schnapsglas?“).
+                als Antwortmöglichkeit (z.B. „<i>Was heißt Schnapsglas?</i>“).
             </li>
             <li>
                 Ein ostwestfälischer Begriff mit vier Bildern als
-                Antwortmöglichkeiten (z.B. „Was heißt Schnapsglas?“);
-                siehe Abbildung 1.
+                Antwortmöglichkeiten (z.B. „<i>Was heißt Schnapsglas?</i>“);
+                <i>siehe Abbildung 1</i>.
             </li>
             <li>
                 Ein Bild zu einem Begriff mit vier ostwestfälischen Begriffen
-                als Antworten; siehe Abbildung 2.
+                als Antworten; <i>siehe Abbildung 2</i>.
             </li>
         </ul>
         <p>
@@ -182,7 +183,7 @@
             der Spieler für diesen um eine Stufe auf und erhält beim nächsten
             Vorkommen einen neuen Schwierigkeitsgrad. Bei dieser zweiten Stufe
             wird dem Spieler die hochdeutsche Übersetzung des Begriffs
-            präsentiert (z.B: „Was heißt Schnapsglas?“), während alle im
+            präsentiert (z.B: „<i>Was heißt Schnapsglas?</i>“), während alle im
             ostwestfälischen Wort vorkommenden Buchstaben zufällig gemischt
             dargestellt sind und in die richtige Reihenfolge gebracht werden
             müssen.
@@ -192,8 +193,8 @@
             Begriffes erlernen, erhält durch die Vorgabe der Buchstaben
             allerdings weiterhin eine Hilfestellung, sodass die Lösung
             durch Knobeln und ausprobieren erreicht werden kann
-            (siehe Abbildung 3). Über einen vorhandenen „Lösen“-Button
-            kann die Eingabe bestätigt werden.
+            (<i>siehe Abbildung 3</i>). Über einen vorhandenen
+            „<i>Lösen</i>“-Button kann die Eingabe bestätigt werden.
         </p>
         <p>
             Die letzte und somit schwierigste Stufe ähnelt ihrem Vorgänger;
@@ -202,7 +203,7 @@
             ostwestfälischen Begriff selbstständig mittels einer eingeblendeten
             Tastatur korrekt eingeben. Kommt ein Spieler hier auf die richtige
             Lösung, so wurde der Begriff erfolgreich erlernt
-            (siehe Abbildung 4).
+            (<i>siehe Abbildung 4</i>).
         </p>
         
         <h3 id="chapter-2-2-2">Das Wörterbuch</h3>
@@ -215,9 +216,9 @@
         </p>
         <p>
             Das Wörterbuch verfügt sowohl über eine Übersichtsliste aller
-            Begriffe (siehe Abbildung 5), als auch über Detailansichten,
+            Begriffe (<i>siehe Abbildung 5</i>), als auch über Detailansichten,
             die vorhandene Bilder und Herkünfte, Zitate und Übersetzungen
-            über den Begriff enthalten (siehe Abbildung 6). Zusätzlich soll
+            über den Begriff enthalten (<i>siehe Abbildung 6</i>). Zusätzlich soll
             hier eine auditive Komponente ergänzt werden, indem alle Begriffe
             als eingesprochene Audiodateien im Wörterbuch abgespielt werden
             können, sodass der Nutzer die korrekte Aussprache der Wörter
@@ -228,12 +229,12 @@
         <p>
             Um dem Nutzer beim Starten der App einen ersten Eindruck über die
             Inhalte zu verschaffen und nicht sofort in einen der Menüpunkte zu
-            werfen, kam die Überlegung auf, den Begriff des Tages als
+            werfen, kam die Überlegung auf, den <i>Begriff des Tages</i> als
             Startbildschirm einzusetzen. Dieser Bildschirm präsentiert dem
             Nutzer einen der in der App vorhandenen Begriffe mitsamt Bild,
             Übersetzung und Informationstext, sodass man bereits vor dem
             ersten Spielen des Quiz ein neues Wort kennenlernen kann
-            (siehe Abbildung 7).
+            (<i>siehe Abbildung 7</i>).
         </p>
         <p>
             Dieser Begriff wird täglich zufällig gewechselt und kann dem
@@ -247,7 +248,7 @@
             Damit der Nutzer der App zu jeder Zeit einen Überblick über den
             bisher erzielten Lernfortschritt behält, wurde beschlossen, eine
             persönliche Statistik zu implementieren, in der über Diagramme
-            wichtige Informationen dargestellt werden (siehe Abbildung 8).
+            wichtige Informationen dargestellt werden (<i>siehe Abbildung 8</i>).
         </p>
         <p>
             Hier erhält man Einsicht in die erzielten Punkte aus den letzten
@@ -276,7 +277,7 @@
             auch andere deutsche Dialekte zu unterstützen. Dieses Feature wurde
             zwar bei der Entwicklung des ersten Prototypen verworfen, bei der
             finalen Umsetzung jedoch wieder aufgegriffen; näheres dazu findet
-            sich in Kapitel 3 und Kapitel 4.
+            sich in <i>Kapitel 3</i> und <i>Kapitel 4</i>.
         </p>
         
         <h2 id="chapter-2-3">Layout & Navigation</h2>
@@ -286,20 +287,26 @@
             noch um eine Navigation und Inhaltsstruktur erweitert werden.
             Aufgrund der vorhandenen persönlichen Geräte und der bereits
             gemachten Erfahrungen der Gruppenmitgliedern mit unterschiedlichen
-            Smartphones und Betriebssystemen, wurde iOS als Zielplattform für
-            den ersten Prototypen ausgewählt, mit dem iPhone 5 (und später dem
-            iPhone SE) als Testgerät.
+            Smartphones und Betriebssystemen, wurde <i>iOS</i> als Zielplattform
+            für den ersten Prototypen ausgewählt, mit dem <i>iPhone 5</i> (und
+            später dem <i>iPhone SE</i>) als Testgerät.
         </p>
         <p>
             Als primäre Quelle für das grundlegende Layout und die
-            Navigationsstruktur der App wurden die iOS Human Interface
-            Guidelines herangezogen; hier sind sämtliche von Apple empfohlenen
-            Interface-Elemente für Apps dokumentiert und beschrieben. Das
-            Einhalten von Richtlinien und Empfehlungen ist beim Entwerfen einer
-            App von erheblicher Bedeutung, um dem Endnutzer eine intuitive
-            Bedienung der App zu ermöglichen und sich auf den Inhalt zu
-            konzentrieren. Auch andere beliebte Apps wie Facebook und WhatsApp
-            dienten der Gruppe als Inspiration für die Gestaltung des Layouts.
+            Navigationsstruktur der App wurden die <i>iOS Human Interface
+            Guidelines</i><cite>
+    Vgl. Apple Inc.: „iOS Human Interface Guidelines“, unter:<br/>
+    https://developer.apple.com/ios/human-interface-guidelines
+    (abgerufen am 09.11.2016)
+</cite>
+herangezogen; hier sind
+            sämtliche von Apple empfohlenen Interface-Elemente für Apps
+            dokumentiert und beschrieben. Das Einhalten von Richtlinien und
+            Empfehlungen ist beim Entwerfen einer App von erheblicher Bedeutung,
+            um dem Endnutzer eine intuitive Bedienung der App zu ermöglichen und
+            sich auf den Inhalt zu konzentrieren. Auch andere beliebte Apps wie
+            <i>Facebook</i> und <i>WhatsApp</i> dienten der Gruppe als
+            Inspiration für die Gestaltung des Layouts.
         </p>
         <p>
             Für die Inhaltsstruktur wurde dabei eine flache Hierarchie gewählt,
@@ -308,13 +315,13 @@
             gerade in der App befindet. Die verwendeten Layout- und
             Navigationselemente und ihre Beziehung zu den zuvor beschriebenen
             Features werden im folgenden im Detail beschrieben und bildlich
-            dargestellt (siehe Abbildung 9), auf die finale Gestaltung dieser
-            Elemente wird in Kapitel 3 eingegangen.
+            dargestellt (<i>siehe Abbildung 9</i>), auf die finale Gestaltung
+            dieser Elemente wird in <i>Kapitel 3</i> eingegangen.
         </p>
         
         <h3 id="chapter-2-3-1">Status Bar</h3>
         <p>
-            Die Status Bar ist in iOS-Apps ein statischer und weitestgehend
+            Die <i>Status Bar</i> ist in iOS-Apps ein statischer und weitestgehend
             unveränderlicher Bestandteil, der sich stets am oberen Rand des
             Bildschirms befindet und wichtige Systeminformationen wie die
             Netzwerk-Konnektivität, die Uhrzeit und den aktuellen
@@ -323,121 +330,124 @@
         <p>
             Dabei ist der Inhalt dieser Leiste global gültig und damit
             unabhängig von der gerade geöffneten App. Die einzige Ausnahme,
-            die die iOS Human Interface Guidelines erlauben, liegt bei
+            die die <i>iOS Human Interface Guidelines</i> erlauben, liegt bei
             Spiele-Apps vor, die im Vollbildschirm-Modus betrieben werden;
-            hier kann es sinnvoll sein, die Status Bar vollständig auszublenden,
-            was bei OWLisch allerdings nicht zutrifft. Daher muss beim Gestalten
-            des App-Layouts Platz für diese Leiste eingeräumt werden.
+            hier kann es sinnvoll sein, die <i>Status Bar</i> vollständig
+            auszublenden, was bei <i>OWLisch</i> allerdings nicht zutrifft.
+            Daher muss beim Gestalten des App-Layouts Platz für diese Leiste
+            eingeräumt werden.
         </p>
         
         <h3 id="chapter-2-3-2">Navigation Bar</h3>
         <p>
-            Die Navigation Bar ist in iOS von wesentlicher Bedeutung für die
-            Navigation innerhalb der App. In der Regel ist diese Leiste visuell
-            mit der zuvor erwähnten Status Bar verknüpft und enthält
-            kontextabhängige Informationen über den aktuellen Inhalt der App.
-            Hier kann beispielsweise der Titel der gerade gewählten View
-            (siehe Punkt 2.3.3.) angezeigt werden. Auch ist es üblich und
-            empfohlen, auf der linken Seite der Leiste einen Zurück-Button
-            (z.B. als Pfeilsymbol) zu platzieren, um innerhalb des aktuellen
-            Kontextes zurück zu gelangen. Dies trifft bei OWLisch vor allem auf
-            das Wörterbuch zu, innerhalb dessen man sich zwischen der
-            Begriff-Liste und den Begriff-Details vor und zurück navigieren
-            können soll (siehe 2.2.2.).
+            Die <i>Navigation Bar</i> ist in <i>iOS</i> von wesentlicher
+            Bedeutung für die Navigation innerhalb der App. In der Regel ist
+            diese Leiste visuell mit der zuvor erwähnten <i>Status Bar</i>
+            verknüpft und enthält kontextabhängige Informationen über den
+            aktuellen Inhalt der App. Hier kann beispielsweise der Titel der
+            gerade gewählten View (<i>siehe Punkt 2.3.3</i>) angezeigt werden.
+            Auch ist es üblich und empfohlen, auf der linken Seite der Leiste
+            einen Zurück-Button (z.B. als Pfeilsymbol) zu platzieren, um
+            innerhalb des aktuellen Kontextes zurück zu gelangen. Dies trifft
+            bei <i>OWLisch</i> vor allem auf das Wörterbuch zu, innerhalb
+            dessen man sich zwischen der Begriff-Liste und den Begriff-Details
+            vor und zurück navigieren können soll (<i>siehe 2.2.2</i>).
         </p>
         <p>
-            Des Weiteren lassen sich in der Navigation Bar auch zusätzliche
-            Buttons unterbringen, um kontextabhängige Aktionen auszuführen; im
-            Wörterbuch könnten hier Buttons in Form von Symbolen sein, um die
-            Begriff-Liste zu sortieren oder mittels einer Suchfunktion zu
-            filtern, während im Quiz ein Abbrechen-Button platziert werden kann,
-            mit dem das bereits gestartete Quiz beendet werden kann.
+            Des Weiteren lassen sich in der <i>Navigation Bar</i> auch
+            zusätzliche Buttons unterbringen, um kontextabhängige Aktionen
+            auszuführen; im Wörterbuch könnten hier Buttons in Form von Symbolen
+            sein, um die Begriff-Liste zu sortieren oder mittels einer
+            Suchfunktion zu filtern, während im Quiz ein Abbrechen-Button
+            platziert werden kann, mit dem das bereits gestartete Quiz beendet
+            werden kann.
         </p>
         <p>
-            Die Platzierung der Navigation Bar ist statisch, sie kann also nicht
-            beliebig verschoben werden; auch sollte sie zu jeder Zeit sichtbar
-            sein, um dem Nutzer stets die Übersicht über seine aktuelle Position
-            innerhalb der App zu gewähren. Für Apps, die einen großen Fokus auf
-            die bloße Darstellung des Inhaltes legen, kann es sinnvoll sein,
-            die Navigation Bar gelegentlich auszublenden, damit mehr Platz zur
-            Verfügung steht (Facebook und Safari blenden die Leiste z.B. aus,
-            wenn der Nutzer nach unten scrollt und wieder ein, sobald wieder
-            nach oben gescrollt wird); für OWLisch ist dies jedoch nicht
-            notwendig.
+            Die Platzierung der <i>Navigation Bar</i> ist statisch, sie kann
+            also nicht beliebig verschoben werden; auch sollte sie zu jeder Zeit
+            sichtbar sein, um dem Nutzer stets die Übersicht über seine aktuelle
+            Position innerhalb der App zu gewähren. Für Apps, die einen großen
+            Fokus auf die bloße Darstellung des Inhaltes legen, kann es sinnvoll
+            sein, die <i>Navigation Bar</i> gelegentlich auszublenden, damit
+            mehr Platz zur Verfügung steht (<i>Facebook</i> und <i>Safari</i>
+            blenden die Leiste z.B. aus, wenn der Nutzer nach unten scrollt und
+            wieder ein, sobald wieder nach oben gescrollt wird); für
+            <i>OWLisch</i> ist dies jedoch nicht notwendig.
         </p>
         
         <h3 id="chapter-2-3-3">View</h3>
         <p>
-            Die View ist das Herzstück der App, denn hier wird der eigentliche
-            Inhalt angezeigt. Alle in Kapitel 2.2. skizzierten Features werden
-            hier platziert und abhängig vom gerade gewählten Menüpunkt
-            (siehe 2.3.4.) ein- und ausgeblendet. Dieses Element nimmt daher
-            auch den größten Platz auf dem Bildschirm ein und lässt sich
-            scrollen, wenn der dargestellte Inhalt über den vorhandenen Platz
-            hinausgeht. Innerhalb der View kann der Nutzer unter Umständen
-            ebenfalls navigieren, z.B. durch aus Auswählen eines Begriffes
-            innerhalb der Begriff-Liste im Wörterbuch. Der Inhalt der zuvor
-            beschriebenen Navigation Bar hängt maßgeblich davon ab, welcher
-            Inhalt gerade in der View dargestellt wird. Im Grunde ist dieses
-            Element nichts weiter als ein leerer Kasten und ist daher selbst
-            in keiner Weise gestaltet.
+            Die <i>View</i> ist das Herzstück der App, denn hier wird der
+            eigentliche Inhalt angezeigt. Alle in <i>Kapitel 2.2</i> skizzierten
+            Features werden hier platziert und abhängig vom gerade gewählten
+            Menüpunkt (<i>siehe 2.3.4</i>) ein- und ausgeblendet. Dieses Element
+            nimmt daher auch den größten Platz auf dem Bildschirm ein und lässt
+            sich scrollen, wenn der dargestellte Inhalt über den vorhandenen
+            Platz hinausgeht. Innerhalb der <i>View</i> kann der Nutzer unter
+            Umständen ebenfalls navigieren, z.B. durch aus Auswählen eines
+            Begriffes innerhalb der Begriff-Liste im Wörterbuch. Der Inhalt der
+            zuvor beschriebenen <i>Navigation Bar</i> hängt maßgeblich davon ab,
+            welcher Inhalt gerade in der <i>View</i> dargestellt wird. Im Grunde
+            ist dieses Element nichts weiter als ein leerer Kasten und ist daher
+            selbst in keiner Weise gestaltet.
         </p>
         
         <h3 id="chapter-2-3-4">Tab Bar</h3>
         <p>
-            Die Tab Bar ist ein Standardelement aus den iOS Human Interface
-            Guidelines, das in einer Vielzahl von Apps verwendet wird, darunter
-            auch die meisten Apps von Apple selbst. Sie stellt die primäre
-            Navigation für die App dar und befindet sich stets am unteren Rand
-            des Bildschirms. In dieser Leiste können bis zu fünf Icons
-            untergebracht werden, die einerseits eine Navigation zwischen den
-            dargestellten Menüpunkten erlauben und andererseits durch die
-            visuelle Hervorhebung des aktuell gewählten Icons stets anzeigen,
-            wo man sich als Nutzer gerade befindet (ergänzend zum Titel in der
-            Navigation Bar).
+            Die <i>Tab Bar</i> ist ein Standardelement aus den <i>iOS Human
+            Interface Guidelines</i>, das in einer Vielzahl von Apps verwendet
+            wird, darunter auch die meisten Apps von <i>Apple</i> selbst. Sie
+            stellt die primäre Navigation für die App dar und befindet sich
+            stets am unteren Rand des Bildschirms. In dieser Leiste können bis
+            zu fünf Icons untergebracht werden, die einerseits eine Navigation
+            zwischen den dargestellten Menüpunkten erlauben und andererseits
+            durch die visuelle Hervorhebung des aktuell gewählten Icons stets
+            anzeigen, wo man sich als Nutzer gerade befindet (ergänzend zum
+            Titel in der <i>Navigation Bar</i>).
         </p>
         <p>
             Dies gewährleistet die eingangs erwähnte flache Hierarchie der App;
             die fünf vorhandenen Menüpunkte liegen alle gleichberechtigt und
-            ohne Verschachtelung auf der selben Navigations-Ebene. In OWLisch
-            erhalten die fünf wichtigsten Features der App (siehe 2.2.) jeweils
-            ein eigenes Icon in der Tab Bar.
+            ohne Verschachtelung auf der selben Navigations-Ebene. In
+            <i>OWLisch</i> erhalten die fünf wichtigsten Features der App
+            (<i>siehe 2.2</i>) jeweils ein eigenes Icon in der <i>Tab Bar</i>.
         </p>
         <p>
-            Das erste Icon verweist dabei auf den Begriff des Tages, danach
-            folgen das Wörterbuch, das Quiz, die Statistik und schließlich die
-            Hilfe. Falls weitere (weniger wichtige) Menüpunkte hinzukommen
-            sollten, lässt sich der letzte Tab in der Leiste zum Menüpunkt
-            „Mehr“ abwandeln, der dann eine Liste aus weiteren, diesem Punkt
-            untergeordneten Optionen (z.B. die Hilfe oder das noch im Raum
-            stehende Feature zum Ändern des Wörterbuches) enthält. Diese
-            Vorgehensweise wird auch von Apple vorgeschlagen, da so nicht nur
-            für den Nutzer, sondern auch für den Entwickler während des
-            Planungsprozesses klar wird, welche Funktionen der App am
-            wichtigsten sind und daher am prominentesten dargestellt werden
-            sollten.
+            Das erste Icon verweist dabei auf den <i>Begriff des Tages</i>,
+            danach folgen das <i>Wörterbuch</i>, das <i>Quiz</i>, die
+            <i>Statistik</i> und schließlich die <i>Hilfe</i>. Falls weitere
+            (weniger wichtige) Menüpunkte hinzukommen sollten, lässt sich der
+            letzte Tab in der Leiste zum Menüpunkt „<i>Mehr</i>“ abwandeln, der
+            dann eine Liste aus weiteren, diesem Punkt untergeordneten Optionen
+            (z.B. die <i>Hilfe</i> oder das noch im Raum stehende Feature zum
+            Ändern des Wörterbuches) enthält. Diese Vorgehensweise wird auch von
+            Apple vorgeschlagen, da so nicht nur für den Nutzer, sondern auch
+            für den Entwickler während des Planungsprozesses klar wird, welche
+            Funktionen der App am wichtigsten sind und daher am prominentesten
+            dargestellt werden sollten.
         </p>
         <p>
-            Die iOS Human Interface Guidelines empfehlen außerdem, die Tab Bar
-            stets anzuzeigen, unabhängig von der aktuellen Position innerhalb
-            der Navigation, um dem Nutzer stets die Option zu bieten, zu jedem
-            beliebigen Punkt zu navigieren. Gegen diese Regel wird in OWLisch
-            beim Quiz allerdings bewusst verstoßen werden (siehe Kapitel 3);
-            sobald ein Quiz gestartet wird, soll es dem Nutzer nämlich explizit
-            nicht mehr erlaubt sein, einen anderen Menüpunkt auszuwählen, so
-            lange das Quiz nicht beendet oder abgebrochen wurde. Dies soll
-            verhindern, dass der Nutzer sich selbst betrügt, indem einfach im
-            Wörterbuch oder beim Begriff des Tages nach der Lösung für eine
-            Frage nachgesehen wird. Zudem gewährt das Ausblenden der Tab Bar
-            unter Umständen mehr Raum, um die Inhalte des Quiz darstellen zu
-            können und zusätzliches Scrollen seitens des Nutzer zu umgehen.
+            Die <i>iOS Human Interface Guidelines</i> empfehlen außerdem, die
+            <i>Tab Bar</i> stets anzuzeigen, unabhängig von der aktuellen
+            Position innerhalb der Navigation, um dem Nutzer stets die Option zu
+            bieten, zu jedem beliebigen Punkt zu navigieren. Gegen diese Regel
+            wird in <i>OWLisch</i> beim Quiz allerdings bewusst verstoßen werden
+            (<i>siehe Kapitel 3</i>); sobald ein Quiz gestartet wird, soll es
+            dem Nutzer nämlich explizit nicht mehr erlaubt sein, einen anderen
+            Menüpunkt auszuwählen, so lange das Quiz nicht beendet oder
+            abgebrochen wurde. Dies soll verhindern, dass der Nutzer sich selbst
+            betrügt, indem einfach im <i>Wörterbuch</i> oder beim <i>Begriff des
+            Tages</i> nach der Lösung für eine Frage nachgesehen wird. Zudem
+            gewährt das Ausblenden der <i>Tab Bar</i> unter Umständen mehr Raum,
+            um die Inhalte des Quiz darstellen zu können und zusätzliches
+            Scrollen seitens des Nutzer zu umgehen.
         </p>
         <p>
-            Für die Orientierung des Nutzers steht trotz ausgeblendeter Tab Bar
-            weiterhin die Navigation Bar zu Verfügung, die anzeigt, dass man
-            sich gerade im Quiz befindet und durch Buttons die Möglichkeit gibt,
-            das Quiz jederzeit abzubrechen und damit die Tab Bar wieder
-            einzublenden.
+            Für die Orientierung des Nutzers steht trotz ausgeblendeter
+            <i>Tab Bar</i> weiterhin die <i>Navigation Bar</i> zu Verfügung,
+            die anzeigt, dass man sich gerade im Quiz befindet und durch Buttons
+            die Möglichkeit gibt, das Quiz jederzeit abzubrechen und damit die
+            <i>Tab Bar</i> wieder einzublenden.
         </p>
         
         <h2 id="chapter-2-4">Didaktisches Konzept</h2>

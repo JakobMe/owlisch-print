@@ -8,26 +8,60 @@
 
  // Seiten
  @page {
-     size: A4 portrait;
-     margin: @margin-page-v @margin-page-h;
-     counter-reset: _countH1;
+    size: A4 portrait;
+    margin: @margin-page-v @margin-page-h;
+    counter-reset: _countH1;
 
-     // Kopfzeile Rechts: Seitenzahl
-     @top-right {
-         content: @string-page counter(page);
-         .layout-head();
-     }
+    // Kopfzeile Rechts: Seitenzahl
+    @top-right {
+        content: @string-page counter(page);
+        .layout-head();
+    }
 
-     // Kopfzeile Links: Kapitel
-     @top-left {
-         content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1);
-         .layout-head();
-     }
- }
+    // Kopfzeile Links: Kapitel
+    @top-left {
+        content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1);
+        .layout-head();
+    }
+}
+
+// Fußnoten
+cite {
+    display: inline;
+    float: footnote;
+    counter-increment: footnote;
+    text-align: left;
+    line-height: @line-height-small;
+    .text-edge();
+
+    // Linie
+    &:before {
+        content: "";
+        display: block;
+        width: 33%;
+        height: 0;
+        border-top: @size-line dotted @color-pale;
+        margin-bottom: @font-size-edge;
+    }
+
+    // Fußnoten-Zahl Inhalt
+    &:footnote-call {
+        font-style: normal;
+        vertical-align: super;
+        font-size: @font-size-edge;
+        line-height: none;
+    }
+
+    // Aufeinanderfolgende Fußnoten
+    & + & {
+        margin-top: @font-size-edge;
+        &:before { display: none; }
+    }
+}
 
 // Body
 body {
     background: @color-background;
-    counter-reset: _countH1 1 _countH2 _countH3;
+    counter-reset: _countH1 1 _countH2 _countH3 footnote;
     .font-main();
 }

@@ -10,20 +10,20 @@
 body {
     color: @color-text;
     font-size: @font-size-text;
-    line-height: (@font-line-height * @font-size-text);
+    line-height: (@line-height-normal * @font-size-text);
 }
 
 // Absätze
 p {
     text-align: justify;
-    margin: 0 0 (@font-size-text * @font-line-height);
+    margin: 0 0 (@font-size-text * @line-height-normal);
     page-break-inside: avoid;
 }
 
 // Listen
 ul {
     padding: 0;
-    margin: 0 0 (@font-size-text * @font-line-height) 0;
+    margin: 0 0 (@font-size-text * @line-height-normal) 0;
     list-style-type: none;
     text-align: left;
     page-break-inside: avoid;
