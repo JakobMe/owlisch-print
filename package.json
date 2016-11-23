@@ -1,0 +1,24 @@
+{
+  "name": "owlisch-print",
+  "version": "1.0.0",
+  "description": "Bachelorarbeit-Dokument für die App OWLisch",
+  "author": "Jakob Metzger",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/JakobMe/owlisch-print#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakobMe/owlisch-print.git"
+  },
+  "scripts": {
+      "print": "prince -s out/print.css out/print.html out/print.pdf"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-kit": "^0.3.0",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-util": "^3.0.7"
+  }
+}

@@ -1,0 +1,19 @@
+# Mac
+.DS_Store
+
+# Codekit
+.codekit-cache
+
+# Cordova
+platforms
+hooks
+plugins
+
+# Node.js
+node_modules
+npm-debug.log
+
+# Atom
+.ftpconfig
+.ftpignore
+.remote-sync.json
