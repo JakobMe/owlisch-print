@@ -1,0 +1,50 @@
+/*
+ * Modul: Content.
+ * Definiert das Layout von Inhalten.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Body
+body {
+    color: @color-text;
+    font-size: @font-size-text;
+    line-height: (@font-line-height * @font-size-text);
+}
+
+// Absätze
+p {
+    text-align: justify;
+    margin: 0 0 (@font-size-text * @font-line-height);
+    page-break-inside: avoid;
+}
+
+// Listen
+ul {
+    padding: 0;
+    margin: 0 0 (@font-size-text * @font-line-height) 0;
+    list-style-type: none;
+    text-align: left;
+    page-break-inside: avoid;
+
+    // Listenelement
+    li {
+        padding: 0 0 0 (@margin-title-h * 2);
+        margin: 0 0 (@font-size-text) 0;
+
+        // Icon
+        &:before {
+            float: left;
+            display: block;
+            text-align: center;
+            content: @string-bullet;
+            width: (@margin-title-h * 2);
+            margin-left: -(@margin-title-h * 2);
+            color: @color-pale;
+        }
+
+        // Letztes Element
+        &:last-child { margin-bottom: 0; }
+    }
+}

@@ -1,0 +1,20 @@
+p,ul{margin:0 0 21.6pt;page-break-inside:avoid}h1,h2,h3,ul li{margin:0 0 12pt}@font-face{font-family:Lato;font-style:normal;font-weight:400;src:url(fonts/lato/lato-regular.woff) format("woff")}@font-face{font-family:Lato;font-style:normal;font-weight:700;src:url(fonts/lato/lato-bold.woff) format("woff")}@font-face{font-family:Lato;font-style:italic;font-weight:400;src:url(fonts/lato/lato-italic.woff) format("woff")}@font-face{font-family:Lato;font-style:italic;font-weight:700;src:url(fonts/lato/lato-bolditalic.woff) format("woff")}@page{size:A4 portrait;margin:3.5cm 3cm;counter-reset:_countH1;@top-right {
+    content: "Seite " counter(page);
+    vertical-align: top;
+    margin: 0;
+    padding: 2cm 0 0 0;
+    font-style: italic;
+    font-size: 10pt;
+    color: #b0b8b9;
+    font-family: "Lato", sans-serif;
+  }
+  @top-left {
+    content: "Kapitel " counter(_countH1) ": " string(_titleH1);
+    vertical-align: top;
+    margin: 0;
+    padding: 2cm 0 0 0;
+    font-style: italic;
+    font-size: 10pt;
+    color: #b0b8b9;
+    font-family: "Lato", sans-serif;
+  }}h1,h2,h3{font-weight:700;color:#3bbb77;padding:0}h1:before,h2:before,h3:before{color:#b0b8b9;font-weight:400;margin-right:.2cm}h1{font-size:24pt;line-height:43.2pt;counter-reset:_countH2 _countH3;counter-increment:_countH1;string-set:_titleH1 content()}h1:before{content:counter(_countH1) "."}section:first-of-type h1:first-of-type{counter-reset:_countH1}h2{font-size:18pt;line-height:32.4pt;padding-left:.5cm;counter-reset:_countH3;counter-increment:_countH2}h2:before{content:counter(_countH1) "." counter(_countH2) "."}h3{font-size:14pt;line-height:25.2pt;padding-left:1cm;counter-increment:_countH3}h3:before{content:counter(_countH1) "." counter(_countH2) "." counter(_countH3) "."}body{background:#fff;counter-reset:_countH1 1 _countH2 _countH3;font-family:Lato,sans-serif;color:#4b4e4f;font-size:12pt;line-height:21.6pt}p{text-align:justify}ul{padding:0;list-style-type:none;text-align:left}ul li{padding:0 0 0 1cm}ul li:before{float:left;display:block;text-align:center;content:"•";width:1cm;margin-left:-1cm;color:#b0b8b9}ul li:last-child{margin-bottom:0}

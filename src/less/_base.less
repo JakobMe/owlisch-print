@@ -1,0 +1,33 @@
+/*
+ * Modul: Base.
+ * Definiert das grundlegende Layout des Dokuments.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+ // Seiten
+ @page {
+     size: A4 portrait;
+     margin: @margin-page-v @margin-page-h;
+     counter-reset: _countH1;
+
+     // Kopfzeile Rechts: Seitenzahl
+     @top-right {
+         content: @string-page counter(page);
+         .layout-head();
+     }
+
+     // Kopfzeile Links: Kapitel
+     @top-left {
+         content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1);
+         .layout-head();
+     }
+ }
+
+// Body
+body {
+    background: @color-background;
+    counter-reset: _countH1 1 _countH2 _countH3;
+    .font-main();
+}

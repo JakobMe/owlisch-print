@@ -1,0 +1,67 @@
+/*
+ * Modul: Titel.
+ * Definiert das Layout von Titeln.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Titel
+h1, h2, h3 {
+    font-weight: bold;
+    color: @color-main;
+    padding: 0;
+    margin: 0 0 @font-size-text 0;
+
+    // Kapitelnummer
+    &:before {
+        color: @color-pale;
+        font-weight: normal;
+        margin-right: @margin-count-h;
+    }
+}
+
+// Titel Erste Ebene
+h1 {
+    font-size: @font-size-h1;
+    line-height: (@font-line-height * @font-size-h1);
+    counter-reset: _countH2 _countH3;
+    counter-increment: _countH1;
+    string-set: _titleH1 content();
+
+    // Kapitelnummer
+    &:before { content: counter(_countH1) @delimeter-chapter; }
+
+    // Kapitelnummer zurücksetzen
+    section:first-of-type &:first-of-type { counter-reset: _countH1; }
+}
+
+// Titel Zweite Ebene
+h2 {
+    font-size: @font-size-h2;
+    line-height: (@font-line-height * @font-size-h2);
+    padding-left: @margin-title-h;
+    counter-reset: _countH3;
+    counter-increment: _countH2;
+
+    // Kapitelnummer
+    &:before {
+        content: counter(_countH1) @delimeter-chapter
+                 counter(_countH2) @delimeter-chapter;
+    }
+}
+
+// Titel Dritte Ebene
+h3 {
+    font-size: @font-size-h3;
+    line-height: (@font-line-height * @font-size-h3);
+    padding-left: (@margin-title-h * 2);
+    counter-increment: _countH3;
+
+    // Kapitelnummer
+    &:before {
+        content: counter(_countH1) @delimeter-chapter
+                 counter(_countH2) @delimeter-chapter
+                 counter(_countH3) @delimeter-chapter;
+    }
+}

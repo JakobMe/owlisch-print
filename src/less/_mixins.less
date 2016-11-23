@@ -1,0 +1,35 @@
+/*
+ * Modul: Mixins.
+ * Definiert globale Mixins für das Dokument.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Mixins: Fonts
+.font-main() { font-family: @font-name-main, sans-serif; }
+.font-icon() { font-family: @font-name-icon, sans-serif; }
+
+// Mixin: Text für Kopf-/Fußzeilen
+.text-edge() {
+    font-style: italic;
+    font-size: @font-size-edge;
+    color: @color-pale;
+    .font-main();
+}
+
+// Mixin: Layout für Kopfzeilen
+.layout-head() {
+    vertical-align: top;
+    margin: 0;
+    padding: @margin-edge-v 0 0 0;
+    .text-edge();
+}
+
+// Mixin: Layout für Fußzeilen
+.layout-foot() {
+    vertical-align: bottom;
+    margin: 0;
+    padding: 0 0 @margin-edge-v 0;
+    .text-edge();
+}
