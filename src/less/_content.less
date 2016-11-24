@@ -18,6 +18,21 @@ p {
     text-align: justify;
     margin: 0 0 @gap-paragraph 0;
     page-break-inside: avoid;
+
+    // Erste Zeile einrücken
+    section > &:first-letter { margin-left: @margin-title-h * 2; }
+
+    // Intro
+    &.intro {
+        font-style: italic;
+        color: @color-pale;
+        text-align: right;
+        line-height: @line-height-small;
+        font-size: @font-size-edge;
+        padding: (@font-size-edge / 2) @font-size-edge;
+        padding-left: @gap-paragraph;
+        border-right: @size-line solid @color-line;
+    }
 }
 
 // Listen
@@ -27,21 +42,32 @@ ul {
     list-style-type: none;
     text-align: left;
     page-break-inside: avoid;
+    border-left: @size-line solid @color-line;
+    margin-left: (@margin-title-h * 2);
 
     // Listenelement
     li {
+        position: relative;
         padding: 0 0 0 (@margin-title-h * 2);
         margin: 0 0 (@font-size-text) 0;
 
         // Icon
         &:before {
-            float: left;
+            box-sizing: border-box;
+            position: absolute;
             display: block;
             text-align: center;
-            content: @string-bullet;
-            width: (@margin-title-h * 2);
-            margin-left: -(@margin-title-h * 2);
-            color: @color-pale;
+            top: 50%;
+            left: -(@margin-title-h * 2);
+            content: @icon-forward;
+            width: (@margin-title-h * 4);
+            height: (@margin-title-h);
+            line-height: (@margin-title-h);
+            margin-top: -(@margin-title-h / 2);
+            color: @color-main;
+            font-size: @font-size-edge;
+            background: @color-background;
+            .font-icon();
         }
 
         // Letztes Element
@@ -51,13 +77,15 @@ ul {
 
 // Spalten
 .cols {
-    overflow: hidden;
     clear: both;
     width: 100%;
     margin: @gap-cols 0;
 
+    //
+    &:first-child { margin-top: 0; }
+
     // Spalten Unten
-    &.cols-bottom {
+    &&-bottom {
         page-break-after: always;
         position: absolute;
         margin: 0;
@@ -67,13 +95,21 @@ ul {
 
     // Spalte
     .col {
+        box-sizing: border-box;
         display: block;
         float: left;
     }
 
     // Spalten-Varianten
-    &.cols-1 .col { width: (100% / 1); }
-    &.cols-2 .col { width: (100% / 2); }
-    &.cols-3 .col { width: (100% / 3); }
-    &.cols-4 .col { width: (100% / 4); }
+    &&-1 .col { width: (100% / 1); }
+    &&-2 .col { width: (100% / 2); }
+    &&-3 .col { width: (100% / 3); }
+    &&-4 .col { width: (100% / 4); }
+
+    // Clear
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }

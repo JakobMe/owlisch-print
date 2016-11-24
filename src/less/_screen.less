@@ -18,14 +18,26 @@
 
     // Abschnitt
     section {
+        position: relative;
         box-sizing: border-box;
         margin: 0 auto;
         padding: 7.5vw;
-        max-width: 900px;
+        max-width: 800px;
         background: @color-background;
         box-shadow: 0 20px 20px 0 fade(@color-text, 20%);
 
         // Abstand Unten
         &:not(:last-child) { margin-bottom: 2.5vw; }
+    }
+
+    // Fußnoten
+    cite { display: none; }
+
+    // Spalten
+    .cols {
+        &&-bottom {
+            position: static;
+            margin-bottom: @gap-cols;
+        }
     }
 }

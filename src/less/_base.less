@@ -12,12 +12,20 @@
     margin: @margin-page-v @margin-page-h;
     margin-bottom: @margin-page-h;
     counter-reset: _countH1;
+}
+
+// Seiten Rechts
+@page:right {
 
     // Kopfzeile Rechts: Seitenzahl
     @top-right {
         content: @string-page counter(page);
         .layout-head();
     }
+}
+
+// Seiten Links
+@page:left {
 
     // Kopfzeile Links: Kapitel
     @top-left {
@@ -41,16 +49,21 @@ cite {
         display: block;
         width: 33%;
         height: 0;
-        border-top: @size-line dotted @color-pale;
+        border-top: @size-line solid @color-line;
         margin-bottom: @font-size-edge;
     }
 
     // Fußnoten-Zahl Inhalt
     &:footnote-call {
+        display: inline-block;
         font-style: normal;
         vertical-align: super;
-        font-size: @font-size-edge;
+        font-size: (@font-size-edge * @factor-count-font);
         line-height: none;
+        padding: (@margin-count-h / 4) (@margin-count-h / 3);
+        margin-left: (@margin-count-h / 4);
+        background: @color-box;
+        border-radius: @size-radius;
     }
 
     // Aufeinanderfolgende Fußnoten

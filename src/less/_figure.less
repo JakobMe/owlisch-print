@@ -8,21 +8,25 @@
 
 // Abbildung
 figure {
+    box-sizing: border-box;
     page-break-inside: avoid;
     clear: both;
     display: block;
     width: 100%;
     height: auto;
     margin: 0;
-    padding: 0;
 
     // Bild
     img {
+        box-sizing: border-box;
         display: block;
         width: auto;
         height: auto;
         margin: 0 auto;
         max-width: 100%;
+        padding: @margin-title-h;
+        background: @color-box;
+        border-radius: @size-radius;
 
         // Bild-Typen
         &.figure-wireframe { height: @figure-size-wireframe; }
@@ -31,18 +35,45 @@ figure {
     // Titel
     figcaption {
         display: block;
+        font-style: italic;
         text-align: center;
         color: @color-pale;
         font-size: @font-size-figure;
-        padding: 0 @margin-figure-h;
+        margin: 0 @margin-figure-h;
         margin-top: @font-size-figure;
-        line-height: @line-height-small;
+        line-height: (@line-height-small * @font-size-figure);
+
+        // Absatz
+        p {
+            text-align: center;
+            margin: (@font-size-figure / 2) 0 0 0;
+        }
 
         // Nummer
         &:before {
             font-weight: bold;
+            display: inline-block;
+            box-sizing: border-box;
             counter-increment: _countFig;
-            content: @string-figure counter(_countFig) @delimeter-title;
+            content: @string-figure counter(_countFig);
+            font-size: (@font-size-figure * @factor-count-font);
+            color: @color-pale;
+            background: @color-box;
+            padding: 0 (@margin-count-h / 2);
+            border-radius: @size-radius;
+            vertical-align: top;
+            font-style: normal;
+        }
+
+        // Linie
+        &:after {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            height: 0;
+            width: @size-border;
+            padding-top: @font-size-figure;
+            border-bottom: @size-line solid @color-line;
         }
     }
 
