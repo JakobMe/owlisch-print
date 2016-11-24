@@ -35,6 +35,23 @@ p {
     }
 }
 
+// Links im Text
+p, ul {
+    a {
+        white-space: nowrap;
+        font-style: italic;
+        text-transform: capitalize;
+        text-decoration: none;
+        display: inline-block;
+        padding: 0 @margin-toc-v;
+        background: @color-box;
+        border-radius: @size-radius;
+        font-size: @font-size-tiny;
+        color: @color-pale;
+        vertical-align: ((@font-size-text - @font-size-tiny) / 2);
+    }
+}
+
 // Listen
 ul {
     padding: 0;
