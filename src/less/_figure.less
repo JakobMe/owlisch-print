@@ -24,12 +24,14 @@ figure {
         height: auto;
         margin: 0 auto;
         max-width: 100%;
-        padding: @margin-title-h;
+        padding: @margin-figure-h;
         background: @color-box;
         border-radius: @size-radius;
 
         // Bild-Typen
-        &.figure-wireframe { height: @figure-size-wireframe; }
+        &.figure-wireframe {
+            height: (@figure-size-wireframe + (@margin-title-h * 2));
+        }
     }
 
     // Titel
@@ -39,7 +41,6 @@ figure {
         text-align: center;
         color: @color-pale;
         font-size: @font-size-figure;
-        margin: 0 @margin-figure-h;
         margin-top: @font-size-figure;
         line-height: (@line-height-small * @font-size-figure);
 

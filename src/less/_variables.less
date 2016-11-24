@@ -13,7 +13,7 @@
 @margin-title-h:               0.5cm;
 @margin-count-h:               0.4cm;
 @margin-figure-v:              1.5cm;
-@margin-figure-h:              1.0cm;
+@margin-figure-h:              0.3cm;
 
 // Größen
 @size-line:                    1.5pt;
@@ -36,6 +36,7 @@
 @line-height-big:              2.5;
 @line-height-normal:           1.8;
 @line-height-small:            1.5;
+@line-height-tiny:             1.0;
 
 // Sonstiges
 @factor-count-font:            0.8;
@@ -57,5 +58,5 @@
 @string-figure:                "Abbildung ";
 
 // Berechnete Abstände
-@gap-paragraph:                (@line-height-normal * @font-size-text);
-@gap-cols:                     (@line-height-big * @font-size-text);
+@gap-paragraph:                (@line-height-tiny * @font-size-text);
+@gap-cols:                     (@line-height-normal * @font-size-text);
