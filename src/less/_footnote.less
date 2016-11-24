@@ -1,0 +1,46 @@
+/*
+ * Modul: Footnote.
+ * Definiert das Layout von Fußnoten.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Fußnoten
+cite {
+    display: inline;
+    float: footnote;
+    counter-increment: footnote;
+    text-align: left;
+    line-height: @line-height-small;
+    .text-edge();
+
+    // Linie
+    &:before {
+        content: "";
+        display: block;
+        width: 33%;
+        height: 0;
+        border-top: @size-line solid @color-line;
+        margin-bottom: @font-size-edge;
+    }
+
+    // Fußnoten-Zahl Inhalt
+    &:footnote-call {
+        display: inline-block;
+        font-style: normal;
+        vertical-align: super;
+        font-size: (@font-size-edge * @factor-count-font);
+        line-height: none;
+        padding: (@margin-count-h / 4) (@margin-count-h / 3);
+        margin-left: (@margin-count-h / 4);
+        background: @color-box;
+        border-radius: @size-radius;
+    }
+
+    // Aufeinanderfolgende Fußnoten
+    & + & {
+        margin-top: @font-size-edge;
+        &:before { display: none; }
+    }
+}

@@ -6,13 +6,6 @@
  * @license MIT
  */
 
-// Body
-body {
-    color: @color-text;
-    font-size: @font-size-text;
-    line-height: @line-height-normal;
-}
-
 // Absätze
 p {
     text-align: justify;
@@ -83,33 +76,6 @@ ul {
 
     // Auf Absatz folgend
     p + & { margin-top: @gap-cols; }
-}
-
-// Spalten
-.columns {
-    clear: both;
-    column-gap: 0;
-    margin: @gap-cols 0;
-
-    // Spaltenzahlen
-    &&-1 { column-count: 1; }
-    &&-2 { column-count: 2; }
-    &&-3 { column-count: 3; }
-    &&-4 { column-count: 4; }
-
-    // Letztes und erstes Element
-    &:last-child { margin-bottom: 0; }
-    &:first-child { margin-top: 0; }
-
-    // Mit Abstand
-    &&-gap { column-gap: @margin-cols-h; }
-
-    // Clear
-    &:after {
-        content: "";
-        clear: both;
-        display: table;
-    }
 }
 
 // Unten

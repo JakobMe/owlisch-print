@@ -6,6 +6,16 @@
  * @license MIT
  */
 
+ // Body
+ body {
+     color: @color-text;
+     font-size: @font-size-text;
+     line-height: @line-height-normal;
+     background: @color-background;
+     counter-reset: _countFig footnote;
+     .font-main();
+ }
+
 // Seiten Standard
 @page {
     size: A4 portrait;
@@ -57,45 +67,6 @@
     }
 }
 
-// Fußnoten
-cite {
-    display: inline;
-    float: footnote;
-    counter-increment: footnote;
-    text-align: left;
-    line-height: @line-height-small;
-    .text-edge();
-
-    // Linie
-    &:before {
-        content: "";
-        display: block;
-        width: 33%;
-        height: 0;
-        border-top: @size-line solid @color-line;
-        margin-bottom: @font-size-edge;
-    }
-
-    // Fußnoten-Zahl Inhalt
-    &:footnote-call {
-        display: inline-block;
-        font-style: normal;
-        vertical-align: super;
-        font-size: (@font-size-edge * @factor-count-font);
-        line-height: none;
-        padding: (@margin-count-h / 4) (@margin-count-h / 3);
-        margin-left: (@margin-count-h / 4);
-        background: @color-box;
-        border-radius: @size-radius;
-    }
-
-    // Aufeinanderfolgende Fußnoten
-    & + & {
-        margin-top: @font-size-edge;
-        &:before { display: none; }
-    }
-}
-
 // Seiten-Umbruch
 .page-break {
     visibility: hidden;
@@ -105,11 +76,4 @@ cite {
 // Abschnitte
 .reset-page {
     counter-reset: page 1;
-}
-
-// Body
-body {
-    background: @color-background;
-    counter-reset: _countFig footnote;
-    .font-main();
 }
