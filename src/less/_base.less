@@ -6,30 +6,53 @@
  * @license MIT
  */
 
- // Seiten
- @page {
+// Seiten Standard
+@page {
     size: A4 portrait;
     margin: @margin-page-v @margin-page-h;
     margin-bottom: @margin-page-h;
-    counter-reset: _countH1;
 }
 
-// Seiten Rechts
-@page:right {
+// Seiten: Inhaltsverzeichnis
+.pages-toc {
+    page: toc;
+    counter-reset: page 1 _countH1 _countToc1 _countToc2 _countToc3;
+}
 
-    // Kopfzeile Rechts: Seitenzahl
+// Seiten: Kapitel
+.pages-chapter {
+    page: chapter;
+    counter-reset: page 1 _countH1 1;
+}
+
+// Kapitel-Seiten Rechts: Seitenzahl
+@page chapter:right {
     @top-right {
         content: @string-page counter(page);
         .layout-head();
     }
 }
 
-// Seiten Links
-@page:left {
-
-    // Kopfzeile Links: Kapitel
+// Kapitel-Seiten Links: Kapitelname
+@page chapter:left {
     @top-left {
         content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1);
+        .layout-head();
+    }
+}
+
+// Verzeichnis-Seiten Rechts: Seitenzahl
+@page toc:right {
+    @top-right {
+        content: @string-page counter(page, upper-roman);
+        .layout-head();
+    }
+}
+
+// Verzeichnis-Seiten Links: Kapitelname
+@page toc:left {
+    @top-left {
+        content: @string-toc;
         .layout-head();
     }
 }

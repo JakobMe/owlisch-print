@@ -36,7 +36,7 @@ p {
 }
 
 // Listen
-ul {
+ul:not(.toc) {
     padding: 0;
     margin: 0 0 @gap-paragraph 0;
     list-style-type: none;
@@ -81,7 +81,7 @@ ul {
     width: 100%;
     margin: @gap-cols 0;
 
-    //
+    // Erstes Element
     &:first-child { margin-top: 0; }
 
     // Spalten Unten
@@ -91,6 +91,20 @@ ul {
         margin: 0;
         bottom: 0;
         left: 0;
+    }
+
+    // Mit Lücke
+    &&-gap {
+        page-break-after: always;
+
+        // Spalte
+        .col {
+            padding: 0 @margin-cols-h;
+
+            // Erstes und letztes Element
+            &:first-child { padding-left: 0; }
+            &:last-child { padding-right: 0; }
+        }
     }
 
     // Spalte

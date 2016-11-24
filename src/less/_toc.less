@@ -1,0 +1,146 @@
+/*
+ * Modul: TOC.
+ * Definiert das Layout von Verzeichnissen.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Verzeichnis
+.toc {
+    text-align: left;
+    font-size: @font-size-edge;
+    color: @color-text;
+    line-height: (@line-height-small * @font-size-edge);
+
+    // Erstes Kapitel-Verzeichnis
+    &&-chapter-first { counter-reset: _countToc1; }
+
+    // Erstes Element
+    &:first-child { margin-top: @gap-paragraph; }
+
+    // Standardliste deaktivieren
+    &, ol {
+        padding: 0;
+        margin: @margin-toc-v 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    // Innere Listen
+    ol {
+        margin: (@margin-toc-v) 0 0 0;
+        padding-left: @margin-title-h;
+        border-left: @size-line solid @color-box;
+
+        // Kindelemente
+        li:first-child { padding-top: 0; }
+        li:last-child { padding-bottom: 0; }
+    }
+
+    // Listenelemente
+    li {
+        padding: (@margin-toc-v / 2) 0;
+
+        // Links
+        a {
+            color: @color-text;
+            text-decoration: none;
+
+            // Umbrüche ausblenden
+            br { display: none; }
+
+            // Nummern
+            &:before {
+                font-size: (@font-size-edge * @factor-count-font);
+                box-sizing: border-box;
+                display: inline-block;
+                color: @color-pale;
+                font-weight: normal;
+                margin-right: @margin-toc-v;
+                background: @color-box;
+                padding: 0 (@margin-toc-v / 2);
+                border-radius: @size-radius;
+                vertical-align: top;
+                .font-main();
+            }
+
+            // Seitenzahlen
+            &:after {
+                color: @color-pale;
+                .font-main();
+            }
+        }
+    }
+
+    // Nummern Erste Ebene
+    & > li > a:before {
+        background: @color-main;
+        color: @color-background;
+        padding: 0 @margin-toc-v;
+    }
+
+    // Erste Ebene Listenelemente
+    & > li {
+        counter-increment: _countToc1;
+
+        // Nummer
+        a:before { content: counter(_countToc1); }
+
+        // Zweite Ebene
+        & > ol {
+            counter-reset: _countToc2;
+
+            // Listenelemente
+            & > li {
+                counter-increment: _countToc2;
+
+                // Nummer
+                a:before {
+                    content: counter(_countToc1) @delimeter-chapter
+                             counter(_countToc2);
+                }
+
+                // Dritte Ebene
+                & > ol {
+                    counter-reset: _countToc3;
+
+                    // Listenelemente
+                    & > li {
+                        counter-increment: _countToc3;
+
+                        // Nummer
+                        a:before {
+                            content: counter(_countToc1) @delimeter-chapter
+                                     counter(_countToc2) @delimeter-chapter
+                                     counter(_countToc3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Nummern Verzeichnisse
+    &&-toc > li > a:before {
+        content: counter(_countToc1, upper-alpha);
+    }
+
+    // Nummern Abbildungen
+    &&-figure > li > a:before {
+        font-weight: bold;
+        background: @color-box;
+        color: @color-pale;
+        content: @string-figure counter(_countToc1);
+    }
+
+    // Seitenzahlen Verzeichnisse
+    &&-toc li a:after {
+        content: leader(@char-lead) target-counter(attr(href), page, upper-roman);
+    }
+
+    // Seitenzahlen Kapitel
+    &&-chapter li a:after, &&-figure li a:after {
+        content: leader(@char-lead) target-counter(attr(href), page);
+    }
+}

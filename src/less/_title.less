@@ -50,7 +50,7 @@ h1 {
         float: left;
         display: block;
         text-align: center;
-        font-size: 24pt;
+        font-size: (@font-size-h1 * @factor-count-font);
         content: counter(_countH1);
         color: @color-background;
         margin-left: -(@size-count + @margin-count-h);
@@ -60,8 +60,9 @@ h1 {
         background: @color-main;
     }
 
-    // Kapitelnummer zurücksetzen
-    section:first-of-type &:first-of-type { counter-reset: _countH1; }
+    // Titel-Nummern
+    &[id^="chapter"]:before { content: counter(_countH1, decimal); }
+    &[id^="toc"]:before { content: counter(_countH1, upper-alpha); }
 }
 
 // Titel Zweite Ebene
