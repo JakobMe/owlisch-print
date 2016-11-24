@@ -8,6 +8,7 @@
 
 // Titel
 h1, h2, h3 {
+    clear: both;
     font-weight: normal;
     color: @color-main;
     padding: 0;
@@ -35,6 +36,7 @@ h1, h2, h3 {
 
 // Titel Erste Ebene
 h1 {
+    box-sizing: border-box;
     page-break-before: always;
     font-size: @font-size-h1;
     line-height: @size-count;
@@ -42,6 +44,13 @@ h1 {
     counter-reset: _countH2 _countH3;
     string-set: _titleH1 content();
     padding-left: (@size-count + @margin-count-h);
+
+    // Intro
+    &.intro {
+        float: left;
+        margin: 0;
+        max-width: 65%;
+    }
 
     // Kapitelnummer
     &:before {

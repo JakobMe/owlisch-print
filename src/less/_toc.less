@@ -8,30 +8,24 @@
 
 // Verzeichnis
 .toc {
+    margin: 0;
+    padding: 0;
     text-align: left;
+    list-style-type: none;
     font-size: @font-size-edge;
     color: @color-text;
     line-height: (@line-height-small * @font-size-edge);
-
-    // Erstes Kapitel-Verzeichnis
-    &&-chapter-first { counter-reset: _countToc1; }
-
-    // Erstes Element
-    &:first-child { margin-top: @gap-paragraph; }
-
-    // Standardliste deaktivieren
-    &, ol {
-        padding: 0;
-        margin: @margin-toc-v 0;
-        margin: 0;
-        list-style-type: none;
-    }
+    counter-reset: _countToc1 _countToc2 _countToc3;
 
     // Innere Listen
     ol {
+        list-style-type: none;
         margin: (@margin-toc-v) 0 0 0;
         padding-left: @margin-title-h;
         border-left: @size-line solid @color-box;
+
+        // Erstes Element
+        &:first-child { margin-top: 0; }
 
         // Kindelemente
         li:first-child { padding-top: 0; }
@@ -82,39 +76,45 @@
 
     // Erste Ebene Listenelemente
     & > li {
-        counter-increment: _countToc1;
 
-        // Nummer
-        a:before { content: counter(_countToc1); }
+        // Link
+        & > a {
+            counter-reset: _countToc2 _countToc3;
+            counter-increment: _countToc1;
+
+            // Nummer
+            &:before {
+                content: counter(_countToc1);
+            }
+        }
 
         // Zweite Ebene
-        & > ol {
-            counter-reset: _countToc2;
+        & > ol > li {
 
-            // Listenelemente
-            & > li {
+            // Link
+            & > a {
+                counter-reset: _countToc3;
                 counter-increment: _countToc2;
 
                 // Nummer
-                a:before {
+                &:before {
                     content: counter(_countToc1) @delimeter-chapter
                              counter(_countToc2);
                 }
+            }
 
-                // Dritte Ebene
-                & > ol {
-                    counter-reset: _countToc3;
+            // Dritte Ebene
+            & > ol > li {
 
-                    // Listenelemente
-                    & > li {
-                        counter-increment: _countToc3;
+                // Link
+                & > a {
+                    counter-increment: _countToc3;
 
-                        // Nummer
-                        a:before {
-                            content: counter(_countToc1) @delimeter-chapter
-                                     counter(_countToc2) @delimeter-chapter
-                                     counter(_countToc3);
-                        }
+                    // Nummer
+                    &:before {
+                        content: counter(_countToc1) @delimeter-chapter
+                                 counter(_countToc2) @delimeter-chapter
+                                 counter(_countToc3);
                     }
                 }
             }

@@ -20,10 +20,17 @@ p {
     page-break-inside: avoid;
 
     // Erste Zeile einrücken
-    section > &:first-letter { margin-left: @margin-title-h * 2; }
+    section > &:first-letter { margin-left: (@margin-title-h * 2); }
+
+    // Letzter Absatz
+    &:last-child { margin-bottom: 0; }
 
     // Intro
     &.intro {
+        float: right;
+        max-width: 30%;
+        margin: 0;
+        box-sizing: border-box;
         font-style: italic;
         color: @color-pale;
         text-align: right;
@@ -36,7 +43,7 @@ p {
 }
 
 // Listen
-ul:not(.toc) {
+ul {
     padding: 0;
     margin: 0 0 @gap-paragraph 0;
     list-style-type: none;
@@ -73,57 +80,44 @@ ul:not(.toc) {
         // Letztes Element
         &:last-child { margin-bottom: 0; }
     }
+
+    // Auf Absatz folgend
+    p + & { margin-top: @gap-cols; }
 }
 
 // Spalten
-.cols {
+.columns {
     clear: both;
-    width: 100%;
+    column-gap: 0;
     margin: @gap-cols 0;
 
-    // Erstes Element
+    // Spaltenzahlen
+    &&-1 { column-count: 1; }
+    &&-2 { column-count: 2; }
+    &&-3 { column-count: 3; }
+    &&-4 { column-count: 4; }
+
+    // Letztes und erstes Element
+    &:last-child { margin-bottom: 0; }
     &:first-child { margin-top: 0; }
 
-    // Spalten Unten
-    &&-bottom {
-        page-break-after: always;
-        position: absolute;
-        margin: 0;
-        bottom: 0;
-        left: 0;
-    }
-
-    // Mit Lücke
-    &&-gap {
-        page-break-after: always;
-
-        // Spalte
-        .col {
-            padding: 0 @margin-cols-h;
-
-            // Erstes und letztes Element
-            &:first-child { padding-left: 0; }
-            &:last-child { padding-right: 0; }
-        }
-    }
-
-    // Spalte
-    .col {
-        box-sizing: border-box;
-        display: block;
-        float: left;
-    }
-
-    // Spalten-Varianten
-    &&-1 .col { width: (100% / 1); }
-    &&-2 .col { width: (100% / 2); }
-    &&-3 .col { width: (100% / 3); }
-    &&-4 .col { width: (100% / 4); }
+    // Mit Abstand
+    &&-gap { column-gap: @margin-cols-h; }
 
     // Clear
     &:after {
         content: "";
-        display: table;
         clear: both;
+        display: table;
     }
+}
+
+// Unten
+.bottom {
+    page-break-after: always;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }

@@ -22,7 +22,7 @@
 // Seiten: Kapitel
 .pages-chapter {
     page: chapter;
-    counter-reset: page 1 _countH1 1;
+    counter-reset: page 1 _countH1 1 _countH2 _countH3;
 }
 
 // Kapitel-Seiten Rechts: Seitenzahl
@@ -110,6 +110,6 @@ cite {
 // Body
 body {
     background: @color-background;
-    counter-reset: _countH1 1 _countH2 _countH3 _countFig footnote;
+    counter-reset: _countFig footnote;
     .font-main();
 }
