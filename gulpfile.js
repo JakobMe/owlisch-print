@@ -46,7 +46,7 @@ gulp.task("less", function() {
             this.emit("end");
         })
         .pipe(gulp.dest("out/"))
-        .pipe(cssmin())
+        .pipe(cssmin({ advanced: false }))
         .pipe(gulp.dest("out/"))
         .pipe(notify({
             sound: false,

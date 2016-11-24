@@ -25,10 +25,11 @@
         max-width: 800px;
         background: @color-background;
         box-shadow: 0 20px 20px 0 fade(@color-text, 20%);
-
-        // Abstand Unten
-        &:not(:last-child) { margin-bottom: 2.5vw; }
+        margin-bottom: 2.5vw;
     }
+
+    // Letzter Abschnitt
+    article:last-child section:last-child { margin-bottom: 0; }
 
     // Fußnoten
     cite { display: none; }
