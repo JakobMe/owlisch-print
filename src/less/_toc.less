@@ -12,9 +12,9 @@
     padding: 0;
     text-align: left;
     list-style-type: none;
-    font-size: @font-size-edge;
+    font-size: @font-size-small;
     color: @color-text;
-    line-height: (@line-height-small * @font-size-edge);
+    line-height: (@line-height-small * @font-size-small);
     counter-reset: _countToc1 _countToc2 _countToc3;
 
     // Innere Listen
@@ -46,7 +46,7 @@
 
             // Nummern
             &:before {
-                font-size: (@font-size-edge * @factor-count-font);
+                font-size: (@font-size-small * @factor-count-font);
                 box-sizing: border-box;
                 display: inline-block;
                 color: @color-pale;
@@ -135,13 +135,13 @@
         content: @string-figure counter(_countToc1);
     }
 
-    // Seitenzahlen Verzeichnisse
-    &&-toc li a:after {
-        content: leader(@char-lead) target-counter(attr(href), page, upper-roman);
-    }
-
     // Seitenzahlen Kapitel
     &&-chapter li a:after, &&-figure li a:after {
         content: leader(@char-lead) target-counter(attr(href), page);
+    }
+
+    // Seitenzahlen Verzeichnisse
+    &&-toc li a:after {
+        content: leader(@char-lead) target-counter(attr(href), page, upper-roman);
     }
 }

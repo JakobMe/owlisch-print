@@ -28,10 +28,68 @@ p {
         color: @color-pale;
         text-align: right;
         line-height: @line-height-small;
-        font-size: @font-size-edge;
-        padding: (@font-size-edge / 2) @font-size-edge;
+        font-size: @font-size-small;
+        padding: (@font-size-small / 2) @font-size-small;
         padding-left: @gap-paragraph;
         border-right: @size-line solid @color-line;
+    }
+}
+
+// Zitate
+blockquote {
+    position: relative;
+    font-style: italic;
+    font-size: @font-size-medium;
+    border-right: @size-line solid @color-line;
+    margin: @gap-paragraph 0;
+    padding: 0 (@margin-title-h * 2) 0 0;
+    line-height: @line-height-small;
+
+    // Anführungszeichen
+    p:before, p:after {
+        position: absolute;
+        line-height: @line-height-tiny;
+        color: @color-line;
+        font-size: @font-size-h1;
+        .font-title();
+    }
+
+    // Anführungszeichen Links
+    p:before {
+        margin-left: -(1ex);
+        content: @char-quote-left;
+    }
+
+    // Anführungszeichen Rechts
+    p:after {
+        margin-right: -(1ex);
+        content: @char-quote-right;
+    }
+
+    // Autor
+    footer {
+        text-align: right;
+        font-style: normal;
+        line-height: @line-height-small;
+        font-size: @font-size-tiny;
+
+        // Strich
+        &:before { content: @string-author; }
+
+        // Links
+        &, & a {
+            text-decoration: none;
+            color: @color-pale;
+        }
+    }
+
+    // Auf Absatz folgend
+    p + & { margin-top: @gap-cols; }
+
+    // Intro
+    &.intro {
+        margin-left: @margin-quote-h;
+        margin-right: @margin-quote-h;
     }
 }
 
@@ -46,9 +104,9 @@ p, ul {
         padding: 0 @margin-toc-v;
         background: @color-box;
         border-radius: @size-radius;
-        font-size: @font-size-tiny;
+        font-size: @font-size-small;
         color: @color-pale;
-        vertical-align: ((@font-size-text - @font-size-tiny) / 2);
+        vertical-align: ((@font-size-medium - @font-size-small) / 2);
     }
 }
 
@@ -66,7 +124,7 @@ ul {
     li {
         position: relative;
         padding: 0 0 0 (@margin-title-h * 2);
-        margin: 0 0 (@font-size-text) 0;
+        margin: 0 0 (@font-size-medium) 0;
 
         // Icon
         &:before {
@@ -81,8 +139,8 @@ ul {
             height: (@margin-title-h);
             line-height: (@margin-title-h);
             margin-top: -(@margin-title-h / 2);
-            color: @color-main;
-            font-size: @font-size-edge;
+            color: @color-line;
+            font-size: @font-size-small;
             background: @color-background;
             .font-icon();
         }
@@ -95,12 +153,30 @@ ul {
     p + & { margin-top: @gap-cols; }
 }
 
-// Unten
-.bottom {
+// Positioniert
+.bottom, .center, .top {
     page-break-after: always;
     position: absolute;
     margin: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
+}
+
+// Unten
+.bottom { bottom: 0; }
+
+// Oben
+.top { top: 0; }
+
+// Mitte
+.center {
+    top: 0;
+    height: 100%;
+    display: table;
+
+    // Kind-Element
+    & > * {
+        display: table-cell;
+        vertical-align: middle;
+    }
 }

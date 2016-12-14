@@ -28,9 +28,19 @@ figure {
         background: @color-box;
         border-radius: @size-radius;
 
-        // Bild-Typen
+        // Typ: Wireframe
         &.figure-wireframe {
             height: (@figure-size-wireframe + (@margin-title-h * 2));
+        }
+
+        // Typ: Smartphone
+        &.figure-phone {
+            height: (@figure-size-phone + (@margin-title-h * 2));
+        }
+
+        // Typ: Ohne Hintergrund
+        &.figure-no-background {
+            background: transparent;
         }
     }
 
@@ -40,14 +50,14 @@ figure {
         font-style: italic;
         text-align: center;
         color: @color-pale;
-        font-size: @font-size-figure;
-        margin-top: @font-size-figure;
-        line-height: (@line-height-small * @font-size-figure);
+        font-size: @font-size-small;
+        margin-top: @font-size-small;
+        line-height: (@line-height-small * @font-size-small);
 
         // Absatz
         p {
             text-align: center;
-            margin: (@font-size-figure / 2) 0 0 0;
+            margin: (@font-size-small / 2) 0 0 0;
         }
 
         // Nummer
@@ -57,7 +67,7 @@ figure {
             box-sizing: border-box;
             counter-increment: _countFig;
             content: @string-figure counter(_countFig);
-            font-size: (@font-size-figure * @factor-count-font);
+            font-size: (@font-size-small * @factor-count-font);
             color: @color-pale;
             background: @color-box;
             padding: 0 (@margin-count-h / 2);
@@ -73,7 +83,7 @@ figure {
             margin: 0 auto;
             height: 0;
             width: @size-border;
-            padding-top: @font-size-figure;
+            padding-top: @font-size-small;
             border-bottom: @size-line solid @color-line;
         }
     }

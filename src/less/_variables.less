@@ -15,7 +15,8 @@
 @margin-figure-v:              1.5cm;
 @margin-figure-h:              0.3cm;
 @margin-toc-v:                 0.2cm;
-@margin-cols-h:                1.0cm;
+@margin-cols-h:                0.7cm;
+@margin-quote-h:               2.5cm;
 
 // Größen
 @size-line:                    1.5pt;
@@ -25,6 +26,7 @@
 
 // Bildgrößen
 @figure-size-wireframe:        9.75cm;
+@figure-size-phone:            16.93cm;
 
 // Fonts
 @font-name-main:               "Lato";
@@ -47,20 +49,24 @@
 @font-size-h1:                 30pt;
 @font-size-h2:                 22pt;
 @font-size-h3:                 18pt;
-@font-size-text:               12pt;
-@font-size-edge:               10pt;
-@font-size-figure:             10pt;
-@font-size-tiny:               10pt;
+@font-size-medium:             12pt;
+@font-size-small:              10pt;
+@font-size-tiny:               8pt;
 
 // Strings
 @delimeter-chapter:            ".";
 @delimeter-title:              ": ";
+@string-author:                "— ";
 @string-page:                  "Seite ";
 @string-chapter:               "Kapitel ";
 @string-figure:                "Abbildung ";
 @string-toc:                   "Inhalts- und Abbildungsverzeichnis";
+@string-document:              "OWLisch – Entwicklung & Gestaltung einer Lern-App";
+@url-blank:                    "img/blank.png";
 @char-lead:                    ".";
+@char-quote-left:              "“";
+@char-quote-right:             "”";
 
 // Berechnete Abstände
-@gap-paragraph:                (@line-height-tiny * @font-size-text);
-@gap-cols:                     (@line-height-normal * @font-size-text * 2);
+@gap-paragraph:                (@line-height-tiny * @font-size-medium);
+@gap-cols:                     (@line-height-normal * @font-size-medium * 2);

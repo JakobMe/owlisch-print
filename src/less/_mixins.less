@@ -14,7 +14,7 @@
 // Mixin: Text für Kopf-/Fußzeilen
 .text-edge() {
     font-style: italic;
-    font-size: @font-size-edge;
+    font-size: @font-size-small;
     color: @color-pale;
     .font-main();
 }
@@ -24,5 +24,13 @@
     vertical-align: top;
     margin: 0;
     padding: @margin-edge-v 0 0 0;
+    .text-edge();
+}
+
+// Mixin: Layout für Fußzeilen
+.layout-foot() {
+    vertical-align: bottom;
+    margin: 0;
+    padding: 0 0 @margin-edge-v 0;
     .text-edge();
 }

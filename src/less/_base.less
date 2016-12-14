@@ -9,7 +9,7 @@
  // Body
  body {
      color: @color-text;
-     font-size: @font-size-text;
+     font-size: @font-size-medium;
      line-height: @line-height-normal;
      background: @color-background;
      counter-reset: _countFig footnote;
@@ -21,59 +21,80 @@
     size: A4 portrait;
     margin: @margin-page-v @margin-page-h;
     margin-bottom: @margin-page-h;
+
+    // Kopf- und Fußzeilen
+    @top { .layout-head(); }
+    @top-left { .layout-head(); }
+    @top-right { .layout-head(); }
+    @bottom { .layout-foot(); }
+    @bottom-left { .layout-foot(); }
+    @bottom-right { .layout-foot(); }
 }
 
-// Seiten: Inhaltsverzeichnis
-.pages-toc {
-    page: toc;
-    counter-reset: page 1 _countH1 _countToc1 _countToc2 _countToc3;
+// Seiten
+.pages {
+
+    // Gruppen zurücksetzen
+    & > *:first-child { prince-page-group: start; }
+
+    // Seiten: Deckblatt
+    &&-cover { page: cover; }
+
+    // Seiten: Inhaltsverzeichnis
+    &&-intro {
+        page: intro;
+        counter-reset: page 1 _countH1 _countToc1 _countToc2 _countToc3;
+    }
+
+    // Seiten: Kapitel
+    &&-chapter {
+        page: chapter;
+        counter-reset: page 1 _countH1 1 _countH2 _countH3;
+    }
 }
 
-// Seiten: Kapitel
-.pages-chapter {
-    page: chapter;
-    counter-reset: page 1 _countH1 1 _countH2 _countH3;
-}
-
-// Kapitel-Seiten Rechts: Seitenzahl
+// Kapitel-Seiten Rechts
 @page chapter:right {
-    @top-right {
-        content: @string-page counter(page);
-        .layout-head();
-    }
+    @top-right { content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1); }
+    @bottom-right { content: @string-page counter(page); }
 }
 
-// Kapitel-Seiten Links: Kapitelname
+// Kapitel-Seiten Links
 @page chapter:left {
-    @top-left {
-        content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1);
-        .layout-head();
-    }
+    @top-left { content: @string-document; }
+    @bottom-left {content: @string-page counter(page); }
 }
 
-// Verzeichnis-Seiten Rechts: Seitenzahl
-@page toc:right {
-    @top-right {
-        content: @string-page counter(page, upper-roman);
-        .layout-head();
-    }
+// Verzeichnis-Seiten Rechts
+@page intro:right {
+    @top-right { content: @string-toc; }
+    @bottom-right { content: @string-page counter(page, upper-roman); }
 }
 
-// Verzeichnis-Seiten Links: Kapitelname
-@page toc:left {
-    @top-left {
-        content: @string-toc;
-        .layout-head();
-    }
+// Verzeichnis-Seiten Links
+@page intro:left {
+    @top-left { content: @string-document; }
+    @bottom-left { content: @string-page counter(page, upper-roman); }
+}
+
+// Verzeichnis-Seiten Erste
+@page intro:first {
+    @top-right { content: normal; }
+    @bottom-right { content: normal; }
+    @top { content: @string-document; }
+    @bottom { content: @string-page counter(page, upper-roman); }
+}
+
+// Leere Seite
+.page-blank {
+    width: 100%;
+    height: 100%;
+    page-break-after: always;
+    content: url(@url-blank);
 }
 
 // Seiten-Umbruch
 .page-break {
     visibility: hidden;
     page-break-after: always;
-}
-
-// Abschnitte
-.reset-page {
-    counter-reset: page 1;
 }
