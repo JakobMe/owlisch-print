@@ -56,13 +56,13 @@ blockquote {
 
     // Anführungszeichen Links
     p:before {
-        margin-left: -(1ex);
+        margin-left: -(@margin-quote-icon);
         content: @char-quote-left;
     }
 
     // Anführungszeichen Rechts
     p:after {
-        margin-right: -(1ex);
+        margin-left: (@margin-quote-icon - 1ex);
         content: @char-quote-right;
     }
 
