@@ -36,8 +36,11 @@
     // Gruppen zurücksetzen
     & > *:first-child { prince-page-group: start; }
 
-    // Seiten: Deckblatt
-    &&-cover { page: cover; }
+    // Seiten: Vorderseite
+    &&-front { page: front; }
+
+    // Seiten: Rückseite
+    &&-back { page: back; }
 
     // Seiten: Inhaltsverzeichnis
     &&-intro {
@@ -54,7 +57,7 @@
 
 // Kapitel-Seiten Rechts
 @page chapter:right {
-    @top-right { content: @string-chapter counter(_countH2) @delimeter-title string(_titleh2); }
+    @top-right { content: @string-chapter counter(_countH2) @delimeter-title string(_titleH2); }
     @bottom-right { content: @string-page counter(page); }
 }
 

@@ -9,7 +9,7 @@
 // Absätze
 p {
     text-align: justify;
-    margin: 0 0 @gap-paragraph 0;
+    margin: 0 0 @margin-paragraph-v 0;
     page-break-inside: avoid;
 
     // Erste Zeile einrücken
@@ -30,7 +30,7 @@ p {
         line-height: @line-height-small;
         font-size: @font-size-small;
         padding: (@font-size-small / 2) @font-size-small;
-        padding-left: @gap-paragraph;
+        padding-left: @margin-paragraph-v;
         border-right: @size-line solid @color-line;
     }
 }
@@ -41,7 +41,7 @@ blockquote {
     font-style: italic;
     font-size: @font-size-medium;
     border-right: @size-line solid @color-line;
-    margin: @gap-paragraph 0;
+    margin: @margin-paragraph-v 0;
     padding: 0 (@margin-title-h * 2) 0 0;
     line-height: @line-height-small;
 
@@ -84,7 +84,7 @@ blockquote {
     }
 
     // Auf Absatz folgend
-    p + & { margin-top: @gap-cols; }
+    p + & { margin-top: @margin-cols-v; }
 
     // Intro
     &.intro {
@@ -113,7 +113,7 @@ p, ul {
 // Listen
 ul {
     padding: 0;
-    margin: 0 0 @gap-paragraph 0;
+    margin: 0 0 @margin-paragraph-v 0;
     list-style-type: none;
     text-align: left;
     page-break-inside: avoid;
@@ -150,7 +150,7 @@ ul {
     }
 
     // Auf Absatz folgend
-    p + & { margin-top: @gap-cols; }
+    p + & { margin-top: @margin-cols-v; }
 }
 
 // Positioniert

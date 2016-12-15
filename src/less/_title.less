@@ -12,12 +12,12 @@ h2, h3, h4 {
     font-weight: normal;
     color: @color-main;
     padding: 0;
-    margin: 0 0 @gap-paragraph 0;
+    margin: 0 0 @margin-paragraph-v 0;
     vertical-align: middle;
-    .font-title();
+    font-weight: bold;
 
     // Folgend
-    p + & { margin-top: (@gap-paragraph * 2); }
+    p + & { margin-top: (@margin-paragraph-v * 2); }
 
     // Kapitelnummer
     &:before {
@@ -42,7 +42,7 @@ h2 {
     line-height: @size-count;
     counter-increment: _countH2;
     counter-reset: _countH3 _countH4;
-    string-set: _titleh2 content();
+    string-set: _titleH2 content();
     padding-left: (@size-count + @margin-count-h);
 
     // Intro

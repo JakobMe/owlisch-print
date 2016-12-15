@@ -33,14 +33,12 @@ figure {
             height: (@figure-size-wireframe + (@margin-title-h * 2));
         }
 
-        // Typ: Smartphone
-        &.figure-phone {
-            height: (@figure-size-phone + (@margin-title-h * 2));
-        }
-
-        // Typ: Ohne Hintergrund
-        &.figure-no-background {
+        // Typ: Logo
+        &.figure-logo {
+            height: @figure-size-logo;
             background: transparent;
+            border-radius: 0;
+            padding: 0;
         }
     }
 
