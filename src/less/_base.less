@@ -43,19 +43,19 @@
     // Seiten: Inhaltsverzeichnis
     &&-intro {
         page: intro;
-        counter-reset: page 1 _countH1 _countToc1 _countToc2 _countToc3;
+        counter-reset: page 1 _countH2 _countToc1 _countToc2 _countToc3;
     }
 
     // Seiten: Kapitel
     &&-chapter {
         page: chapter;
-        counter-reset: page 1 _countH1 1 _countH2 _countH3;
+        counter-reset: page 1 _countH2 1 _countH3 _countH4;
     }
 }
 
 // Kapitel-Seiten Rechts
 @page chapter:right {
-    @top-right { content: @string-chapter counter(_countH1) @delimeter-title string(_titleH1); }
+    @top-right { content: @string-chapter counter(_countH2) @delimeter-title string(_titleh2); }
     @bottom-right { content: @string-page counter(page); }
 }
 

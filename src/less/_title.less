@@ -7,7 +7,7 @@
  */
 
 // Titel
-h1, h2, h3 {
+h2, h3, h4 {
     clear: both;
     font-weight: normal;
     color: @color-main;
@@ -35,14 +35,14 @@ h1, h2, h3 {
 }
 
 // Titel Erste Ebene
-h1 {
+h2 {
     box-sizing: border-box;
     page-break-before: always;
-    font-size: @font-size-h1;
+    font-size: @font-size-h2;
     line-height: @size-count;
-    counter-increment: _countH1;
-    counter-reset: _countH2 _countH3;
-    string-set: _titleH1 content();
+    counter-increment: _countH2;
+    counter-reset: _countH3 _countH4;
+    string-set: _titleh2 content();
     padding-left: (@size-count + @margin-count-h);
 
     // Intro
@@ -59,8 +59,8 @@ h1 {
         float: left;
         display: block;
         text-align: center;
-        font-size: (@font-size-h1 * @factor-count-font);
-        content: counter(_countH1);
+        font-size: (@font-size-h2 * @factor-count-font);
+        content: counter(_countH2);
         color: @color-background;
         margin-left: -(@size-count + @margin-count-h);
         width: @size-count;
@@ -70,43 +70,43 @@ h1 {
     }
 
     // Titel-Nummern
-    &[id^="chapter"]:before { content: counter(_countH1, decimal); }
-    &[id^="toc"]:before { content: counter(_countH1, upper-alpha); }
+    &[id^="chapter"]:before { content: counter(_countH2, decimal); }
+    &[id^="toc"]:before { content: counter(_countH2, upper-alpha); }
 }
 
 // Titel Zweite Ebene
-h2 {
-    font-size: @font-size-h2;
-    line-height: (@line-height-small * @font-size-h2);
-    padding-left: @margin-title-h;
-    counter-reset: _countH3;
-    counter-increment: _countH2;
-
-    // Kapitelnummer
-    &:before {
-        font-size: (@font-size-h2 * @factor-count-font);
-        content: counter(_countH1) @delimeter-chapter
-                 counter(_countH2);
-    }
-}
-
-// Titel Dritte Ebene
 h3 {
     font-size: @font-size-h3;
     line-height: (@line-height-small * @font-size-h3);
-    padding-left: (@margin-title-h * 2);
+    padding-left: @margin-title-h;
+    counter-reset: _countH4;
     counter-increment: _countH3;
 
     // Kapitelnummer
     &:before {
         font-size: (@font-size-h3 * @factor-count-font);
-        content: counter(_countH1) @delimeter-chapter
-                 counter(_countH2) @delimeter-chapter
+        content: counter(_countH2) @delimeter-chapter
                  counter(_countH3);
     }
 }
 
+// Titel Dritte Ebene
+h4 {
+    font-size: @font-size-h4;
+    line-height: (@line-height-small * @font-size-h4);
+    padding-left: (@margin-title-h * 2);
+    counter-increment: _countH4;
+
+    // Kapitelnummer
+    &:before {
+        font-size: (@font-size-h4 * @factor-count-font);
+        content: counter(_countH2) @delimeter-chapter
+                 counter(_countH3) @delimeter-chapter
+                 counter(_countH4);
+    }
+}
+
 // Counter-Reset
-.reset-h1 { counter-reset: _countH1; }
 .reset-h2 { counter-reset: _countH2; }
 .reset-h3 { counter-reset: _countH3; }
+.reset-h4 { counter-reset: _countH4; }
