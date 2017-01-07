@@ -40,9 +40,10 @@ blockquote {
     position: relative;
     font-style: italic;
     font-size: @font-size-medium;
-    border-right: @size-line solid @color-line;
+    border-left: @size-line solid @color-line;
     margin: @margin-paragraph-v 0;
-    padding: 0 (@margin-title-h * 2) 0 0;
+    margin-left: (@margin-title-h * 2);
+    padding: 0 0 0 (@margin-title-h * 2);
     line-height: @line-height-small;
 
     // Anführungszeichen
@@ -68,7 +69,7 @@ blockquote {
 
     // Autor
     footer {
-        text-align: right;
+        text-align: left;
         font-style: normal;
         line-height: @line-height-small;
         font-size: @font-size-tiny;
@@ -85,11 +86,18 @@ blockquote {
 
     // Auf Absatz folgend
     p + & { margin-top: @margin-cols-v; }
+    & + p { margin-top: @margin-cols-v; }
 
     // Intro
     &.intro {
         margin-left: @margin-quote-h;
         margin-right: @margin-quote-h;
+        padding: 0 (@margin-title-h * 2) 0 0;
+        border-right: @size-line solid @color-line;
+        border-left: none;
+
+        // Autor
+        footer { text-align: right; }
     }
 }
 
@@ -107,6 +115,12 @@ p, ul {
         font-size: @font-size-small;
         color: @color-pale;
         vertical-align: ((@font-size-medium - @font-size-small) / 2);
+
+        // Externer Link
+        &.external {
+            text-transform: none;
+            white-space: normal;
+        }
     }
 }
 
@@ -119,6 +133,7 @@ ul {
     page-break-inside: avoid;
     border-left: @size-line solid @color-line;
     margin-left: (@margin-title-h * 2);
+    margin: 0;
 
     // Listenelement
     li {
@@ -133,13 +148,13 @@ ul {
             display: block;
             text-align: center;
             top: 50%;
-            left: -(@margin-title-h * 2);
+            left: -(@margin-title-h);
             content: @icon-forward;
-            width: (@margin-title-h * 4);
+            width: (@margin-title-h * 2);
             height: (@margin-title-h);
             line-height: (@margin-title-h);
             margin-top: -(@margin-title-h / 2);
-            color: @color-line;
+            color: @color-pale;
             font-size: @font-size-small;
             background: @color-background;
             .font-icon();
@@ -151,6 +166,36 @@ ul {
 
     // Auf Absatz folgend
     p + & { margin-top: @margin-cols-v; }
+}
+
+// Geordnete Listen
+ol:not([class^=toc]) {
+    list-style: none;
+    counter-reset: _countList;
+    padding: 0;
+    margin: 0;
+
+    // Listenelement
+    li {
+        counter-increment: _countList;
+        position: relative;
+        padding-left: (@margin-title-h * 2);
+        margin: 0 0 (@font-size-medium / 3) 0;
+
+        // Zahl
+        &:before {
+            box-sizing: border-box;
+            margin-left: -( @margin-title-h * 2);
+            margin-right:  @margin-title-h;
+            display: inline-block;
+            text-align: right;
+            left: -(@margin-title-h * 2);
+            content: counter(_countList) @delimeter-chapter;
+            width: @margin-title-h;
+            color: @color-pale;
+            font-size: @font-size-small;
+        }
+    }
 }
 
 // Positioniert

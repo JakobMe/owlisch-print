@@ -16,8 +16,8 @@ gulp.task("default", ["watch"]);
 gulp.task("watch", function() {
     gulp.watch("src/kit/**/*.kit", ["pdf-kit"]);
     gulp.watch("src/less/**/*.less", ["pdf-less"]);
+    gulp.watch("src/img/**/*", ["pdf-img"]);
     gulp.watch("src/fonts/**/*", ["fonts"]);
-    gulp.watch("src/img/**/*", ["img"]);
 });
 
 // Fonts-Task
@@ -29,7 +29,13 @@ gulp.task("fonts", function() {
 // Image-Task
 gulp.task("img", function() {
     return gulp.src("src/img/**/*")
-        .pipe(gulp.dest("out/img/"));
+        .pipe(gulp.dest("out/img/"))
+        .pipe(notify({
+            sound: false,
+            icon: "Terminal Icon",
+            title: "Gulp (LESS)",
+            message: "out/<%= file.relative %> kopiert\nout/print.pdf erzeugt",
+        }));
 });
 
 // LESS-Task
@@ -80,4 +86,5 @@ gulp.task("kit", function() {
 
 // PDF-Tasks
 gulp.task("pdf-kit", ["kit"], function() { exec(execPdf); });
+gulp.task("pdf-img", ["img"], function() { exec(execPdf); });
 gulp.task("pdf-less", ["less"], function() { exec(execPdf); });

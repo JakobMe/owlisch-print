@@ -3,7 +3,7 @@
 <head>
 
     
-                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                        
     <!-- Meta -->
     <title>OWLisch – Entwicklung und Gestaltung einer Lern-App</title>
     <meta name="author" content="Jakob Metzger">
@@ -68,7 +68,7 @@
             <ol class="toc toc-chapter">
                 <li>
                     <a href="#chapter-1">Einleitung & Zielsetzung</a>
-                    <ol>
+                    <ol class="toc-sub">
                         <li><a href="#chapter-1-1">Vorgeschichte & Motivation</a></li>
                         <li><a href="#chapter-1-2">Zielsetzung</a></li>
                         <li><a href="#chapter-1-3">Aufbau der Arbeit</a></li>
@@ -76,11 +76,11 @@
                 </li>
                 <li>
                     <a href="#chapter-2">Idee & Konzept der App</a>
-                    <ol>
+                    <ol class="toc-sub">
                         <li><a href="#chapter-2-1">Entstehung der Idee</a></li>
                         <li>
                             <a href="#chapter-2-2">Features & Funktionen</a>
-                            <ol>
+                            <ol class="toc-sub">
                                 <li><a href="#chapter-2-2-1">Das Quiz</a></li>
                                 <li><a href="#chapter-2-2-2">Das Wörterbuch</a></li>
                                 <li><a href="#chapter-2-2-3">Begriff des Tages</a></li>
@@ -91,7 +91,7 @@
                         </li>
                         <li>
                             <a href="#chapter-2-3">Layout & Navigation</a>
-                            <ol>
+                            <ol class="toc-sub">
                                 <li><a href="#chapter-2-3-1">Status Bar</a></li>
                                 <li><a href="#chapter-2-3-2">Navigation Bar</a></li>
                                 <li><a href="#chapter-2-3-3">View</a></li>
@@ -100,25 +100,20 @@
                         </li>
                         <li>
                             <a href="#chapter-2-4">Didaktisches Konzept</a>
-                            <ol>
+                            <ol class="toc-sub">
                                 <li><a href="#chapter-2-4-1">Behaviorismus</a></li>
                                 <li><a href="#chapter-2-4-2">Kognitivismus</a></li>
                             </ol>
+                        </li>
+                        <li>
+                            <a href="#chapter-2-5">Ostwestfälische Begriffe</a>
                         </li>
                     </ol>
                 </li>
                 <li>
                     <a href="#chapter-3">Gestaltung <br/>der App</a>
                     <!--
-                    <ol>
-
-                    </ol>
-                    -->
-                </li>
-                <li>
-                    <a href="#chapter-4">Programmierung <br/>der App</a>
-                    <!--
-                    <ol>
+                    <ol class="toc-sub">
 
                     </ol>
                     -->
@@ -141,6 +136,7 @@
                 <li><a href="#figure-7">Wireframe des Begriff des Tages</a></li>
                 <li><a href="#figure-8">Wireframe der Statistik des Nutzers</a></li>
                 <li><a href="#figure-9">Wireframe des App-Layouts</a></li>
+                <li><a href="#figure-10">Flussdiagramm zum <br/>Behaviorismus in der App</a></li>
             </ol>
         </div>
     </section>
@@ -521,10 +517,13 @@
         <p>
             Als primäre Quelle für das grundlegende Layout und die
             Navigationsstruktur der App wurden die <i>iOS Human Interface
-            Guidelines</i><cite>
-    Vgl. Apple Inc.: „iOS Human Interface Guidelines“, unter:<br/>
-    https://developer.apple.com/ios/human-interface-guidelines
-    (abgerufen am 09.11.2016)
+            Guidelines</i><cite class="line">
+    Vgl. Apple Inc.: iOS Human Interface Guidelines<br/>
+    <a href="https://developer.apple.com/ios/human-interface-guidelines"
+       class="external">
+       https://developer.apple.com/ios/human-interface-guidelines
+       (abgerufen am 15.12.2016)
+    </a>
 </cite>
 herangezogen; hier sind
             sämtliche von Apple empfohlenen Interface-Elemente für Apps
@@ -677,7 +676,7 @@ herangezogen; hier sind
             Position innerhalb der Navigation, um dem Nutzer stets die Option zu
             bieten, zu jedem beliebigen Punkt zu navigieren. Gegen diese Regel
             wird in <i>OWLisch</i> beim Quiz allerdings bewusst verstoßen
-            werden ; sobald ein Quiz gestartet wird, soll es dem Nutzer nämlich
+            werden; sobald ein Quiz gestartet wird, soll es dem Nutzer nämlich
             explizit nicht mehr erlaubt sein, einen anderen Menüpunkt
             auszuwählen, so lange das Quiz nicht beendet oder abgebrochen wurde.
             Dies soll verhindern, dass der Nutzer sich selbst betrügt, indem
@@ -698,8 +697,276 @@ herangezogen; hier sind
         <!-- Kapitel 2.4 -->
         <h3 id="chapter-2-4">Didaktisches Konzept</h3>
         <p>
-            ...
+            Im nachfolgenden werden die didaktischen Prinzipien erläutert,
+            die bei der Konzeption der App eine zentrale Rolle spielen. Dabei
+            basiert das Lernkonzept von <i>OWLisch</i> hauptsächlich auf dem
+            <i>Behaviorismus</i> und dem <i>Kognitivismus</i>, zwei
+            psychologische Theorien, die in der Didaktik und im E-Learning
+            Anwendung finden.
         </p>
+
+        
+        <!-- Kapitel 2.4.1 -->
+        <h4 id="chapter-2-4-1">Behaviorismus</h4>
+        <p>
+            In der Lerntheorie des <i>Behaviorismus</i> steht das Verhalten
+            der Lernenden im Vordergrund, während die internen psychologischen
+            Prozesse außer Acht gelassen werden (sie sind eine
+            <i>Black Box</i>). Das Lernen wird hierbei durch äußere Reize
+            stimuliert, die bestimmte Reaktionen hervorrufen sollen. Gewollte
+            positive Reaktionen werden durch Belohnungen bestärkt, während
+            ungewollte Reaktionen durch Bestrafungen oder dem Ausbleiben von
+            Belohungen unterdrückt werden. Durch das Zusammenspiel von äußeren
+            Reizen, der Reaktion des Lernenden und das anschließende Feedback
+            wird eine <i>Reiz-Reaktions-Kette</i> aufgebaut, die einen objektiv
+            messbaren Lernerfolg hervorrufen soll.<cite class="line">
+    Vgl. Meir, Susanne (2006): E-Learning Plus, Seite 10
+</cite>
+        </p>
+        <p>
+            Von zentraler Bedeutung für den Lernerfolg ist dabei eine klare
+            Aufgabenstellung und ein eindeutiger, nachvollziehbarer Lösungsweg.
+            Die einzelnen Schritte zum erzielten Lernerfolg und das Lernziel
+            selbst müssen dem Lerndenen bekannt sein und in einer logischen
+            Abfolge stattfinden. Durch eine kleinteilige Portionierung der
+            Aufgaben kann eine schrittweise Annäherung an das Lernziel mit
+            häufigen Belohnungen und einem stetig ansteigenden
+            Schwierigkeitsgrad stattfinden.<cite>
+    Vgl. Vontobel, Peter (2006): Didaktisches Design aus lernpsychologischer
+    Sicht, Seite 2-3
+</cite>
+        </p>
+        <p>
+            In <i>OWLisch</i> wird dieses Konzept hauptsächlich im Quiz
+            realisiert; die gestellten Fragen dienen hier als Reiz, der beim
+            Lernenden eine Reaktion in Form der Beantwortung der Frage
+            hervorrufen soll. Wie der Lernende auf die richtige Antwort kommt,
+            spielt dabei zunächst keine Rolle (die genannte <i>Black Box</i>).
+            Auf die Reaktion folgt schließlich ein Feedback:
+            <a href="#figure-10">siehe Abbildung 10</a>
+        </p>
+        <p>
+            Wird die Frage richtig beantwortet, erhält der Nutzer eine
+            Belohnung in Form eines Stufenanstiegs (dargestellt durch Sterne),
+            einem neuen Eintrag im persönlichen Wörterbuch und dem Steigen der
+            Fortschritts-Leiste in der Statistik-Ansicht. Bei einer falschen
+            Lösung erfährt der Lernende zwar das richtige Ergebnis, eine
+            Belohnung bleibt jedoch aus, um dieses ungewollte Verhalten nicht
+            zu bestärken.
+        </p>
+        <div class="bottom">
+            
+    <!-- Abbildung 10 -->
+    <figure id="figure-10">
+        <img src="img/figure-10.png" class="figure-wireframe" />
+        <figcaption>
+            <p>Flussdiagramm zum <br/>Behaviorismus in der App</p>
+        </figcaption>
+    </figure>
+        </div>
+        <p>
+            Durch die fehlende Belohnung wird der Lernende zudem dazu
+            motiviert, die Aufgaben so lange zu wiederholen, bis sie korrekt
+            gelöst wurden und so ein Erfolgserlebnis hervorrufen. Die
+            Kleinteiligkeit der Aufgaben sorgt für häufige Erfolge und
+            Belohnungen und folgt damit einem wichtigen Grundprinzip des
+            <i>Behaviorismus</i>:
+        </p>
+        <blockquote class="intros">
+            <p>
+                Verstärkung des Lernverhaltens durch Erfolg:<br/>
+                Wer erfolgreich lernt, lernt lieber und besser!
+            </p>
+            <footer>
+                Vontobel, Peter (2006): Didaktisches Design aus
+                lernpsychologischer Sicht, Seite 3
+            </footer>
+        </blockquote>
+        <p>
+            Durch die präzise Fragestellung und die Tatsache, dass bei jeder
+            Frage eine eindeutige Lösung definiert ist, kann am Ende einer
+            Quiz-Runde (bestehend aus zehn Fragen) ein objektiv
+            quantifizierbarer Lernerfolg in Form einer erreichten Punktzahl
+            und den hinzugewonnen Stufenanstiegen gemessen und für den Nutzer
+            dargestellt werden. Die Stufenanstiege sorgen zudem dafür, dass
+            die Schwierigkeit der gestellten Fragen ansteigt.
+            <a href="#chapter-2-2-1">siehe 2.2.1</a>
+        </p>
+        <p>
+            Mit jeder Frage rückt der Lernende also dem Lernziel, alle
+            vorhandenen Begriffe zu erlernen, sichtbar einen Schritt näher und
+            wird stetig dazu angehalten, seine Leistung zu verbessern, um der
+            steigenden Herausforderung gerecht zu werden und weiterhin
+            Erfolgserlebnisse zu erhalten.
+        </p>
+        
+        <!-- Kapitel 2.4.2 -->
+        <h4 id="chapter-2-4-2">Kognitivismus</h4>
+        <p>
+            Die zweite wichtige Lerntheorie, die bei <i>OWLisch</i> Anwendung
+            findet, ist der <i>Kognitivismus</i>. Dieses Konzept ging in den
+            1950er Jahren aus dem <i>Behaviorismus</i> hervor und beschäftigt
+            sich intensiver mit der <i>Black Box</i>, die bis dahin größtenteils
+            ignoriert wurde. Im Mittelpunkt steht dabei das Verständnis der
+            kognitiven Prozesse im menschlichen Gehirn.<cite class="line">
+    Vgl.
+    <a href="http://www.lernpsychologie.net/lerntheorien/kognitivismus"
+       class="external">
+       http://www.lernpsychologie.net/lerntheorien/kognitivismus
+       (abgerufen am 07.01.2017)
+    </a>
+</cite>
+        </p>
+        <p>
+            Aus den Erkenntnissen des <i>Kognitivismus</i> lassen sich für die
+            Didaktik und Entwicklung von Lernsystemen folgende Regeln und
+            Leitlinien ableiten, die auch (teilweise) bei <i>OWLisch</i>
+            eingesetzt werden:<cite class="line">
+    Vgl. Vontobel, Peter (2006): Didaktisches Design aus lernpsychologischer
+    Sicht, Seite 10 ff.
+</cite>
+        </p>
+        <ul>
+            <li>
+                <i>1. Aufmerksamkeit wecken:</i><br/>
+                Der Lernende muss seine Aufmerksamkeit auf den zu lernenden
+                Gegenstand legen, damit überhaupt erst ein Lernen stattfinden
+                kann. Dies kann z.B. durch besondere Hervorhebungen oder
+                Abwechslungsreichtum erreicht werden.
+            </li>
+            <li>
+                <i>2. Vorwissen aktivieren:</i><br/>
+                Für den Lernenden ist es von Vorteil, wenn neue Informationen
+                stetig mit bereits im Langzeitgedächtnis vorhandenem Vorwissen
+                verknüpft werden können.
+            </li>
+            <li>
+                <i>3. Wahrnehmungsprozess unterstützen:</i><br/>
+                Eine besonders übersichtliche und einfache Darstellung der
+                Lerninhalte begünstigt das Lernen, da Informationen schneller
+                und effizienter aufgenommen werden können.
+            </li>
+            <li>
+                <i>4. Speicherung im Gedächtnis verbessern:</i><br/>
+                Das Gelernte muss vom Kurz- ins Langzeitgedächtnis übergehen;
+                Wiederholungen der Aufgaben oder anderweitige Anwendung neuer
+                Informationen kann dabei helfen. Auch alle zuvor genannten
+                Prinzipien verbessern die Speicherung im Gedächtnis.
+            </li>
+            <li>
+                <i>5. Wissen überprüfen und verbessern:</i><br/>
+                Durch Lernkontrollen muss es dem Lernenden ermöglicht werden,
+                sein Wissen zu prüfen und vertiefen. Erfolge bei Lernkontrollen
+                wirken zudem motivierend und verstärken das Lernverhalten
+                positiv.
+            </li>
+        </ul>
+        <p>
+            Diese Prinzipien spielen aufgrund der geringen Komplexität der
+            Lerninhalte von <i>OWLisch</i> zwar nur eine untergeordnete Rolle,
+            lassen sich aber vor allem bei der visuellen Gestaltung vom Quiz
+            und vom Wörterbuch gut integrieren.
+        </p>
+        <p>
+            So wird jede Frage im Quiz als individuelle Lerneinheit kompakt
+            und übersichtlich auf einem einzigen Screen dargestellt, ohne dass
+            der Nutzer auf dem Bildschirm scrollen oder anderweitig nach
+            benötigten Informationen suchen muss. Eine Frage muss erst gelöst
+            werden, bevor die nächste angezeigt wird und das Quiz kann
+            zwischendurch nicht verlassen werden, ohne es vollständig
+            abzubrechen. Dadurch findet keinerlei Ablenkung statt und die volle
+            Aufmerksamkeit des Lernenden wird auf diese eine Aufgabe gelenkt,
+            was sowohl <i>die Aufmerksamkeit weckt</i>, als auch <i>den
+            Wahrnehmungsprozess unterstützt</i>.
+        </p>
+        <p>
+            Auch die unterschiedlichen Quiz-Typen
+            <a href="#chapter-2-2-1">siehe 2.2.1</a> und die Implementierung
+            der Audiofunktion zum Vorlesen der ostwestfälischen Begriffe
+            kommen diesen beiden Prinzipien zugute, indem sie einerseit
+            Abwechslung schaffen und so einer <i>Reizmonotonie</i> vorbeugen,
+            und andererseits unterschiedliche Arten der Wahrnehmung und
+            Verarbeitung von Informationen (Text, Bild und Ton) anbieten, die
+            zudem die Verknüpfung der Lerninhalte mit bereits <i>vorhandenem
+            Vorwissen</i> unterstützen (dem Lernenden mag ein Begriff noch
+            nicht als geschriebenes Wort untergekommen sein, aber vielleicht
+            hat er ihn schon einmal gehört oder kennt den abgebildeten
+            Gegenstand). Das Prinzip <i>Vorwissen aktivieren</i> spielt im
+            didaktischen Konzept der App allerdings nur eine unwesentliche
+            Rolle, da die Lerninhalte eigentlich simpel genug sind, um
+            keinerlei Vorwissen vorauszusetzen.
+        </p>
+        <p>
+            Das in <i>OWLisch</i> enthaltene persönliche Wörterbuch des Nutzers
+            kann im kognitivistischen Sinne die <i>Speicherung im Gedächtnis
+            verbessern</i>, da der Lernende hier jederzeit Zugriff auf die ihm
+            bereits bekannten Begriffe hat und kleine Häppchen an zusätzlichen
+            Informationen (Zitate, Anekdoten, Hintergrundwissen) zu diesen
+            Begriffen abrufen kann, die als zusätzliche Erinnerungsstütze
+            dienen. Auch beim Wörterbuch findet die oben genannte kompakte
+            und ablenkungsfreie Gestaltung Anwendung.
+        </p>
+        <p>
+            Das Prinzip <i>Wissen überprüfen und verbessern</i> wird mit dem
+            Quiz als Kernelement der App natürlich in vollem Umfang umgesetzt;
+            es wird dem Nutzer nicht nur ermöglicht, eine Lernkontrolle
+            durchzuführen, diese ist sogar der Hauptmechanismus des
+            Lernprozesses. Hier überschneiden sich die Konzepte des
+            <i>Behaviorismus</i> und die Erkenntnisse des <i>Kognitivismus</i>.
+        </p>
+        
+        <!-- Kapitel 2.5 -->
+        <h3 id="chapter-2-5">Ostwestfälische Begriffe</h3>
+        <p>
+            Zum Abschluss dieses Kapitels folgt noch eine Auflistung aller 30
+            in der finalen Version von <i>OWLisch</i> enthaltenen
+            ostwestfälischen Begriffe mitsamt Übersetzung und Artikel.
+        </p>
+        <div class="columns columns-2">
+            <ol>
+                <li>angeschickert — angetrunken</li>
+                <li>beömmeln — sich totlachen</li>
+                <li>betuppen — betrügen</li>
+                <li>Bollerbuche, <i>die</i> — Jogginghose</li>
+                <li>Bömsken, <i>das</i> — Bonbon</li>
+                <li>Bütterken, <i>das</i> — Butterbrot</li>
+                <li>dölmern — spielen</li>
+                <li>Dönekens, <i>die</i> — Anekdoten</li>
+                <li>fickerich — nervös</li>
+                <li>Knüpp, <i>der</i> — Knoten</li>
+                <li>Kroppzeug, <i>das</i> — Krempel</li>
+                <li>Latüchte, <i>die</i> — Laterne</li>
+                <li>Mäse, <i>die</i> — Hintern</li>
+                <li>Möttke, <i>die</i> — Schlamm</li>
+                <li>Mürker, <i>der</i> — Maurer</li>
+                <li>nöhlen — meckern</li>
+                <li>nönkern — Mittagsschlaf halten</li>
+                <li>öddelich — dreckig</li>
+                <li>Pättkenschnüwer, <i>der</i> — Moped</li>
+                <li>pecken — kleben</li>
+                <li>Pillepoppen, <i>die</i> — Kaulquappen</li>
+                <li>Pinneken, <i>das</i> — Schnapsglas</li>
+                <li>plästern — regnen</li>
+                <li>Pläte, <i>die</i> — Glatze</li>
+                <li>Plüdden, <i>die</i> — alte Klamotten</li>
+                <li>Pölter, <i>der</i> — Schlafanzug</li>
+                <li>ratzen — schlafen</li>
+                <li>Töffel, <i>der</i> — Trottel</li>
+                <li>vermackeln — beschädigen</li>
+                <li>wullacken — schuften</li>
+            </ol>
+        </div>
+    </section>
+        
+    <!-- Kapitel 3 -->
+    <section>
+        <div class="columns columns-1 reset-h3">
+            <h2 id="chapter-3" class="intro">Gestaltung <br/>der App</h2>
+            <p class="intro">
+                Nachfolgend werden die Typografie, Farb-gestaltung, das
+                Layout und das Stylesheet der App erläutert.
+            </p>
+        </div>
     </section>
     </article>
 
