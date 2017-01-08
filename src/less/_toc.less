@@ -123,8 +123,13 @@
         }
     }
 
-    // Nummern Verzeichnisse
+    // Nummern Intro
     &&-intro > li > a:before {
+        content: counter(_countToc1, upper-roman);
+    }
+
+    // Nummern Outro
+    &&-outro > li > a:before  {
         content: counter(_countToc1, upper-alpha);
     }
 
@@ -141,8 +146,13 @@
         content: leader(@char-lead) target-counter(attr(href), page);
     }
 
-    // Seitenzahlen Verzeichnisse
+    // Seitenzahlen Intro
     &&-intro li a:after {
         content: leader(@char-lead) target-counter(attr(href), page, upper-roman);
+    }
+
+    // Seitenzahlen Outro
+    &&-outro li a:after {
+        content: leader(@char-lead) target-counter(attr(href), page, upper-alpha);
     }
 }

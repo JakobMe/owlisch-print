@@ -42,9 +42,15 @@
     // Seiten: Rückseite
     &&-back { page: back; }
 
-    // Seiten: Inhaltsverzeichnis
+    // Seiten: Intro
     &&-intro {
         page: intro;
+        counter-reset: page 1 _countH2 _countToc1 _countToc2 _countToc3;
+    }
+
+    // Seiten: Outro
+    &&-outro {
+        page: outro;
         counter-reset: page 1 _countH2 _countToc1 _countToc2 _countToc3;
     }
 
@@ -67,24 +73,44 @@
     @bottom-left {content: @string-page counter(page); }
 }
 
-// Verzeichnis-Seiten Rechts
+// Intro-Seiten Rechts
 @page intro:right {
-    @top-right { content: @string-toc; }
+    @top-right { content: @string-intro; }
     @bottom-right { content: @string-page counter(page, upper-roman); }
 }
 
-// Verzeichnis-Seiten Links
+// Intro-Seiten Links
 @page intro:left {
     @top-left { content: @string-document; }
     @bottom-left { content: @string-page counter(page, upper-roman); }
 }
 
-// Verzeichnis-Seiten Erste
+// Intro-Seiten Erste
 @page intro:first {
     @top-right { content: normal; }
     @bottom-right { content: normal; }
     @top { content: @string-document; }
     @bottom { content: @string-page counter(page, upper-roman); }
+}
+
+// Outro-Seiten Rechts
+@page outro:right {
+    @top-right { content: @string-outro; }
+    @bottom-right { content: @string-page counter(page, upper-alpha); }
+}
+
+// Outro-Seiten Links
+@page outro:left {
+    @top-left { content: @string-document; }
+    @bottom-left { content: @string-page counter(page, upper-alpha); }
+}
+
+// Outro-Seiten Letzte
+@page outro:nth(3) {
+    @top-right { content: normal; }
+    @bottom-right { content: normal; }
+    @top { content: @string-document; }
+    @bottom { content: @string-page counter(page, upper-alpha); }
 }
 
 // Leere Seite

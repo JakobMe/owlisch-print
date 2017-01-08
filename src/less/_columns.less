@@ -19,8 +19,8 @@
     &&-4 { column-count: 4; }
 
     // Letztes und erstes Element
-    &:last-child { margin-bottom: 0; }
-    &:first-child { margin-top: 0; }
+    &:last-child, &&-last { margin-bottom: 0; }
+    &:first-child, &&-first { margin-top: 0; }
 
     // Mit Abstand
     &&-gap { column-gap: @margin-cols-h; }

@@ -71,7 +71,8 @@ h2 {
 
     // Titel-Nummern
     &[id^="chapter"]:before { content: counter(_countH2, decimal); }
-    &[id^="toc"]:before { content: counter(_countH2, upper-alpha); }
+    &[id^="intro"]:before { content: counter(_countH2, upper-roman); }
+    &[id^="outro"]:before { content: counter(_countH2, upper-alpha); }
 }
 
 // Titel Zweite Ebene

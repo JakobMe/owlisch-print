@@ -3,7 +3,7 @@
 <head>
 
     
-                                                                                                                                                                                                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                                                                                                                                                                                                                
     <!-- Meta -->
     <title>OWLisch – Entwicklung und Gestaltung einer Lern-App</title>
     <meta name="author" content="Jakob Metzger">
@@ -59,11 +59,11 @@
         
     <!-- Intro: Inhaltsverzeichnis -->
     <section>
-        <h2 id="toc-chapters">Inhaltsverzeichnis</h2>
+        <h2 id="intro-toc">Inhaltsverzeichnis</h2>
         <div class="columns columns-2 columns-gap">
             <ol class="toc toc-intro">
-                <li><a href="#toc-chapters">Inhaltsverzeichnis</a></li>
-                <li><a href="#toc-figures">Abbildungsverzeichnis</a></li>
+                <li><a href="#intro-toc">Inhaltsverzeichnis</a></li>
+                <li><a href="#intro-figures">Abbildungsverzeichnis</a></li>
             </ol>
             <ol class="toc toc-chapter">
                 <li>
@@ -119,26 +119,37 @@
                         <li>
                             <a href="#chapter-3-4">Gestaltungselemente</a>
                             <ol class="toc-sub">
-                                <li><a href="#chapter-3-4-1">App-Icon</a></li>
+                                <li><a href="#chapter-3-4-1">Tab Bar</a></li>
                                 <li><a href="#chapter-3-4-2">Navigation Bar</a></li>
-                                <li><a href="#chapter-3-4-3">Tab Bar</a></li>
-                                <li><a href="#chapter-3-4-4">Listen</a></li>
-                                <li><a href="#chapter-3-4-5">Buttons & Inputs</a></li>
-                                <li><a href="#chapter-3-4-6">Titel</a></li>
-                                <li><a href="#chapter-3-4-7">Texte & Hinweise</a></li>
-                                <li><a href="#chapter-3-4-8">Diagramme</a></li>
+                                <li><a href="#chapter-3-4-3">Titel & Texte</a></li>
+                                <li><a href="#chapter-3-4-4">Buttons & Inputs</a></li>
+                                <li><a href="#chapter-3-4-5">Listen</a></li>
+                                <li><a href="#chapter-3-4-6">Diagramme</a></li>
+                                <li><a href="#chapter-3-4-7">App-Icon</a></li>
                             </ol>
                         </li>
                         <li><a href="#chapter-3-5">Stylesheet & BEM</a></li>
                     </ol>
                 </li>
+                <li>
+                    <a href="#chapter-4">Programmierung <br/>der App</a>
+                    <!--
+                    <ol class="toc-sub">
+                    </ol>
+                    -->
+                </li>
+                <li><a href="#chapter-5">Fazit</a></li>
+            </ol>
+            <ol class="toc toc-outro">
+                <li><a href="#outro-appendix">Anhang</a></li>
+                <li><a href="#outro-affidavit">Eidesstattliche Erklärung</a></li>
             </ol>
         </div>
     </section>
         
     <!-- Intro: Abbildungsverzeichnis -->
     <section>
-        <h2 id="toc-figures">Abbildungsverzeichnis</h2>
+        <h2 id="intro-figures">Abbildungsverzeichnis</h2>
         <div class="columns columns-1">
             <ol class="toc toc-figure">
                 <li><a href="#figure-1">Wireframe des Quiz-Typs <br/>Begriff zu Bilder</a></li>
@@ -151,6 +162,10 @@
                 <li><a href="#figure-8">Wireframe der Statistik des Nutzers</a></li>
                 <li><a href="#figure-9">Wireframe des App-Layouts</a></li>
                 <li><a href="#figure-10">Flussdiagramm zum <br/>Behaviorismus in der App</a></li>
+                <li><a href="#figure-11">Screenshots: Begriff des Tages & Statistik</a></li>
+                <li><a href="#figure-12">Screenshots: Quiz-Ende & -Typen</a></li>
+                <li><a href="#figure-13">Screenshots: Mehr, Hilfe & Optionen</a></li>
+                <li><a href="#figure-14">Screenshots: Wörterbuch-Übersicht & -Details</a></li>
             </ol>
         </div>
     </section>
@@ -328,7 +343,7 @@
                 als Antworten. <a href="#figure-2">siehe Abbildung 2</a>
             </li>
         </ul>
-        <div class="columns columns-2">
+        <div class="columns columns-2 columns-first">
             
     <!-- Abbildung 1 -->
     <figure id="figure-1">
@@ -362,7 +377,7 @@
             Buchstaben zufällig gemischt dargestellt sind und in die richtige
             Reihenfolge gebracht werden müssen.
         </p>
-        <div class="columns columns-2">
+        <div class="columns columns-2 columns-first">
             
     <!-- Abbildung 3 -->
     <figure id="figure-3">
@@ -985,81 +1000,181 @@ herangezogen; hier sind
         <!-- Kapitel 3.1 -->
         <h3 id="chapter-3-1">Überblick & Screenshots</h3>
         <p>
-            ...
+            Bevor die Gestaltung der App im Detail präsentiert und erläutert
+            wird, folgt zunächst ein grober Überblick, der mittels Screenshots
+            aller im vorigen Kapitel erwähnten Features und Layout-Elemente
+            vermittelt wird. Anschließend werden die Farbgestaltung, Typografie
+            und schließlich alle Gestaltungselemente erläutert, bevor das
+            Kapitel mit einer kurzen Erklärung der Umsetzung mittels Stylesheets
+            und der dort verwendeten Techniken abschließt.
         </p>
+        <div class="bottom">
+    <!-- Abbildung 11 -->
+    <figure id="figure-11">
+        <div class="figure-row">
+            <img src="img/figure-11a.png" class="figure-screenshot" />
+            <img src="img/figure-11b.png" class="figure-screenshot" />
+        </div>
+        <figcaption>
+            <p>Screenshots: Begriff des Tages & Statistik</p>
+        </figcaption>
+    </figure>
+</div>
+        <div class="bottom">
+    <!-- Abbildung 12 -->
+    <figure id="figure-12">
+        <div class="figure-row">
+            <img src="img/figure-12a.png" class="figure-screenshot" />
+            <img src="img/figure-12b.png" class="figure-screenshot" />
+        </div>
+        <div class="figure-row">
+            <img src="img/figure-12c.png" class="figure-screenshot" />
+            <img src="img/figure-12d.png" class="figure-screenshot" />
+        </div>
+        <figcaption>
+            <p>Screenshots: Quiz-Ende & -Typen</p>
+        </figcaption>
+    </figure>
+</div>
+        <div class="top">
+    <!-- Abbildung 13 -->
+    <figure id="figure-13">
+        <div class="figure-row">
+            <img src="img/figure-13a.png" class="figure-screenshot" />
+            <img src="img/figure-13b.png" class="figure-screenshot" />
+        </div>
+        <div class="figure-row">
+            <img src="img/figure-13c.png" class="figure-screenshot" />
+            <img src="img/figure-13d.png" class="figure-screenshot" />
+        </div>
+        <figcaption>
+            <p>Screenshots: Mehr, Hilfe & Optionen</p>
+        </figcaption>
+    </figure>
+</div>
+        <div class="columns columns-first">
+    <!-- Abbildung 14 -->
+    <figure id="figure-14">
+        <div class="figure-row">
+            <img src="img/figure-14a.png" class="figure-screenshot" />
+            <img src="img/figure-14b.png" class="figure-screenshot" />
+        </div>
+        <figcaption>
+            <p>Screenshots: Wörterbuch-Übersicht & -Details</p>
+        </figcaption>
+    </figure>
+</div>
         
         <!-- Kapitel 3.2 -->
         <h3 id="chapter-3-2">Farbgestaltung</h3>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.3 -->
         <h3 id="chapter-3-3">Typografie & Icons</h3>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4 -->
         <h3 id="chapter-3-4">Gestaltungselemente</h3>
         <p>
-            ...
+            
         </p>
 
         
         <!-- Kapitel 3.4.1 -->
-        <h4 id="chapter-3-4-1">App-Icon</h4>
+        <h4 id="chapter-3-4-1">Tab Bar</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.2 -->
         <h4 id="chapter-3-4-2">Navigation Bar</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.3 -->
-        <h4 id="chapter-3-4-3">Tab Bar</h4>
+        <h4 id="chapter-3-4-3">Titel & Texte</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.4 -->
-        <h4 id="chapter-3-4-4">Listen</h4>
+        <h4 id="chapter-3-4-4">Buttons & Inputs</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.5 -->
-        <h4 id="chapter-3-4-5">Buttons & Inputs</h4>
+        <h4 id="chapter-3-4-5">Listen</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.6 -->
-        <h4 id="chapter-3-4-6">Titel</h4>
+        <h4 id="chapter-3-4-6">Diagramme</h4>
         <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.4.7 -->
-        <h4 id="chapter-3-4-7">Texte & Hinweise</h4>
+        <h4 id="chapter-3-4-7">App-Icon</h4>
         <p>
-            ...
-        </p>
-        
-        <!-- Kapitel 3.4.8 -->
-        <h4 id="chapter-3-4-8">Diagramme</h4>
-        <p>
-            ...
+            
         </p>
         
         <!-- Kapitel 3.5 -->
         <h3 id="chapter-3-5">Stylesheet & BEM</h3>
         <p>
-            ...
+            
         </p>
+    </section>
+    </article>
+
+    <!-- Seiten: Outro -->
+    <article class="pages pages-outro">
+        
+    <!-- Outro: Anhang -->
+    <section>
+        <h2 id="outro-appendix">Anhang</h2>
+        <p>
+            (Hier kommt der Anhang...)
+        </p>
+    </section>
+        
+    <!-- Outro: Eidesstattliche Erklärung -->
+    <section>
+        <h2 id="outro-affidavit">Eidesstattliche Erklärung</h2>
+        <p>
+            (Hier kommt die Eidesstattliche Erklärung...)
+        </p>
+        <div class="page-break"></div>
+    </section>
+        
+    <!-- Intro: Zitat -->
+    <section>
+        <div class="center">
+            <div>
+                <blockquote class="intro">
+                    <p>
+                        Der Ostwestfale an sich ramentert gerne. Hat er sich
+                        beruhigt, drömelt er zuhause rum – am liebsten im Pölter
+                        und mit Schluffen an den Füßen. Es sind diese Wörter
+                        und Redensarten, die typisch für die ostwestfälische
+                        Mundart sind.
+                    </p>
+                    <footer>
+                        <a href="http://www.lz.de/ueberregional/owl/7860369_Die-Unvergaenglichkeit-des-Ostwestfaelischen.html">
+                            Lippische Landes-Zeitung: Die<br/>
+                            Unvergänglichkeit des Ostwestfälischen
+                        </a>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
     </section>
     </article>
 

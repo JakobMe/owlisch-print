@@ -8,6 +8,7 @@
 
 // Abbildung
 figure {
+    text-align: center;
     box-sizing: border-box;
     page-break-inside: avoid;
     clear: both;
@@ -15,6 +16,7 @@ figure {
     width: 100%;
     height: auto;
     margin: 0;
+    font-size: 0;
 
     // Bild
     img {
@@ -44,6 +46,20 @@ figure {
             background: transparent;
             border-radius: 0;
             padding: 0;
+        }
+    }
+
+    // Abbildungs-Zeile
+    .figure-row {
+        margin-bottom: @margin-figure-h;
+
+        // Letztes Element
+        &:last-of-type { margin-bottom: 0; }
+
+        // Bilder
+        img {
+            margin: 0 (@margin-figure-h / 2);
+            display: inline-block;
         }
     }
 
