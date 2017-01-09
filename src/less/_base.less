@@ -105,14 +105,6 @@
     @bottom-left { content: @string-page counter(page, upper-alpha); }
 }
 
-// Outro-Seiten Letzte
-@page outro:nth(3) {
-    @top-right { content: normal; }
-    @bottom-right { content: normal; }
-    @top { content: @string-document; }
-    @bottom { content: @string-page counter(page, upper-alpha); }
-}
-
 // Leere Seite
 .page-blank {
     width: 100%;
