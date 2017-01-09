@@ -45,6 +45,11 @@ h2 {
     string-set: _titleH2 content();
     padding-left: (@size-count + @margin-count-h);
 
+    // Folgend
+    & + p, & + .columns, & + ol, & + ul {
+        margin-top: (@margin-paragraph-v * 2);
+    }
+
     // Intro
     &.intro {
         float: left;

@@ -33,6 +33,16 @@ p {
         padding-left: @margin-paragraph-v;
         border-right: @size-line solid @color-line;
     }
+
+    // Unterschrift
+    &.signature {
+        color: @color-pale;
+        font-style: italic;
+        border-top: @size-line dotted @color-pale;
+    }
+
+    // Rechts
+    &.right { text-align: right; }
 }
 
 // Zitate
@@ -102,7 +112,7 @@ blockquote {
 }
 
 // Links im Text
-p, ul {
+p, ul:not(.literature) {
     a {
         white-space: nowrap;
         font-style: italic;
@@ -118,6 +128,18 @@ p, ul {
         // Externer Link
         &.external { white-space: normal; }
     }
+}
+
+// Links im Literaturverzeichnis
+.literature a, cite a {
+    padding: 0;
+    display: inline;
+    background: transparent;
+    white-space: normal;
+    vertical-align: baseline;
+    font-style: italic;
+    color: @color-pale;
+    text-decoration: none;
 }
 
 // Listen
