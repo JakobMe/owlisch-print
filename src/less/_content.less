@@ -216,6 +216,103 @@ ol:not([class^=toc]) {
     }
 }
 
+// Font Showcase
+.showcase-font {
+    text-align: left;
+    color: @color-text;
+    line-height: 1.2;
+    margin: 0;
+    font-size: @font-size-showcase;
+    padding: @margin-figure-h;
+    .font-main();
+
+    // Label
+    &:before {
+        display: block;
+        font-size: @font-size-small;
+        color: @color-pale;
+        font-weight: normal;
+        font-style: italic;
+        line-height: 1;
+        margin-bottom: @margin-figure-h;
+        content: "Lato";
+    }
+
+    // Variante: Regular
+    &.regular {
+        font-weight: normal;
+        font-style: normal;
+        &:before { content: "Lato Regular"; }
+    }
+
+    // Variante: Bold
+    &.bold {
+        font-weight: bold;
+        font-style: normal;
+        &:before { content: "Lato Bold"; }
+    }
+
+    // Variante: Italic
+    &.italic {
+        font-weight: normal;
+        font-style: italic;
+        &:before { content: "Lato Italic"; }
+    }
+
+    // Variante: Bold Italic
+    &.bolditalic {
+        font-weight: bold;
+        font-style: italic;
+        &:before { content: "Lato Bold Italic"; }
+    }
+}
+
+// Icon Showcase
+.showcase-icon {
+    position: relative;
+    text-align: center;
+    font-size: @font-size-showcase;
+    color: @color-text;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+
+    // Icon
+    [class^="icon-"] {
+        text-align: center;
+        box-sizing: border-box;
+        display: inline-block;
+        padding: @margin-toc-v 0;
+        width: 24%;
+
+        // Label
+        &:after {
+            display: block;
+            font-style: italic;
+            font-size: @font-size-tiny;
+            color: @color-pale;
+            margin-top: @margin-toc-v;
+            content: attr(class);
+        }
+    }
+}
+
+// Code
+code {
+    display: inline-block;
+    white-space: nowrap;
+    font-style: normal;
+    color: @color-pale;
+    padding: 0 @margin-toc-v;
+    background: @color-box;
+    border-radius: @size-radius;
+    font-size: @font-size-small;
+    vertical-align: ((@font-size-medium - @font-size-small) / 2);
+    .font-code();
+}
+
 // Positioniert
 .bottom, .center, .top {
     page-break-after: always;

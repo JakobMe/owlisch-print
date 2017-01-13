@@ -2,5 +2,111 @@
 <!-- Kapitel 3.3 -->
 <h3 id="chapter-3-3"><!-- $chapter-3-3 --></h3>
 <p>
-
+    In der gesamten App (sowie in diesem Dokument) wird die Schriftart
+    <i>Lato</i> (polnisch für <i>Sommer</i>) verwendet
+    <a href="#figure-16">siehe Abbildung 16</a>; es handelt sich dabei
+    um eine serifenlose Open-Source Schriftart, die im Jahr 2010 vom
+    Gestalter <i>Łukasz Dziedzic</i> in Warschau entwickelt und in
+    Kooperation mit <i>Google</i> und der polnischen Schriftgießerei
+    <i>tyPoland</i> veröffentlicht wurde.<!-- @import footnote-6 -->
+</p>
+<div class="columns columns-1">
+    <!-- @import figure-16 -->
+</div>
+<div class="page-break"></div>
+<p>
+    <i>Lato</i> kommt dabei in den Schriftschnitten <i>Regular</i>,
+    <i>Italic</i>, <i>Bold</i> und <i>Bold Italic</i> und den folgenden
+    Schriftgrößen und deren Bezeichnungen im <i>LESS-Quellcode</i> (näheres
+    dazu in <i>Kapitel 3.5</i>) innerhalb der App zum Einsatz:
+</p>
+<div class="columns columns-2">
+    <ol>
+        <li>09px&nbsp;&nbsp;&nbsp;<code>@app-font-size-micro</code></li>
+        <li>11px&nbsp;&nbsp;&nbsp;<code>@app-font-size-tiny</code></li>
+        <li>13px&nbsp;&nbsp;&nbsp;<code>@app-font-size-small</code></li>
+        <li>15px&nbsp;&nbsp;&nbsp;<code>@app-font-size-medium</code></li>
+        <li>18px&nbsp;&nbsp;&nbsp;<code>@app-font-size-big</code></li>
+        <li>22px&nbsp;&nbsp;&nbsp;<code>@app-font-size-large</code></li>
+        <!--<li>28px&nbsp;&nbsp;&nbsp;<code>@app-font-size-huge</code></li>-->
+    </ol>
+</div>
+<p>
+    Die Entscheidung, eine eigene Schriftart in <i>OWLisch</i> zu
+    implementieren, enstand aus dem Vorhaben, die App auf mehreren
+    Plattformen (<i>iOS</i>, <i>Android</i>, diverse Browser) zu
+    unterstützen. Die Plattformen und unterschiedlichen Betriebssysteme
+    unterstützen jedoch nicht die selben Standard-Schriftarten; um
+    eine einheitliche Gestaltung zu erreichen, wurde daher <i>Lato</i>
+    mit dem <i>CSS Font-Face</i> Feature implementiert.
+</p>
+<p>
+    Die Wahl von <i>Lato</i> stützt sich dabei auf zwei Haupt-Kriterien:
+    Einerseits ist die Schriftart unter der <i>SIL Open Font</i> Lizenz
+    veröffentlicht und ist daher kostenlos und frei in Projekten
+    verwendbar, andererseits handelt es sich um einen modernen,
+    unauffälligen und gut lesbaren Font, der für die Darstellung auf
+    Bildschirmen (insbesondere für Apps und Websites) optimiert ist.
+    Dezente Rundungen in der Schriftart geben ein Gefühl von Wärme,
+    während die Geradlinigkeit und Struktur des Fonts Stabilität
+    und Ernsthaftigkeit vermitteln, ohne dass diese Charakteristiken
+    bewusst ins Auge fallen und den Nutzer vom eigentlichen Inhalt
+    ablenken<!-- @import footnote-7 -->, was für die App, die in der
+    Gestaltung ein besonderes Augenmerk auf Übersichtlichkeit
+    und Simplizität legt, passende Merkmale für einen Font sind.
+</p>
+<div class="columns columns-1">
+    <!-- @import figure-17 -->
+</div>
+<p>
+    Sämtliche in <i>OWLisch</i> enthaltenen Icons sind in obiger
+    Abbildung dargestellt. Die Icons wurden jedoch nicht als Grafiken
+    implementiert, sondern als Schriften, sogenannten <i>Webfont-Icons</i>.
+    Dies hat gegenüber herkömmlichen Grafiken den Vorteil, dass
+    die Symbole wesentlich flexibler eingesetzt und mittels <i>CSS</i>
+    gestaltet werden können; Größe, Farbe und andere Eigenschaften
+    lassen sich so analog zur herkömmlichen Typografie manipulieren,
+    ohne für jeden Kontext eines Icons eine separate Grafik erstellen
+    zu müssen.
+</p>
+<p>
+    Ein weiterer Vorteil ist die Unabhängigkeit von der Pixeldichte
+    des Bildschirms, auf dem die <i>Webfont-Icons</i> dargestellt werden;
+    herkömmliche Grafiken müssen so z.B. für <i>Retina Displays</i> oder
+    andere Bildschirme mit hoher Pixeldichte zusätzlich in hochauflösenden
+    Versionen bereitgestellt werden, um eine optimale Darstellung zu
+    ermöglichen.
+</p>
+<p>
+    In der App kommen zwei unterschiedliche und miteinander zu einer
+    Schrift-Datei zusammengefasste Icon-Pakete zum Einsatz:
+    <i>Entypo</i> von <i>Daniel Bruce</i> und <i>Font Awesome</i> von
+    <i>Dave Gandy</i>, beide unter der <i>SIL Open Font</i> Lizenz
+    veröffentlicht und daher frei und kostenlos verwendbar.
+    Die Icon-Pakete haben große Ähnlichkeit zueinander und lassen sich
+    daher gut kombinieren; die Entscheidung, zwei Pakete zu benutzen,
+    stammt aus der Tatsache, das keines der beiden alleinstehend
+    alle gewünschten Icons für <i>OWLisch</i> enthält.
+</p>
+<p>
+    Für das zusammengestellte Paket wurde jedes individuelle Symbol
+    mit Hilfe des webbasierten Dienstes
+    <i>Fontello</i><!-- @import footnote-8 --> ausgewählt
+    und zu einer einzelnen Datei zusammengefasst; es sind demnach keine
+    Icons enthalten, die nicht auch in der App verwendet werden, was
+    angesichts der Tatsache, dass diese Icon-Pakete in ihrer Gänze
+    hunderte von Symbolen enthalten, eine merkliche Reduktion
+    der Gesamt-Dateigröße von <i>OWLisch</i> zur Folge hat.
+</p>
+<p>
+    Stilistisch passen die Symbole sowohl zur Schriftart <i>Lato</i>,
+    als auch zur restlichen Gestaltung von <i>OWLisch</i>; sie sind simpel
+    und klar definiert, teilen sich die subtilen Rundungen mit <i>Lato</i>
+    und vermitteln ihre Bedeutung auf den ersten Blick. Dabei dienen
+    die Symbole einerseits dazu, dass Interface der App durch Details
+    aufzulockern und interessanter zu gestalten, und andererseits zur
+    Verdeutlichung und besseren Erkennbarkeit von Aktionen
+    oder dargestellten Informationen. Häufig werden sie unterstützend
+    neben Beschriftungen oder auf Schaltflächen platziert, wenn ihre
+    Bedeutung ansonsten nicht unmittelbar erkennbar ist.
 </p>
