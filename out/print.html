@@ -120,7 +120,7 @@
                             <li><a href="#chapter-3-4-7">App-Icon</a></li>
                         </ol>
                     </li>
-                    <li><a href="#chapter-3-5">Stylesheet & BEM</a></li>
+                    <li><a href="#chapter-3-5">Stylesheet, LESS & BEM</a></li>
                 </ol>
             </li>
             <li>
@@ -166,9 +166,9 @@
             <li><a href="#figure-20">Detailansicht: Titel & Texte</a></li>
             <li><a href="#figure-21">Detailansicht: Buttons</a></li>
             <li><a href="#figure-22">Detailansicht: Inputs</a></li>
-            <li><a href="#figure-22">Detailansicht: Listen</a></li>
-            <li><a href="#figure-22">Detailansicht: Diagramme</a></li>
-            <li><a href="#figure-22">Detailansicht: App-Icon</a></li>
+            <li><a href="#figure-23">Detailansicht: Listen</a></li>
+            <li><a href="#figure-24">Detailansicht: Diagramme</a></li>
+            <li><a href="#figure-25">App-Icon von OWLisch</a></li>
         </ol>
     </div>
 </section>
@@ -1449,7 +1449,7 @@ herangezogen; hier sind
     bestehen, positioniert auf einer durchgehenden grauen Linie.
 </p>
 <div class="page-break"></div>
-<div class="columns columns-1 columns-first top">
+<div class="center">
     <!-- Abbildung 20 -->
 <figure id="figure-20">
     <div class="figure-row">
@@ -1517,7 +1517,7 @@ herangezogen; hier sind
     <a href="#figure-21">siehe Abbildung 21</a>.
 </p>
 <div class="page-break"></div>
-<div class="columns columns-1 top columns-first">
+<div class="center">
     <!-- Abbildung 21 -->
 <figure id="figure-21">
     <div class="figure-row">
@@ -1644,7 +1644,8 @@ herangezogen; hier sind
     Hintergrund, schwarzen Text und einen grünen Haken hat, um ihn eindeutig
     identifizieren zu können.
 </p>
-<div class="columns columns-1">
+<div class="page-break"></div>
+<div class="center">
     <!-- Abbildung 23 -->
 <figure id="figure-23">
     <div class="figure-row">
@@ -1699,7 +1700,8 @@ herangezogen; hier sind
     Prozentzahlen finden sich, analog zu den grünen <i>Diagrammen</i>,
     ebenfalls als Achsenbeschriftungen im <i>Diagramm</i> wieder.
 </p>
-<div class="columns columns-1">
+<div class="page-break"></div>
+<div class="center">
     <!-- Abbildung 24 -->
 <figure id="figure-24">
     <div class="figure-row">
@@ -1719,17 +1721,85 @@ herangezogen; hier sind
     </figcaption>
 </figure>
 </div>
-<div class="page-break"></div>
 <!-- Kapitel 3.4.7 -->
 <h4 id="chapter-3-4-7">App-Icon</h4>
 <p>
-
+    Das <i>App-Icon</i> von <i>OWLisch</i> ist relativ simpel gestaltet;
+    der Name der App in der Schriftart <i>Lato</i> mit weißem Text auf
+    der Hauptfarbe der App, ergänzt durch einen flachen Schattenwurf
+    <a href="#figure-25">siehe Abbildung 25</a>. Zur Verdeutlichung des
+    Namens <i>OWLisch</i> wurde der Schriftzug in seine zwei Bestandteile
+    <i>OWL</i> und <i>isch</i> aufgespalten; <i>OWL</i> wurde dabei oben
+    in <i>Lato Black</i> platziert, während sich <i>isch</i> in <i>Lato
+    Light Italic</i> darunter befindet und so visuell vom darüber
+    befindlichen Schriftzug abgrenzt. Für die optimale Darstellung auf
+    sämtlichen <i>iOS</i>-Geräten wurde das Icon in folgenden Größen zur
+    Verfügung gestellt:
+</p>
+<div class="columns columns-2 columns-gap">
+    <div class="columns columns-2">
+        <ol>
+            <li>29x29px</li>
+            <li>40x40px</li>
+            <li>50x50px</li>
+            <li>57x57px</li>
+            <li>58x58px</li>
+            <li>72x72px</li>
+            <li>76x76px</li>
+            <li>80x80px</li>
+            <li>87x87px</li>
+            <li>100x100px</li>
+            <li>114x114px</li>
+            <li>120x120px</li>
+            <li>144x144px</li>
+            <li>152x152px</li>
+            <li>167x167px</li>
+            <li>180x180px</li>
+        </ol>
+    </div>
+    <div class="columns columns-1">
+        <!-- Abbildung 25 -->
+<figure id="figure-25">
+    <img src="img/figure-25.png" class="figure figure-icon" />
+    <figcaption>
+        <p>App-Icon von OWLisch</p>
+    </figcaption>
+</figure>
+    </div>
+</div>
+<p>
+    Da <i>OWLisch</i> jedoch ebenfalls auf allen gängigen Web-Browsern
+    funk-tionieren soll, wurde noch ein sogenanntes <i>Favicon</i>
+    ergänzt; dieses wird von Browsern in der Adressleiste
+    oder im entsprechenden Tab als Symbol für eine Website dargestellt
+    und ist im Falle der App identisch mit dem eigentlichen <i>App-Icon</i>.
+    Auch das <i>Favicon</i> muss in diversen Größen und Versionen zur
+    Verfügung gestellt werden, hier wurde jedoch auf den webbasierten
+    Dienst <i>Favicon Generator</i><cite class="line">
+    Siehe:
+    <a href="http://realfavicongenerator.net">
+       http://realfavicongenerator.net
+       (15.01.2017)
+    </a>
+</cite>
+  zurückgegriffen,
+    der alle benötigten Varianten generiert.
 </p>
     <!-- Kapitel 3.5 -->
-<h3 id="chapter-3-5">Stylesheet & BEM</h3>
+<h3 id="chapter-3-5">Stylesheet, LESS & BEM</h3>
 <p>
 
 </p>
+</section>
+        <!-- Kapitel 4 -->
+<section>
+    <div class="columns columns-1 reset-h3">
+        <h2 id="chapter-4" class="intro">Programmierung <br/>der App</h2>
+        <p class="intro">
+            Nachfolgend wird die Programmierung der App
+            mit JavaScript, HTML, CSS und Cordova grob angerissen.
+        </p>
+    </div>
 </section>
     </article>
 
