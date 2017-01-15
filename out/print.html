@@ -3,7 +3,7 @@
 <head>
 
     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     <!-- Meta -->
     <title>OWLisch – Entwicklung und Gestaltung einer Lern-App</title>
     <meta name="author" content="Jakob Metzger">
@@ -170,6 +170,7 @@
             <li><a href="#figure-15">Farbpalette der App</a></li>
             <li><a href="#figure-16">Schriftart Lato</a></li>
             <li><a href="#figure-17">Übersicht der Icons in der App</a></li>
+            <li><a href="#figure-18">Details der Tab Bar</a></li>
         </ol>
     </div>
 </section>
@@ -1329,14 +1330,70 @@ herangezogen; hier sind
 <!-- Kapitel 3.4 -->
 <h3 id="chapter-3-4">Gestaltungselemente</h3>
 <p>
-
+    Es folgt eine detaillierte Betrachtung individueller
+    Gestaltungselemente innerhalb der App und eine Einordnung
+    dieser Elemente in den Gesamtkontext ihrer Verwendung
+    und Funktion.
 </p>
 
 
 <!-- Kapitel 3.4.1 -->
 <h4 id="chapter-3-4-1">Tab Bar</h4>
 <p>
-
+    Die Gestaltung der <i>Tab Bar</i> entspricht im Wesentlichen
+    dem bereits erwähten Konzept <a href="#chapter-2-3-4">siehe 2.3.4</a>,
+    wurde jedoch um zwei Elemente erweitert: Ein zusätzlicher
+    Indikator in Form eines grünen Balkens über dem aktiven
+    Menüpunkt und unterstützende Beschriftungen der Symbole
+    <a href="#figure-18">siehe Abbildung 18</a>.
+    In frühen Tests hat sich herausgestellt, dass Icons alleine
+    zu verwirrend für die Nutzer sind, da ihre Bedeutung nicht
+    auf Anhieb erkennbar ist und der Nutzer so nicht weiß, was sich
+    hinter welchem Menüpunkt verbirgt; zudem wird in den <i>iOS
+    Human Interface Guidelines</i> eine Verwendung von Labels
+    in der <i>Tab Bar</i> empfohlen. Der zusätzliche Indikator für
+    den aktiven Menüpunkt dient hingegen schlicht der besseren
+    Erkennbarkeit und Unterscheidung zu den restlichen Punkten.
+</p>
+<p>
+    Typisch für <i>iOS</i> sind hierbei inaktive Punkte in grau
+    und der aktive Menüpunkt in der Hauptfarbe der App (in diesem Fall
+    grün) dargestellt. Am oberen Rand der <i>Tab Bar</i> wurde eine dunkle
+    Linie platziert, die zur besseren visuellen Trennung des Inhalts
+    von der <i>Tab Bar</i> dient.
+</p>
+<div class="columns columns-1 columns-last bottom">
+    
+<!-- Abbildung 18 -->
+<figure id="figure-18">
+    <img src="img/figure-18.png" class="figure figure-detail" />
+    <figcaption>
+        <p>Details der Tab Bar</p>
+    </figcaption>
+</figure>
+</div>
+<p>
+    Die Anordnung der Menüpunkte innerhalb der <i>Tab Bar</i>
+    folgt sowohl logischen, als auch ästhetischen Gesichtspunkten.
+    Der erste Menüpunkt, der beim Starten der App angezeigt wird,
+    ist der <i>Begriff des Tages</i>, der aufgrund des begrenzten
+    Platzes in <i>Heute</i> umbenannt wurde und auch an erster Stelle,
+    ganz links, platziert wurde. Der Punkt <i>Mehr</i>, hinter dem
+    sich alle Menüpunkte mit niedriger Priorität verbergen, wurde
+    hingegen an die letzte Stelle gesetzt, was somit der
+    typischen Leserichtung von links nach rechts folgt.
+</p>
+<p>
+    Die verbleibenden drei Punkte wurden hingegen so angeordnet,
+    dass sich aufgrund der Textlänge ihrer Beschriftungen eine
+    Symmetrie um den Mittelpunkt der <i>Tab Bar</i> ergibt;
+    <i>Wörterbuch</i> und <i>Statistik</i> haben mit zehn und neun
+    Buchstaben eine ähnliche Länge und umschließen den zentralen
+    Punkt <i>Quiz</i>, der nicht nur optisch, sondern auch logisch
+    eine zentrale Position als Hauptfunktion der App einnimmt. Aus
+    dieser mittleren Positionierung vom <i>Quiz</i> folgt auch
+    eine Symmetrie mit anderen Elementen innerhalb der View, sobald
+    der Nutzer das Quiz aufruft <a href="#figure-12">siehe Abbildung 12</a>.
 </p>
 
 <!-- Kapitel 3.4.2 -->
