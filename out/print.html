@@ -3,7 +3,7 @@
 <head>
 
     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
     <!-- Meta -->
     <title>OWLisch – Entwicklung und Gestaltung einer Lern-App</title>
     <meta name="author" content="Jakob Metzger">
@@ -171,6 +171,8 @@
             <li><a href="#figure-16">Schriftart Lato</a></li>
             <li><a href="#figure-17">Übersicht der Icons in der App</a></li>
             <li><a href="#figure-18">Details der Tab Bar</a></li>
+            <li><a href="#figure-19">Details der Navigation Bar</a></li>
+            <li><a href="#figure-20">Details zu Titeln & Texten</a></li>
         </ol>
     </div>
 </section>
@@ -1392,20 +1394,170 @@ herangezogen; hier sind
     Punkt <i>Quiz</i>, der nicht nur optisch, sondern auch logisch
     eine zentrale Position als Hauptfunktion der App einnimmt. Aus
     dieser mittleren Positionierung vom <i>Quiz</i> folgt auch
-    eine Symmetrie mit anderen Elementen innerhalb der View, sobald
+    eine Symmetrie mit anderen Elementen innerhalb der <i>View</i>, sobald
     der Nutzer das Quiz aufruft <a href="#figure-12">siehe Abbildung 12</a>.
 </p>
 
 <!-- Kapitel 3.4.2 -->
 <h4 id="chapter-3-4-2">Navigation Bar</h4>
 <p>
-
+    Die Gestaltung der <i>Navigation Bar</i> entspricht ebenfalls
+    zum Großteil dem zuvor beschriebenen Konzept
+    <a href="#chapter-2-3-2">siehe 2.3.2</a>, wurde jedoch um eine
+    Suchfunktion für das <i>Wörterbuch</i> erweitert
+    <a href="#figure-19">siehe Abbildung 19</a>. Die <i>Navigation Bar</i>
+    wurde in der Hauptfarbe der App mit weißem Text darauf gestaltet und
+    geht, typisch für <i>iOS</i>, nahtlos in die <i>Status Bar</i> über.
+</p>
+<p>
+    Die <i>Navigation Bar</i> enthält in <i>OWLisch</i> bis zu zwei
+    Icons (links und rechts), die innerhalb des aktuellen Kontextes
+    bestimmte Funktionen oder Aktionen erlauben, wie z.B. das Abbrechen
+    oder Überspringen im <i>Quiz</i>, das Zurück-Navigieren innerhalb des
+    <i>Wörterbuches</i> oder das Durchsuchen oder Sortieren der
+    <i>Wörterbuch-Übersicht</i>. Zudem befindet sich der Titel
+    der aktuellen <i>View</i> mittig platziert in Großbuchstaben
+    in dieser Leiste.
+</p>
+<div class="columns columns-1">
+    
+<!-- Abbildung 19 -->
+<figure id="figure-19">
+    <div class="figure-row">
+        <img src="img/figure-19a.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-19b.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-19c.png" class="figure figure-detail" />
+    </div>
+    <figcaption>
+        <p>Details der Navigation Bar</p>
+    </figcaption>
+</figure>
+</div>
+<p>
+    Die Funktionalitäten im <i>Wörterbuch</i> sind dabei Elemente, die
+    erst bei der eigentlichen Entwicklung der App im Anschluss an die
+    Konzipierung im Detail ausgestaltet und implementiert wurden.
+    Es wurde ersichtlich, dass eine Liste mit dutzenden oder gar hunderten
+    von Begriffen schnell sehr unübersichtlich für den Nutzer werden kann,
+    sodass ihm gleich zwei Möglichkeiten gegeben wurden, diese Liste
+    effizienter zu navigieren: Einerseits kann mit dem Lupen-Symbol
+    in der <i>Navigation Bar</i> ein Suchfeld eingeblendet werden,
+    dass vorübergehend den Titel verdrängt und per Tastatureingabe
+    eine Filterung der Liste in Echtzeit erlaubt, wobei nur noch
+    Begriffe angezeigt werden, in denen der Suchbegriff enthalten ist
+    <a href="#figure-14">siehe Abbildung 14</a>.
+</p>
+<p>
+    Zusätzlich dazu kann die Liste mit einem weiteren Button auf der
+    rechten Seite der <i>Navigation Bar</i> sortiert werden; dabei wird
+    eine Auswahlliste eingeblendet <a href="#chapter-3-4-5">siehe 3.4.5</a>,
+    die es dem Nutzer ermöglicht, das <i>Wörterbuch</i> sowohl alphabetisch,
+    als auch nach Stufe des Begriffes zu sortieren, jeweils auf- und
+    absteigend. Beide Möglichkeiten lassen sich dabei gleichzeitig
+    einsetzen, sodass auch eine bereits gefilterte Liste zusätzlich
+    nach Belieben sortiert werden kann.
 </p>
 
 <!-- Kapitel 3.4.3 -->
 <h4 id="chapter-3-4-3">Titel & Texte</h4>
 <p>
-
+    <i>OWLisch</i> ist eine sehr textlastige App, <i>Titel und Texte</i>
+    tauchen daher in diversen Variationen überall in der App auf;
+    die gängigsten Varianten sind nebenstehend vergrößert dargestellt
+    <a href="#figure-20">siehe Abbildung 20</a>. Dabei findet eine
+    Unterscheidung zwischen <i>Titeln</i>, <i>Statustexten</i>,
+    <i>Fließtexten</i> und <i>Hinweisen</i> statt:
+</p>
+<p>
+    <i>Titel</i> sind stets in schwarzem Text auf weißem Grund, mittig
+    positioniert, mit einem großzügigen Innenabstand und in der größten
+    verwendeten Schriftgröße dargestellt, um sie von restlichen Inhalten
+    klar abzuheben. Ein <i>Titel</i> kann dabei von zusätzlichen Elementen
+    begleitet werden, z.B. Informationen zum Fortschritt und der aktuellen
+    Stufe eines Begriffes, einem Button zur Audio-Wiedergabe oder
+    einem Bild zu einem Begriff. Teile des Textes innerhalb eines Titels
+    können durch kursive oder fette Schriftschnitte besonders hervorgehoben
+    werden.
+</p>
+<p>
+    <i>Statustexte</i> sind eine Form von Untertiteln, die zusätzliche
+    hilfreiche Informationen im aktuellen Kontext darstellen, meistens
+    am oberen Rand der <i>View</i> positioniert. Hier finden sich in
+    der Regel numerische Angaben, z.B. zur Anzahl der vorhandenen Begriffe
+    im <i>Wörterbuch</i>, die Anzahl der Fragen im <i>Quiz</i> oder das
+    Ergebnis einer Quiz-Runde und die Anzahl der ausgelassenen Begriffe.
+    Auf der linken Seite eines <i>Statustextes</i> befindet sich ein
+    beschreibendes Label mitsamt Symbol in grauem Text, auf der rechten
+    Seite die entsprechende numerische Angabe in einem grauen, abgerundeten
+    Kasten. Eine weitere Art des <i>Statustextes</i> ist die
+    Fortschritts-Leiste im <i>Quiz</i>; sie stellt in Form eines Diagramms
+    die bisherigen Ergebnisse des Nutzers in der aktuellen Quiz-Runde dar
+    und bietet somit zu jeder Zeit während eines Spiels eine Übersicht
+    zum Fortschritt und den noch ausstehenden Fragen.
+</p>
+<p>
+    Die einzelnen Elemente innerhalb der Fortschrittsleiste können in
+    fünf verschiedenen Varianten dargestellt werden, die sich alle die
+    Charakteristik teilen, aus einem weißem Kreis mit grauen Rahmen zu
+    bestehen, positioniert auf einer durchgehenden grauen Linie.
+</p>
+<div class="page-break"></div>
+<div class="columns columns-1 columns-first top">
+    
+<!-- Abbildung 20 -->
+<figure id="figure-20">
+    <div class="figure-row">
+        <img src="img/figure-20a.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-20b.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-20c.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-20d.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-20e.png" class="figure figure-detail" />
+    </div>
+    <div class="figure-row">
+        <img src="img/figure-20f.png" class="figure figure-detail" />
+    </div>
+    <figcaption>
+        <p>Details zu Titeln & Texten</p>
+    </figcaption>
+</figure>
+</div>
+<p>
+    Noch ausstehende Fragen der Quiz-Runde werden dabei als kleiner
+    Kreis angezeigt, während sowohl die aktuelle, als auch bereits
+    beantwortete Fragen größer gestaltet sind. Die aktuelle Frage
+    hat hierbei noch einen leeren, weißen Hintergrund, bei Beantwortung
+    wird dieser Hintergrund mit einem entsprechenden Symbol gefüllt;
+    ein grüner Haken für eine korrekte Antwort, ein rotes Kreuz für
+    eine falsche, und eine graue Linie für eine übersprungene Frage.
+</p>
+<p>
+    <i>Fließtexte</i> und <i>Hinweise</i> sind sich strukturell ähnlich,
+    werden aber unterschiedlich stark hervorgehoben. Gewöhnliche Texte
+    werden auf weißem Grund, in schwarzer Schrift und linksbündig
+    dargestellt, während <i>Hinweise</i> in grauer Schrift auf dem
+    ebenfalls grauen Hintergrund der <i>View</i>, zentriert und kursiv
+    gestaltet sind, um sie in den Hintergrund zu rücken und nicht
+    unnötig Aufmerksamkeit auf sie zu lenken. <i>Hinweise</i> dienen
+    als kleine zusätzliche Informations-Häppchen, die die Funktionsweise
+    der App für neue Nutzer kurz und knapp am entsprechenden Ort erklären
+    sollen, ohne zwingend die ausführlichere Hilfe der App aufrufen zu
+    müssen. Erfahrene Nutzer können diese <i>Hinweise</i> aufgrund ihrer
+    unauffälligen Gestaltung hingegen leicht ignorieren. Beide genannten
+    Elemente können dabei zusätzlich um eine darüber befindliche
+    Beschriftung mit Symbol erweitert werden, z.B. <i>Beschreibung</i>
+    oder <i>Hinweis</i>, um auf ihre Funktion ersichtlich zu machen.
 </p>
 
 <!-- Kapitel 3.4.4 -->
@@ -1448,43 +1600,37 @@ herangezogen; hier sind
     <h2 id="outro-literature">Literaturverzeichnis</h2>
     <div class="columns columns-1">
         <ol class="literature">
-            <li>
-                Apple Inc. (2016): iOS Human Interface Guidelines.<br/>
+            <li>Apple Inc. (2016): iOS Human Interface Guidelines.<br/>
                 <a href="https://developer.apple.com/ios/human-interface-guidelines">
                    https://developer.apple.com/ios/human-interface-guidelines
                    (15.12.2016)
                 </a>
             </li>
-            <li>
-                Dziedzic, Łukasz (2017): Lato.<br/>
+            <li>Dziedzic, Łukasz (2017): Lato.<br/>
                 <a href="http://www.latofonts.com/lato-free-fonts">
                    http://www.latofonts.com/lato-free-fonts
                    (13.01.2017)
                 </a>
             </li>
-            <li>
-                Höhne, Sebastian (2017): Kognitivismus.<br/>
+            <li>Höhne, Sebastian (2017): Kognitivismus.<br/>
                 <a href="http://www.lernpsychologie.net/lerntheorien/kognitivismus">
                    http://www.lernpsychologie.net/lerntheorien/kognitivismus
                    (07.01.2017)
                 </a>
             </li>
-            <li>
-                Lippische Landes-Zeitung (2013): Die Unvergänglichkeit des Ostwestfälischen.<br/>
+            <li>Lippische Landes-Zeitung (2013): Die Unvergänglichkeit des Ostwestfälischen.<br/>
                 <a href="http://www.lz.de/ueberregional/owl/7860369_Die-Unvergaenglichkeit-des-Ostwestfaelischen.html">
                     http://www.lz.de/ueberregional/owl/7860369_Die-Unvergaenglichkeit-des-Ostwestfaelischen.html
                     (12.12.2016)
                 </a>
             </li>
-            <li>
-                Meir, Susanne (2006): E-Learning Plus.<br/>
+            <li>Meir, Susanne (2006): E-Learning Plus.<br/>
                 <a href="https://lehrerfortbildung-bw.de/moodle-info/schule/einfuehrung/material/2_meir_9-19.pdf">
                    https://lehrerfortbildung-bw.de/moodle-info/schule/einfuehrung/material/2_meir_9-19.pdf
                    (07.01.2017)
                 </a>
             </li>
-            <li>
-                Vontobel, Peter (2006): Didaktisches Design aus lernpsychologischer
+            <li>Vontobel, Peter (2006): Didaktisches Design aus lernpsychologischer
                 Sicht. Pädagogische Hochschule Zürich.<br/>
                 <a href="http://www.sciencetonic.de/media/015_digimedia/050_konzepte/LIT_0210_Didaktisches_Design_Vontobel_2006.pdf">
                    http://www.sciencetonic.de/media/015_digimedia/050_konzepte/LIT_0210_Didaktisches_Design_Vontobel_2006.pdf
