@@ -304,13 +304,29 @@ code {
     display: inline-block;
     white-space: nowrap;
     font-style: normal;
-    color: @color-pale;
+    color: @color-text;
     padding: 0 @margin-toc-v;
     background: @color-box;
     border-radius: @size-radius;
     font-size: @font-size-small;
     vertical-align: ((@font-size-medium - @font-size-small) / 2);
     .font-code();
+}
+
+// Pre
+pre {
+    display: block;
+    color: @color-text;
+    padding: @margin-figure-h;
+    font-size: @font-size-small;
+    background: @color-box;
+    border-radius: @size-radius;
+    margin: 0 0 @margin-paragraph-v 0;
+    page-break-inside: avoid;
+    .font-code();
+
+    // Letztes Element
+    &:last-child { margin-bottom: 0; }
 }
 
 // Positioniert

@@ -1,5 +1,172 @@
 <!-- Kapitel 3.5 -->
 <h3 id="chapter-3-5"><!-- $chapter-3-5 --></h3>
 <p>
+    Zum Abschluss dieses Kapitels und als Übergang zum nächsten folgt
+    eine kurze Erläuterung der eingesetzten Techniken und Technologien,
+    mit denen die bisher in diesem Kapitel beschriebene und dargestellte
+    Gestaltung von <i>OWLisch</i> letztlich in der App umgesetzt wurde.
+</p>
+<p>
+    Da die App, wie in der Einleitung erwähnt, mit Web-Technologien
+    umgesetzt werden sollte, wurden sogenannte <i>Cascading Style Sheets</i>,
+    kurz <i>CSS</i>, eingesetzt. CSS gilt als die Standard
+    Stylesheet-Spache im World Wide Web und erlaubt es, mittels
+    einer Reihe von Eigenschaften und Anweisungen sämtliche Elemente
+    einer Website (oder in diesem Fall einer App) zu gestalten.
+</p>
+<p>
+    Bei <i>OWLisch</i> kam zusätzlich zu gewöhnlichem CSS noch
+    <i>LESS CSS</i> zum Einsatz; dabei handelt es sich um einen sogenannten
+    <i>CSS-Präprozessor</i>, der CSS um eine Reihe von neuen Features
+    erweitert und eine effizientere und flexiblere Entwicklung ermöglicht.
+    Dabei fügt <i>LESS</i> der Sprache keine neuen Eigenschaften im
+    eigentlichen Sinne hinzu, sondern ändert lediglich die Art, wie sie
+    geschrieben wird, indem z.B. der Einsatz von Variablen und
+    Verschachtelungen ermöglicht wird, um redudante Wiederholungen im
+    Code zu minimieren. <i>LESS</i> wird durch einen <i>Compiler</i>
+    stets zu regulärem CSS konvertiert.<!-- @import footnote-11 -->
+</p>
+<p>
+    Ein Beispiel für den Einsatz von <i>LESS</i> sind die zuvor erwähnten
+    Schriftgrößen innerhalb der App <a href="#chapter-3-3">siehe 3.3</a>:
+    Sie sind als Variablen mit eigenem Namen definiert und können so
+    im gesamten Stylesheet des Projektes unter diesem Namen verwendet werden,
+    ohne die entsprechenden Pixelwerte ständig zu wiederholen. So wird
+    in <i>OWLisch</i> mit allen Werten verfahren; von Farben, über
+    Schriftgrößen bis hin zu Innen- und Außenabständen, was die Umsetzung
+    einer konsistenten Gestaltung erleichtert.
+</p>
+<p>
+    Um CSS in Kombination mit HTML einsetzen zu können, bedarf es
+    sogenannter <i>Selektoren</i>, mit denen CSS-Eigenschaften auf
+    ausgewählte HTML-Elemente angewandt werden können. In <i>OWLisch</i>
+    wurden ausschließlich <i>Klassen</i>-Selektoren verwendet, z.B.
+    <code>&lt;nav class="tabbar"&gt;</code>, was mittels CSS mit
+    <code>.tabbar { ... }</code> selektiert werden kann. Ein allgemeines
+    Problem beim Entwickeln einer Website oder App ist dabei die Benennung
+    dieser Klassen; hier kann sehr schnell Chaos und Unübersichtlichkeit
+    entstehen, wenn keine konsistente Namenskonvention verwendet wird.
+</p>
+<p>
+    In <i>OWLisch</i> wurde daher auf die bekannte Namenskonvention
+    <i>BEM</i>, kurz für <i>Block Element Modifier</i>, zurückgegriffen.
+    Mit dieser Methode werden überge-ordnete Elemente als <i>Blöcke</i>
+    definiert, die in sich geschlossen und unabhängig von anderen
+    <i>Blöcken</i> gestaltet werden und als eigenständige und
+    wiederverwendbare Entitäten gelten. Innerhalb dieser <i>Blöcke</i>
+    gibt es <i>Elemente</i>, die nicht eigenständig existieren können
+    und stets zu ihrem übergeordneten <i>Block</i> gehören. Und schließlich
+    gibt es <i>Modifikatoren</i>, die einen <i>Block</i> oder ein
+    <i>Element</i> modifizieren, ohne eine neue Entität zu
+    definieren:<!-- @import footnote-10 -->
+</p>
+<p>
+    <code>.block</code>
+    <code>.block__element</code>
+    <code>.block--modifier</code>
+    <code>.block__element--modifier</code>
+</p>
+<p>
+    Ein Beispiel aus <i>OWLisch</i> für die Anwendung dieser Konvention
+    ist die <i>Tab Bar</i>, die als <i>Block</i> gilt, während die
+    darin enthaltenen <i>Tabs</i> <i>Elemente</i> darstellen und ein
+    aktiver <i>Tab</i> um einen <i>Modifikator</i> erweitert wird:
+</p>
+<pre>
+&lt;nav class="tabbar"&gt;
+    &lt;ul class="tabbar__list"&gt;
+        &lt;li class="tabbar__tab tabbar__tab--active"&gt;...&lt;/li&gt;
+        ...
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</pre>
+<p>
+    Für die Gestaltung dieses Beispiels mit CSS ergibt sich aus dem
+    Zusam-menspiel von <i>LESS</i> und <i>BEM</i> ein weiterer Vorteil;
+    durch den Einsatz der erwähnten Verschachtelung und dem
+    <code>&</code>-Operator in <i>LESS</i>, der sich stets auf den
+    <i>Selektor</i> aus der übergeordneten Ebene bezieht, lassen sich
+    unnötige Wiederholungen im Code reduzieren:
+</p>
+<pre>
+// CSS
+.tabbar { ... }
+.tabbar__tab { ... }
+.tabbar__tab--active { ... }
 
+// LESS
+.tabbar {
+    &__tab {
+        &--active { ... }
+    }
+}
+</pre>
+<p>
+    Zusätzlich zu dieser Namenskonvention wurden alle definierten
+    <i>Blöcke</i> in separate Dateien aufgespalten, die mit <i>LESS</i>
+    und der dazugehörigen Master-Datei <code>app.less</code> zu einer
+    einzigen CSS-Datei kompiliert werden; dies erlaubt eine
+    übersichtliche Strukturierung des Quellcodes und ein schnelles
+    Auffinden von Code in den entsprechenden Dateien unter
+    <code>src/less/app/</code>:
+</p>
+<div class="columns columns-2">
+    <ol>
+        <li><code>app.less</code></li>
+        <li><code>block-badge.less</code></li>
+        <li><code>block-body.less</code></li>
+        <li><code>block-button.less</code></li>
+        <li><code>block-chart.less</code></li>
+        <li><code>block-dropdown.less</code></li>
+        <li><code>block-list.less</code></li>
+        <li><code>block-navigationbar.less</code></li>
+        <li><code>block-notice.less</code></li>
+        <li><code>block-play.less</code></li>
+        <li><code>block-progressbar.less</code></li>
+        <li><code>block-quiz.less</code></li>
+        <li><code>block-slider.less</code></li>
+        <li><code>block-stars.less</code></li>
+        <li><code>block-statistics.less</code></li>
+        <li><code>block-tabbar.less</code></li>
+        <li><code>block-term.less</code></li>
+        <li><code>block-title.less</code></li>
+        <li><code>block-view.less</code></li>
+        <li><code>block-viewport.less</code></li>
+    </ol>
+</div>
+<p>
+    Ergänzt werden diese Dateien durch mehrere Konfigurations-Dateien,
+    in denen etwa Farben, Fonts, Variablen und Animationen definiert
+    werden, die global gültig und damit unabhängig von den <i>Blöcken</i>
+    sind:
+</p>
+<div class="columns columns-2">
+    <ol>
+        <li><code>config-animations.less</code></li>
+        <li><code>config-colors.less</code></li>
+        <li><code>config-font.less</code></li>
+        <li><code>config-mixins.less</code></li>
+        <li><code>config-variables.less</code></li>
+    </ol>
+</div>
+<p>
+    Bei der Umsetzung der Gestaltung von <i>OWLisch</i> wurde
+    außerdem darauf geachtet, ausschließlich CSS zu verwenden
+    und nicht auf Grafiken zurück-zugreifen; Schatten, Rundungen,
+    Verläufe, Rahmen und Hintergründe werden mit CSS erzeugt und bleiben
+    so skalierbar, unabhängig von der Größe oder Pixeldichte des
+    Bildschirms und einfach zu manipulieren, während gleichzeitig
+    die Dateigröße der App drastisch reduziert wird. Tatsächliche Grafiken,
+    wie etwa die Bilder im Quiz
+    <a href="#figure-21">siehe Abbildung 21</a>, liegen natürlich dennoch
+    als <code>.jpg</code>-Dateien vor.
+</p>
+<p>
+    Für die Kompilierung und Minimierung von <i>LESS</i>-Code und
+    das Zusam-menfügen der Dateien wurde <i>Gulp</i>, ein sogenannter
+    <i>Task-Runner</i>, verwendet; die genannten Aufgaben werden so
+    voll automatisiert bei jeder Änderung einer Quell-Datei ausgeführt.
+    Da <i>Gulp</i> auch für den restlichen Code der App von Bedeutung ist,
+    folgt eine nähere Erklärung erst im nächsten Kapitel dieser Arbeit.
+    Der vollständige <i>LESS</i>-Quellcode der App findet sich im Anhang.
 </p>
