@@ -2216,7 +2216,133 @@ var Modul = (function() {
     <!-- Kapitel 4.3 -->
 <h3 id="chapter-4-3">Daten & Dateien</h3>
 <p>
-    Folgt...
+    Neben den bisher beschriebenen JavaScript-Dateien, die den
+    Kern des Programms bilden, und den in vorigen Kapiteln beschriebenen
+    Favicons/App-Icons und CSS-Dateien werden sowohl beim Start, als auch
+    während der Aus-führung der App zusätzliche Dateien geladen und
+    Daten geschrieben.
+</p>
+<p>
+    Einerseits handelt es sich dabei um <i>Template</i>-Dateien;
+    dies sind einzelne HTML-Dateien, die bestimmte Elemente der App
+    und zusätzliche Anweisungen für <i>Mustache</i> beinhalten, um
+    dynamisch Inhalte einzufügen und die Struktur der App zum Start
+    zu erzeugen. Diese Templates werden zu Beginn per <i>AJAX</i>
+    (<i>Asynchronous JavaScript and XML</i>)
+    geladen und vom <i>Template-Modul</i> zwischengespeichert.
+    Ein Beispiel für ein solches Template ist <code>tmpl/tabbar.html</code>;
+    diesem wird innerhalb des <i>TabBar-Moduls</i> eine Liste mit den
+    in der App vorhandenen Tabs übergeben, woraufhin die fertig
+    generierte <i>Tab Bar</i> in die App eingefügt wird:
+</p>
+<pre>
+&lt;ul class="tabbar__list tabbar__list--hidden" data-tabbar="list"&gt;
+    {{#.}}
+    &lt;li class="tabbar__tab" data-tabbar="tab" data-panel="{{name}}"&gt;
+        &lt;i class="tabbar__icon icon icon--{{icon}}"&gt;&lt;/i&gt;
+        &lt;span class="tabbar__label"&gt;{{label}}&lt;/span&gt;
+    &lt;/li&gt;
+    {{/.}}
+&lt;/ul&gt;
+&lt;div class="tabbar__status"&gt;&lt;/div&gt;
+</pre>
+<p>
+    Um die Daten der Wörterbücher, die in <i>OWLisch</i> zur Verfügung
+    stehen, von der eigentlichen Programmierung der App zu trennen,
+    wurden zusätzliche Dateien im <code>JSON</code>-Format (<i>JavaScript
+    Object Notation</i>) angelegt, die ebenfalls per <i>AJAX</i> zu Beginn
+    geladen werden. Dabei verfügt jedes Wörterbuch (z.B. <i>Ostwestfälisch</i>)
+    über ein eigenes Verzeichnis, in dem sowohl die <code>JSON</code>-Datei,
+    als auch die mit dem Wörterbuch verknüpften Bild- und Audio-Dateien
+    enthalten sind.
+</p>
+<p>
+    Die Bild-Dateien liegen als <code>.jpeg</code> mit einer Größe von
+    <code>280x280px</code> und die Audio-Dateien im <code>.mp3</code>-Format
+    vor. Sämtliche in der finalen Version der App enthaltenen Bilder stammen
+    aus der freien Bild-Datenbank <i>FreeImages</i><cite class="line">
+    Siehe:
+    <a href="http://www.freeimages.com">
+       http://www.freeimages.com
+       (18.01.2017)
+    </a>
+</cite>
+,
+    alle Audio-Dateien wurden freundlicherweise von <i>Miriam Belke</i>, die
+    schon an der Ent-wicklung des ersten Prototypen beteiligt war
+    <a href="#chapter-2-1">siehe 2.1</a>, eingesprochen und bearbeitet.
+    Die <code>JSON</code>-Datei eines Wörterbuches enthält alle für
+    das Wörterbuch definierten Begriffe mitsamt Übersetzung, Beschreibungstext
+    und Antwort-möglichkeiten im Quiz. Die enthaltenen Begriffe müssen
+    dabei einem bestimmten Format folgen:
+</p>
+<pre>
+{
+    "alias"           : "kurzname",
+    "article"         : "Artikel, optional",
+    "term"            : "Anzeigename",
+    "translation"     : "Übersetzung",
+    "info"            : "Beschreibungstext",
+    "answersNative"   : ["Deutsche Antwort", "..."],
+    "answersForeign"  : ["Fremdsprachen-Antwort", "..."],
+    "answersPictures" : ["Bild-Datei", "..."]
+}
+</pre>
+<p>
+    Die Datei selbst (z.B. <code>data/owl/owl.json</code>) kann beliebig
+    viele Begriffe enthalten und die App kann beliebig viele Wörterbücher
+    enthalten, wodurch <i>OWLisch</i> sehr leicht erweiterbar ist. Testweise
+    ist in der App auch ein bayerisches Wörterbuch mit zehn Begriffen
+    enthalten, das über den <i>Mehr</i>-Tab ausgewählt werden kann
+    <a href="#figure-13">siehe Abbildung 13</a>. Die <code>JSON</code>-Dateien
+    und Bilder werden mit <i>Gulp</i> zusätzlich minimiert/komprimiert und
+    bei der Ausführung von <i>OWLisch</i> im Browser nur bei Bedarf geladen,
+    um die Datenlast und Ladezeit für den Nutzer zu reduzieren. In der
+    Anwendung als installierte App liegen alle Dateien ohnehin lokal auf
+    dem Gerät vor, sodass keine merklichen Ladezeiten entstehen.
+</p>
+<p>
+    Die letzte Art von Daten, die in <i>OWLisch</i> vorkommen, sind
+    die Fortschritts-Daten des Nutzers; diese werden jedoch nicht als
+    Dateien gespeichert, sondern im sogenannten <i>LocalStorage</i>
+    des Browsers. Dieser verhält sich ähnlich zum <i>Cache</i>, nur
+    dass hier auch persistente Daten (in einem begrenzten Rahmen)
+    abgelegt werden können, die bei jedem erneuten Besuch der App
+    (in der Ausführung als Browser-App) weiterhin vorhanden sind.
+</p>
+<p>
+    Bei der Konvertierung von <i>OWLisch</i> zu einer nativen App
+    mittels <i>Cordova</i> dient der <i>LocalStorage</i> jedoch
+    ebenfalls als geeigneter Speicherort für die Daten; sie werden
+    dann lokal auf dem Gerät des Benutzers gespeichert und können in
+    <i>iOS</i> sogar per <i>iCloud</i> zwischen mehreren Geräten
+    synchronisiert werden. Zwar liegt das Maximum der gespeicherten
+    Daten bei etwa 5MB, was in Anbetracht der geringen Datenmengen
+    von <i>OWLisch</i> jedoch kein Problem darstellt.
+</p>
+<p>
+    Gespeichert werden auf diese Weise die Ergebnisse der zehn letzten
+    Quiz-Runden des Nutzers, die aktuelle Stufe jedes Begriffes aus
+    dem Wörterbuch, der Begriff des Tages mit Datum (jeweils separat für jedes
+    vorhandene Wörterbuch) und das aktuell verwendete Wörterbuch.
+    Beispielhaft können diese Daten fol-gendermaßen aussehen:
+</p>
+<pre>
+{
+    "dictionary": "owl",
+    "owl": {
+        "featured": { "term": "maese", "date": 20170118 },
+        "progress": { "maese": { "lvl": 3, "fail": 1 }, ... },
+        "scores"  : [1, 3, 1, 7, 7, 0, 3, 7, 5, 9]
+    }
+}
+</pre>
+<p>
+    Innerhalb der App können diese Daten durch den Benutzer auch
+    jederzeit gelöscht werden, um noch einmal von vorne anzufangen
+    <a href="#figure-13">siehe Abbildung 13</a>. Beim Ändern
+    des Wörterbuches bleiben die Daten jedoch verlustfrei bestehen,
+    sodass der Nutzer beliebig hin und her wechseln kann.
 </p>
     <!-- Kapitel 4.4 -->
 <h3 id="chapter-4-4">Sonstige Hilfsmittel</h3>
