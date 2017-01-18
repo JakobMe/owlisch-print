@@ -171,7 +171,7 @@
             <li><a href="#figure-23">Detailansicht: Listen</a></li>
             <li><a href="#figure-24">Detailansicht: Diagramme</a></li>
             <li><a href="#figure-25">App-Icon von OWLisch</a></li>
-            <li><a href="#figure-26">Programmstruktur der App</a></li>
+            <li><a href="#figure-26">Flussdiagramm zum Mediator-Pattern</a></li>
         </ol>
     </div>
 </section>
@@ -297,7 +297,7 @@
 </p>
 <p>
     Im Hintergrund, für den Spieler weitestgehend unsichtbar, sollte
-    ein einfaches Karteikartensystem implementiert werden; Begriffe,
+    ein ein-faches Karteikartensystem implementiert werden; Begriffe,
     die falsch erraten werden, sollten häufiger im Quiz auftauchen und
     so in den Vordergrund rücken, bis der Spieler die entsprechende
     Frage richtig beantwortet.
@@ -522,7 +522,7 @@
     noch um eine Navigation und Inhaltsstruktur erweitert werden.
     Aufgrund der vorhandenen persönlichen Geräte und der bereits
     gemachten Erfahrungen der Gruppenmitgliedern mit unterschiedlichen
-    Smartphones und Betriebssystemen, wurde <i>iOS</i> als Zielplattform
+    Smartphones und Betriebssystemen, wurde <i>iOS</i> als Ziel-plattform
     für den ersten Prototypen ausgewählt, mit dem <i>iPhone 5</i> (und
     später dem <i>iPhone SE</i>) als Testgerät.
 </p>
@@ -2028,7 +2028,7 @@ herangezogen; hier sind
         Eine sogenannte <i>Templating-Engine</i>, die es ermöglicht,
         mittels Vorlagen dynamisch HTML-Inhalt in die App einzufügen;
         der Name entstammt der Ähnlichkeit der angewandten Syntax
-        <code>{{}}</code> mit einem Schnurrbart.
+        <code>{{...}}</code> mit einem Schnurrbart.
     </li>
 </ul>
 <p>
@@ -2078,17 +2078,150 @@ herangezogen; hier sind
     <!-- Kapitel 4.2 -->
 <h3 id="chapter-4-2">Module & Struktur</h3>
 <p>
-    Folgt...
+    Bei der Programmierung von <i>OWLisch</i> wurden die verschiedenen
+    Funk-tionalitäten der App in <i>Module</i> gegliedert, die größtenteils
+    in sich geschlossen sind und unabhängig von anderen <i>Modulen</i>
+    agieren. Dabei gibt es <i>Kernmodule</i>, die spezifische Elemente
+    der App, wie z.B. das <i>Quiz</i> oder die <i>Tab Bar</i>, eigenständig
+    steuern, und <i>Hilfsmodule</i>, die zusätzliche und global
+    verfügbare Funktionalitäten für alle <i>Module</i> bereitstellen.
+    Dabei wurde jedes <i>Modul</i> in eine eigene Datei ausgelagert, wobei
+    sämtlicher Quellcode mittels <i>Gulp</i> schließlich zu einzelnen Datei
+    zusammengefügt wird <a href="#chapter-4-4">siehe 4.4</a>. Die
+    <i>Kernmodule</i> umfassen folgende Dateien und deren Funktionen:
 </p>
+<div class="columns columns-1">
+<ol>
+    <li><code>app.js</code>
+        Initialisiert und startet die App
+    </li>
+    <li><code>data.js</code>
+        Lädt und speichert lokale Daten und Dateien
+    </li>
+    <li><code>dictionary.js</code>
+        Steuert das <i>Wörterbuch</i> der App
+    </li>
+    <li><code>featured.js</code>
+        Steuert den <i>Begriff des Tages</i>
+    </li>
+    <li><code>more.js</code>
+        Steuert den <i>Mehr</i>-Tab der App
+    </li>
+    <li><code>navigationbar.js</code>
+        Steuert die <i>Navigation Bar</i> der App
+    </li>
+    <li><code>quiz.js</code>
+        Steuert das <i>Quiz</i> der App
+    </li>
+    <li><code>statistics.js</code>
+        Steuert die <i>Statistik</i> der App
+    </li>
+    <li><code>tabbar.js</code>
+        Steuert die <i>Tab Bar</i> der App
+    </li>
+    <li><code>view.js</code>
+        Steuert die <i>View</i> der App
+    </li>
+</ol>
+</div>
+<p>
+    Diese <i>Module</i> wurden im sogenannten <i>Revealing Module Pattern</i>
+    program-miert; die Variablen, Methoden und Funktionen der <i>Module</i>
+    sind dadurch vor Zugriff von außen geschützt, es sei denn, sie werden
+    über eine öffentliche Schnittstelle offenbart. Eine Implementierung
+    dieser Methode sieht beispielhaft folgendermaßen aus:
+</p>
+<pre>
+var Modul = (function() {
+    function _private() { ... }    // Private Funktion
+    function public() { ... }      // Öffentliche Funktion
+    return { public: public };     // Öffentliche Schnittstelle
+})();
+</pre>
+<p>
+    Die individuellen <i>Kernmodule</i> können dabei nicht direkt
+    miteinander inter-agieren oder kommunizieren, sondern sind voneinander
+    abgeschottet und funk-tionieren auch ohne die Existenz anderer
+    <i>Kernmodule</i>. Für den Austausch von Daten und Nachrichten
+    zwischen ihnen steht stattdessen ein sogenannter <i>Medi-ator</i>
+    zur Verfügung, der in <i>OWLisch</i> zu den <i>Hilfsmodulen</i> gehört;
+    jedes <i>Modul</i> kann dabei beim <i>Mediator</i> über <i>Kanäle</i>
+    Nachrichten senden und wiederum selbst <i>Kanäle</i> abonnieren, ohne
+    zu wissen, welche <i>Module</i> auf Nachrichten reagieren oder
+    überhaupt existieren.
+</p>
+<div class="bottom">
+    <!-- Abbildung 26 -->
+<figure id="figure-26">
+    <img src="img/figure-26.png" class="figure figure-wireframe" />
+    <figcaption>
+        <p>Flussdiagramm zum Mediator-Pattern</p>
+    </figcaption>
+</figure>
+</div>
+<p>
+    Im hier gezeigten Beispiel <a href="#figure-26">siehe Abbildung 26</a>
+    wird schematisch die Kommu-nikation zwischen dem <i>Data-Modul</i> und
+    dem <i>Quiz-Modul</i> verdeutlicht; wird beispielsweise vom Nutzer
+    während einer Quiz-Runde ein Begriff korrekt erraten, wird vom
+    <i>Quiz-Modul</i> eine Nachricht mit einem Datenanhang im Kanal
+    <code>terms:update</code> über den <i>Mediator</i> gesendet. Das
+    <i>Data-Modul</i> reagiert auf diese Nachricht, indem die neuen
+    Daten gespeichert werden und wiederum eine <i>Mediator</i>-Nachricht
+    mit den aktualisierten Daten gesendet wird, die von mehreren anderen
+    <i>Modulen</i> genutzt wird, um ihre eigene Anzeige zu aktualisieren
+    (das <i>Statistics-Modul</i> aktualisiert so z.B. die dargestellten
+    Diagramme).
+</p>
+<p>
+    Auf diese Weise bleibt die App flexibel und skalierbar; es können
+    beliebige <i>Module</i> entfernt oder hinzugefügt werden, ohne die
+    vorhandenen umschreiben zu müssen. Gesendete Nachrichten über den
+    <i>Mediator</i> können von beliebig vielen <i>Modulen</i> empfangen
+    und eigenständig verarbeitet werden, ohne mit anderen Elementen
+    der App zu kollidieren, und neue <i>Module</i> müssen lediglich
+    mit dem <i>Mediator</i> verknüpft werden, um die App um neue
+    Funktionalitäten zu erweitern.
+</p>
+<p>
+    Neben den bereits genannten <i>Kernmodulen</i> gibt es in <i>OWLisch</i>
+    noch folgende <i>Hilfsmodule</i>, die zusätzliche, allgemeingültige
+    Funktionen bereitstellen (wie der <i>Mediator</i>). Für eine
+    ausführliche Beschreibung aller hier genannten <i>Module</i> und den
+    darin enthaltenen Methoden und Funktionen steht im Anhang dieser
+    Arbeit eine umfangreiche JavaScript-Dokumentation zur Verfügung.
+</p>
+<div class="columns columns-1">
+    <ol>
+        <li><code>config.js</code>
+            Globale Konfigurationen und Einstellungen
+        </li>
+        <li><code>mediator.js</code>
+            Steuert Kommunikation zwischen Modulen
+        </li>
+        <li><code>play.js</code>
+            Steuert das Abspielen von Audio-Dateien
+        </li>
+        <li><code>slider.js</code>
+            Stellt Funktionen für animierte Slider bereit
+        </li>
+        <li><code>template.js</code>
+            Fügt Inhalte mit <i>mustache.js</i> in die App ein
+        </li>
+        <li><code>util.js</code>
+            Allgemeine Hilfsfunktionen
+        </li>
+    </ol>
+</div>
     <!-- Kapitel 4.3 -->
 <h3 id="chapter-4-3">Daten & Dateien</h3>
 <p>
-    
+    Folgt...
 </p>
     <!-- Kapitel 4.4 -->
 <h3 id="chapter-4-4">Sonstige Hilfsmittel</h3>
 <p>
-    
+    Folgt...
 </p>
 </section>
         <!-- Kapitel 5 -->
