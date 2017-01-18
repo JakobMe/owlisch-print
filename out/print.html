@@ -2,7 +2,7 @@
 <html dir="ltr" lang="de">
 <head>
 
-                                                                                                                                                                                                                
+                                                                                                                                                                                                                                
     <!-- Meta -->
     <title>OWLisch – Entwicklung und Gestaltung einer Lern-App</title>
     <meta name="author" content="Jakob Metzger">
@@ -125,10 +125,12 @@
             </li>
             <li>
                 <a href="#chapter-4">Programmierung <br/>der App</a>
-                <!--
                 <ol class="toc-sub">
+                    <li><a href="#chapter-4-1">Fremdcode & Frameworks</a></li>
+                    <li><a href="#chapter-4-2">Module & Struktur</a></li>
+                    <li><a href="#chapter-4-3">Daten & Dateien</a></li>
+                    <li><a href="#chapter-4-4">Sonstige Hilfsmittel</a></li>
                 </ol>
-                -->
             </li>
             <li><a href="#chapter-5">Fazit</a></li>
         </ol>
@@ -169,6 +171,7 @@
             <li><a href="#figure-23">Detailansicht: Listen</a></li>
             <li><a href="#figure-24">Detailansicht: Diagramme</a></li>
             <li><a href="#figure-25">App-Icon von OWLisch</a></li>
+            <li><a href="#figure-26">Programmstruktur der App</a></li>
         </ol>
     </div>
 </section>
@@ -1411,7 +1414,7 @@ herangezogen; hier sind
     tauchen daher in diversen Variationen überall in der App auf;
     die gängigsten Varianten sind nebenstehend vergrößert dargestellt
     <a href="#figure-20">siehe Abbildung 20</a>. Dabei findet eine
-    Unterscheidung zwischen <i>Titeln</i>, <i>Statustexten</i>,
+    Unter-scheidung zwischen <i>Titeln</i>, <i>Statustexten</i>,
     <i>Fließtexten</i> und <i>Hinweisen</i> statt:
 </p>
 <p>
@@ -1490,7 +1493,7 @@ herangezogen; hier sind
     dargestellt, während <i>Hinweise</i> in grauer Schrift auf dem
     ebenfalls grauen Hintergrund der <i>View</i>, zentriert und kursiv
     gestaltet sind, um sie in den Hintergrund zu rücken und nicht
-    unnötig Aufmerksamkeit auf sie zu lenken. <i>Hinweise</i> dienen
+    unnötig Aufmerk-samkeit auf sie zu lenken. <i>Hinweise</i> dienen
     als kleine zusätzliche Informations-Häppchen, die die Funktionsweise
     der App für neue Nutzer kurz und knapp am entsprechenden Ort erklären
     sollen, ohne zwingend die ausführlichere Hilfe der App aufrufen zu
@@ -1979,6 +1982,124 @@ herangezogen; hier sind
             mit JavaScript, HTML und Cordova grob angerissen.
         </p>
     </div>
+    <!-- Kapitel 4.1 -->
+<h3 id="chapter-4-1">Fremdcode & Frameworks</h3>
+<p>
+    Bevor die eigentliche Programmierung von <i>OWLisch</i> näher
+    erläutert wird, folgt zunächst ein Überblick über den Fremdcode
+    und die Frameworks, die bei der Entwicklung verwendet wurden.
+
+    Im JavaScript-Code innerhalb der App selbst wurde dabei auf
+    vier Plugins zurückgegriffen, die alle auf
+    <i>GitHub</i><cite class="line">
+    Siehe:
+    <a href="https://github.com">
+       https://github.com
+       (18.01.2017)
+    </a>
+</cite>
+ zur Verfügung stehen und
+    unter der <i>MIT</i> Lizenz veröffentlicht wurden:
+</p>
+<ul>
+    <li>
+        <code>jQuery</code> <i>von The jQuery Foundation</i>:<br/>
+        Hierbei handelt es sich um eine umfangreiche Bibliothek an
+        Hilfsfunktionen, die das Manipulieren und Verändern des
+        HTML-Dokuments erleichtern und beschleunigen; eine der weltweit
+        am häufigsten genutzten JavaScript-Bibliotheken.
+    </li>
+    <li>
+        <code>FastClick</code> <i>von FT Labs</i>:<br/>
+        Für gewöhnlich gibt es bei Browsern auf Mobilgeräten eine
+        Verzögerung von etwa 300 ms zwischen dem Berühren des Bildschirms
+        und dem Ausführen der damit verbundenen Aktion, um zu erkennen,
+        ob der Nutzer einen Doppelklick ausführt. <i>FastClick</i> entfernt
+        diese Verzögerung, die es bei nativen Apps nicht gibt.
+    </li>
+    <li>
+        <code>jquery-bemhelpers</code> <i>von Max Shirshin</i>:<br/>
+        Ein kleines Plugin für <i>jQuery</i>, das den Umgang mit
+        der CSS-Namenskonvention <i>BEM</i> <a href="#chapter-3-5">siehe 3.5</a>
+        in JavaScript erleichtert.
+    </li>
+    <li>
+        <code>mustache.js</code> <i>von Jan Lehnardt</i>:<br/>
+        Eine sogenannte <i>Templating-Engine</i>, die es ermöglicht,
+        mittels Vorlagen dynamisch HTML-Inhalt in die App einzufügen;
+        der Name entstammt der Ähnlichkeit der angewandten Syntax
+        <code>{{}}</code> mit einem Schnurrbart.
+    </li>
+</ul>
+<p>
+    Was <i>OWLisch</i>, das bis zu diesem Punkt lediglich eine
+    gewöhnliche Website oder Webapp ist, aber zu einer echten App
+    macht, die auf <i>iOS</i>-Geräten installiert und theoretisch
+    über den <i>Apple App-Store</i> heruntergeladen werden kann,
+    ist das Framework <i>Cordova</i> von <i>The Apache Software
+    Foundation</i>. Dabei handelt es sich um ein frei verfügbares
+    Open-Source Framework, veröffentlicht unter der <i>Apache-2.0</i> Lizenz,
+    das eine mit JavaScript, HTML und CSS programmierte Webapp als native
+    App verpackt und dabei alle verbeiteten Plattformen und mobilen
+    Betriebs-systeme wie <i>iOS</i>, <i>Android</i> und <i>Windows Phone</i>
+    unterstützt.<cite class="line">
+    Vgl. The Apache Software Foundation, 2017: Apache Cordova.<br/>
+    <a href="https://cordova.apache.org">
+       https://cordova.apache.org
+       (18.01.2017)
+    </a>
+</cite>
+</p>
+<p>
+    Die Installation und Ausführung von <i>Cordova</i> erfolgt dabei
+    über die Java-Script-Laufzeitumgebung <i>node.js</i><cite>
+    Siehe:
+    <a href="https://nodejs.org">
+       https://nodejs.org
+       (18.01.2017)
+    </a>
+</cite>
+    und dem darin enthaltenen Paketverwal-tungstool <i>NPM</i>
+    (<i>Node Package Manager</i>). Im Falle von <i>OWLisch</i> wird durch
+    dieses Framework ein Projekt für die Entwicklungsumgebung <i>Xcode</i>
+    von <i>Apple</i> erzeugt, über die, in Kombination mit einem gültigen
+    <i>Apple-Entwickler-Account</i>, die In-stallation auf einem <i>iPhone</i>
+    oder das Ausführen in einem <i>iOS</i>-Emulator stattfinden kann (was
+    jedoch nur auf dem <i>macOS</i> Betriebssystem funkioniert).
+    Neben <i>Cordova</i> selbst wurden noch offizielle Plugins des selben
+    Entwicklers für das Framework verwendet, die zusätzliche Funkionen
+    innerhalb der App aktivieren:
+</p>
+<ol>
+    <li><code>cordova-plugin-dialog</code></li>
+    <li><code>cordova-plugin-keyboard</code></li>
+    <li><code>cordova-plugin-statusbar</code></li>
+</ol>
+    <!-- Kapitel 4.2 -->
+<h3 id="chapter-4-2">Module & Struktur</h3>
+<p>
+    Folgt...
+</p>
+    <!-- Kapitel 4.3 -->
+<h3 id="chapter-4-3">Daten & Dateien</h3>
+<p>
+    
+</p>
+    <!-- Kapitel 4.4 -->
+<h3 id="chapter-4-4">Sonstige Hilfsmittel</h3>
+<p>
+    
+</p>
+</section>
+        <!-- Kapitel 5 -->
+<section>
+    <div class="columns columns-1 reset-h3">
+        <h2 id="chapter-5" class="intro">Fazit</h2>
+        <p class="intro">
+            Als abschließendes Kapitel folgt ein Fazit und eine
+            Zusammenfassung der vorliegenden Arbeit.
+        </p>
+    </div>
 </section>
     </article>
 
@@ -2029,6 +2150,12 @@ herangezogen; hier sind
                 <a href="http://getbem.com/introduction/">
                    http://getbem.com/introduction/
                    (16.01.2017)
+                </a>
+            </li>
+            <li>The Apache Software Foundation, 2017: Apache Cordova.<br/>
+                <a href="https://cordova.apache.org">
+                   https://cordova.apache.org
+                   (18.01.2017)
                 </a>
             </li>
             <li>Vontobel, Peter, 2006: Didaktisches Design aus lernpsychologischer

@@ -112,7 +112,7 @@ blockquote {
 }
 
 // Links im Text
-p, ul:not(.literature) {
+p, ol:not(.literature), ul {
     a {
         white-space: nowrap;
         font-style: italic;
@@ -148,7 +148,6 @@ ul {
     margin: 0 0 @margin-paragraph-v 0;
     list-style-type: none;
     text-align: left;
-    page-break-inside: avoid;
     border-left: @size-line solid @color-line;
     margin-left: (@margin-title-h * 2);
     margin: 0;
@@ -156,6 +155,7 @@ ul {
     // Listenelement
     li {
         position: relative;
+        page-break-inside: avoid;
         padding: 0 0 0 (@margin-title-h * 2);
         margin: 0 0 (@font-size-medium) 0;
 
