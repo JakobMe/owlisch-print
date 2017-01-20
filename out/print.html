@@ -197,12 +197,12 @@
     Gestaltung und Umsetzung einer Lern-App für Dialektwörter aus
     Ostwestfalen-Lippe beteiligt. Dabei entstand ein erster
     funktionsfähiger Prototyp der App <i>OWLisch</i>, an dessen
-    Programmierung ich maßgeblich mitgewirkt habe.
+    Programmierung ich maß-geblich mitgewirkt habe.
 </p>
 <p>
     Bereits beim Entwickeln dieser ersten rudimentären Version habe ich
     einen tieferen Einblick sowohl in die Programmierung von Web-Apps
-    mit der Programmiersprache JavaScript, als auch in die didaktische
+    mit der Pro-grammiersprache JavaScript, als auch in die didaktische
     Konzeption einer solchen Lern-App erhalten. Mit dieser Arbeit wollte
     ich noch einen Schritt weiter gehen und aus der bereits bestehenden
     Idee ein fertiges Produkt erstellen, das auf aktuellen Technologien
@@ -215,7 +215,7 @@
     Das Ziel dieser Arbeit war es, eine lauffähige iOS-Version von
     <i>OWLisch</i> zu entwickeln. Dabei sollte die App von Grund auf neu
     programmiert werden; ich entschied mich allerdings dazu, die App
-    nicht in der von Apple kreierten Programmiersprache <i>Swift</i> zu
+    nicht in der von Apple kreierten Pro-grammiersprache <i>Swift</i> zu
     entwickeln, sondern einen Hybrid-Ansatz zu wählen, um größtmögliche
     Flexibilität zu erreichen.
 </p>
@@ -231,8 +231,8 @@
 <p>
     Der eigentliche Inhalt und das Konzept des bestehenden Prototyps
     sollten dabei nur geringfügig verändert oder erweitert werden;
-    die in dieser Arbeit enthaltene Beschreibung der Konzeption und
-    Gestaltung stimmen daher größ-tenteils mit der Vorgängerversion
+    die in dieser Arbeit ent-haltene Beschreibung der Konzeption und
+    Gestaltung stimmen daher größten-teils mit der Vorgängerversion
     überein.
 </p>
     <!-- Kapitel 1.3 -->
@@ -244,13 +244,13 @@
     grafische Gestaltung der App näher beleuchtet und im Detail
     beschrieben, wobei ein Vergleich zu den <i>iOS Human Interface
     Guidelines</i> gezogen und eine erste Verbindung zum dazugehörigen
-    Quellcode hergestellt wird.
+    Quell-code hergestellt wird.
 </p>
 <p>
     Im nächsten Kapitel des Hauptteils wird die eigentliche
     Programmierung der App näher beschrieben; dabei werden die
-    eingesetzten Technologien und Bibliotheken, der modulare Aufbau
-    des Programms und die verwendeten Programmiermuster in der Sprache
+    eingesetzten Technologien und Bibli-otheken, der modulare Aufbau
+    des Programms und die verwendeten Program-miermuster in der Sprache
     <i>JavaScript</i> präsentiert. Das letzte Kapitel fasst die Arbeit
     zusammen und gibt einen Ausblick auf eine mögliche Fortsetzung des
     Projekts.
@@ -273,7 +273,7 @@
     Tugba Aksakal, Miriam Belke, Melanie Derksen, Franziska Kluge,
     Lisa Kottmann, Kai-Frederik Lüking, Jakob Metzger und Philipp
     Niewöhner. Ziel war es zunächst, ein Konzept für eine Lern-App für
-    Dialektwörter aus Ostwestfalen-Lippe unter Berücksichtigung von
+    Dia-lektwörter aus Ostwestfalen-Lippe unter Berücksichtigung von
     didaktischen Erkenntnissen zu entwickeln; zu diesem Zweck wurden
     während des Seminars interdisziplinäre Gruppen aus verschiedenen
     Studiengängen gebildet (Medien-wissenschaften,
@@ -288,8 +288,8 @@
 </p>
 <p>
     Um das Lernen der ostwestfälischen Vokabeln aufzulockern, wurde ein
-    sogenannter Gamification-Ansatz gewählt – das Anwenden
-    spieltypischer Ele-mente in einem sonst spielfremden Kontext – in
+    so-genannter Gamification-Ansatz gewählt – das Anwenden
+    spieltypischer Elemen-te in einem sonst spielfremden Kontext – in
     Anlehnung an die App <i>Quizduell</i>. Die in der App enthaltenen
     Begriffe sollten als ein Quiz präsentiert werden, das über mehrere
     Schwierigkeitsstufen verfügt und den Spieler bei richtigen Antworten
@@ -309,7 +309,7 @@
     Funktionalitäten erdacht und skizziert werden. Im Fokus stand dabei
     zunächst das Quiz als Hauptbestandteil der App; dieses sollte über
     mehrere Quiz-Typen verfügen, die verschiedene Schwierigkeitsgrade
-    darstellen und dem Spieler sowohl Abwechslung, als auch eine
+    darstellen und dem Spieler so-wohl Abwechslung, als auch eine
     Herausforderung bieten.
 </p>
 <!-- Kapitel 2.2.1 -->
@@ -337,7 +337,7 @@
     </li>
     <li>
         Ein Bild zu einem Begriff mit vier ostwestfälischen Begriffen
-        als Antworten <a href="#figure-2">siehe Abbildung 2</a>.
+        als Antwortmöglichkeiten <a href="#figure-2">siehe Abbildung 2</a>.
     </li>
 </ul>
 <div class="columns columns-2 columns-first">
@@ -360,15 +360,15 @@
     Diese vier Typen sollten dabei jedes Mal zufällig ausgewählt werden.
     Die Bilderrätsel lockern dabei einerseits die sonst stark
     textbasierte App auf und unterstützen andererseits visuelles Lernen
-    und können dem Spieler so eine zusätzliche Erinnerungsstütze bieten,
+    und können dem Spieler so eine zu-sätzliche Erinnerungsstütze bieten,
     wenn der entsprechende Begriff noch einmal im Quiz auftaucht.
 </p>
 <p>
     Wird ein Begriff während dieser ersten Stufe richtig erraten, steigt
     der Spieler für diesen um eine Stufe auf und erhält beim nächsten
     Vorkommen einen neuen Schwierigkeitsgrad. Bei dieser zweiten Stufe
-    wird dem Spieler die hochdeutsche Übersetzung des Begriffs
-    präsentiert, während alle im ost-westfälischen Wort vorkommenden
+    wird dem Spieler die hoch-deutsche Übersetzung des Begriffs
+    präsentiert, während alle im ostwestfälischen Wort vorkommenden
     Buchstaben zufällig gemischt dargestellt sind und in die richtige
     Reihenfolge gebracht werden müssen.
 </p>
@@ -392,14 +392,14 @@
     Hierdurch soll der Spieler die korrekte Schreibweise des
     Begriffes erlernen, erhält durch die Vorgabe der Buchstaben
     allerdings weiterhin eine Hilfestellung, sodass die Lösung
-    durch Knobeln und ausprobieren erreicht werden kann. Über einen
-    vorhandenen „<i>Lösen</i>“-Button kann die Eingabe bestätigt
+    durch Knobeln und Ausprobieren erreicht werden kann. Über einen
+    vorhandenen Button kann die Eingabe bestätigt
     werden <a href="#figure-3">siehe Abbildung 3</a>.
 </p>
 <p>
     Die letzte und somit schwierigste Stufe ähnelt ihrem Vorgänger;
     auch hier wird die hochdeutsche Übersetzung dargestellt, es
-    entfällt jedoch die Hilfestellung. Der Spieler muss den
+    entfällt jedoch die Hilfe-stellung. Der Spieler muss den
     ostwestfälischen Begriff selbstständig mittels einer eingeblendeten
     Tastatur korrekt eingeben. Kommt ein Spieler hier auf die richtige
     Lösung, so wurde der Begriff erfolgreich erlernt
@@ -417,7 +417,7 @@
 <p>
     Das Wörterbuch verfügt sowohl über eine Übersichtsliste aller
     Begriffe <a href="#figure-5">siehe Abbildung 5</a>, als auch über
-    Detailansichten, die vorhandene Bilder und Herkünfte, Zitate und
+    Detailansichten, die vorhandene Bilder und Her-künfte, Zitate und
     Übersetzungen über den Begriff enthalten
     <a href="#figure-6">siehe Abbildung 6</a>. Zusätzlich soll
     hier eine auditive Komponente ergänzt werden, indem alle Begriffe
@@ -446,7 +446,7 @@
 <p>
     Um dem Nutzer beim Starten der App einen ersten Eindruck über die
     Inhalte zu verschaffen und nicht sofort in einen der Menüpunkte zu
-    werfen, kam die Überlegung auf, den <i>Begriff des Tages</i> als
+    werfen, kam die Über-legung auf, den <i>Begriff des Tages</i> als
     Startbildschirm einzusetzen.
 </p>
 <p>
@@ -455,7 +455,7 @@
     (ähnlich wie bei den Wörterbuch-Details), sodass man bereits vor
     dem ersten Spielen des Quiz ein neues Wort kennenlernen kann
     <a href="#figure-7">siehe Abbildung 7</a>. Dieser Begriff wird
-    täglich zufällig gewechselt und kann dem Nutzer somit sowohl
+    täglich zu-fällig gewechselt und kann dem Nutzer somit sowohl
     bereits bekannt, als auch völlig neu sein. Gelernte Begriffe können
     so noch einmal aufgefrischt werden, sodass sie beim nächsten Spiel
     einfacher zu lösen sind.
@@ -482,7 +482,7 @@
     Damit der Nutzer der App zu jeder Zeit einen Überblick über den
     bisher erzielten Lernfortschritt behält, wurde beschlossen, eine
     persönliche Statistik zu implementieren, in der über Diagramme
-    wichtige Informationen dargestellt werden
+    wichtige Informationen dargestellt wer-den
     <a href="#figure-8">siehe Abbildung 8</a>.
 </p>
 <p>
@@ -498,7 +498,7 @@
 <h4 id="chapter-2-2-5">Die Hilfe</h4>
 <p>
     Da trotz sorgfältiger Überlegungen hinsichtlich der Inhalte und
-    Funk-tionsweisen der App beim Nutzer dennoch Fragen zur Bedienung
+    Funktions-weisen der App beim Nutzer dennoch Fragen zur Bedienung
     aufkommen können, sollte zusätzlich noch ein ausführlicher
     Hilfetext in der App untergebracht werden. Hier sollen die
     wesentlichen Funktionen vom Quiz, dem Wörterbuch und der Statistik
@@ -521,8 +521,8 @@
     und wie diese in etwa gestaltet sein sollten, musste das Konzept
     noch um eine Navigation und Inhaltsstruktur erweitert werden.
     Aufgrund der vorhandenen persönlichen Geräte und der bereits
-    gemachten Erfahrungen der Gruppenmitgliedern mit unterschiedlichen
-    Smartphones und Betriebssystemen, wurde <i>iOS</i> als Ziel-plattform
+    gemachten Erfahrungen der Gruppenmitgliedern mit un-terschiedlichen
+    Smartphones und Betriebssystemen, wurde <i>iOS</i> als Zielplattform
     für den ersten Prototypen ausgewählt, mit dem <i>iPhone 5</i> (und
     später dem <i>iPhone SE</i>) als Testgerät.
 </p>
@@ -571,7 +571,7 @@ herangezogen; hier sind
     die die <i>iOS Human Interface Guidelines</i> erlauben, liegt bei
     Spiele-Apps vor, die im Vollbildschirm-Modus betrieben werden;
     hier kann es sinnvoll sein, die <i>Status Bar</i> vollständig
-    auszublenden, was bei <i>OWLisch</i> allerdings nicht zutrifft.
+    auszu-blenden, was bei <i>OWLisch</i> allerdings nicht zutrifft.
     Daher muss beim Gestalten des App-Layouts Platz für diese Leiste
     eingeräumt werden.
 </p>
@@ -604,7 +604,7 @@ herangezogen; hier sind
 <p>
     Des Weiteren lassen sich in der <i>Navigation Bar</i> auch
     zusätzliche Buttons unterbringen, um kontextabhängige Aktionen
-    auszuführen; im Wörterbuch könnten hier Buttons in Form von Symbolen
+    auszuführen; im Wörterbuch könn-ten hier Buttons in Form von Symbolen
     sein, um die Begriff-Liste zu sortieren oder mittels einer
     Suchfunktion zu filtern, während im Quiz ein Abbrechen-Button
     platziert werden kann, mit dem das bereits gestartete Quiz beendet
@@ -658,7 +658,7 @@ herangezogen; hier sind
     Dies gewährleistet die eingangs erwähnte flache Hierarchie der App;
     die fünf vorhandenen Menüpunkte liegen alle gleichberechtigt und
     ohne Verschachtelung auf der selben Navigations-Ebene. In
-    <i>OWLisch</i> erhalten die fünf wichtigsten Features der App
+    <i>OWLisch</i> erhalten die fünf wichtigsten Fea-tures der App
     <a href="#chapter-2-2">siehe 2.2</a> jeweils ein eigenes Icon
     in der <i>Tab Bar</i>.
 </p>
@@ -694,7 +694,7 @@ herangezogen; hier sind
 </p>
 <p>
     Für die Orientierung des Nutzers steht trotz ausgeblendeter
-    <i>Tab Bar</i> weiterhin die <i>Navigation Bar</i> zu Verfügung,
+    <i>Tab Bar</i> weiter-hin die <i>Navigation Bar</i> zu Verfügung,
     die anzeigt, dass man sich gerade im Quiz befindet und durch Buttons
     die Möglichkeit gibt, das Quiz jederzeit abzubrechen und damit die
     <i>Tab Bar</i> wieder einzublenden.
@@ -706,7 +706,7 @@ herangezogen; hier sind
     die bei der Konzeption der App eine zentrale Rolle spielen. Dabei
     basiert das Lernkonzept von <i>OWLisch</i> hauptsächlich auf dem
     <i>Behaviorismus</i> und dem <i>Kognitivismus</i>, zwei
-    psychologische Theorien, die in der Didaktik und im E-Learning
+    psy-chologische Theorien, die in der Didaktik und im E-Learning
     Anwendung finden.
 </p>
 <!-- Kapitel 2.4.1 -->
@@ -720,7 +720,7 @@ herangezogen; hier sind
     positive Reaktionen werden durch Belohnungen bestärkt, während
     ungewollte Re-aktionen durch Bestrafungen oder dem Ausbleiben von
     Belohungen unterdrückt werden. Durch das Zusammenspiel von äußeren
-    Reizen, der Reaktion des Lernenden und das anschließende Feedback
+    Reizen, der Reaktion des Ler-nenden und das anschließende Feedback
     wird eine <i>Reiz-Reaktions-Kette</i> aufgebaut, die einen objektiv
     messbaren Lernerfolg hervorrufen soll.<cite class="line">
     Vgl. Meir, Susanne, 2006: E-Learning Plus, Seite 10.
@@ -728,7 +728,7 @@ herangezogen; hier sind
 </p>
 <p>
     Von zentraler Bedeutung für den Lernerfolg ist dabei eine klare
-    Auf-gabenstellung und ein eindeutiger, nachvollziehbarer Lösungsweg.
+    Aufga-benstellung und ein eindeutiger, nachvollziehbarer Lösungsweg.
     Die einzelnen Schritte zum erzielten Lernerfolg und das Lernziel
     selbst müssen dem Lerndenen bekannt sein und in einer logischen
     Abfolge stattfinden. Durch eine kleinteilige Portionierung der
@@ -741,7 +741,7 @@ herangezogen; hier sind
 </p>
 <p>
     In <i>OWLisch</i> wird dieses Konzept hauptsächlich im Quiz
-    realisiert; die gestellten Fragen dienen hier als Reiz, der beim
+    realisiert; die ge-stellten Fragen dienen hier als Reiz, der beim
     Lernenden eine Reaktion in Form der Beantwortung der Frage
     hervorrufen soll. Wie der Lernende auf die richtige Antwort kommt,
     spielt dabei zunächst keine Rolle (die genannte <i>Black Box</i>).
@@ -753,7 +753,7 @@ herangezogen; hier sind
     Belohnung in Form eines Stufenanstiegs (dargestellt durch Sterne),
     einem neuen Eintrag im persönlichen Wörterbuch und dem Steigen der
     Fortschritts-Leiste in der Statistik-Ansicht. Bei einer falschen
-    Lösung erfährt der Lernende zwar das richtige Ergebnis, eine
+    Lösung erfährt der Lernende zwar das richtige Ergeb-nis, eine
     Belohnung bleibt jedoch aus, um dieses ungewollte Verhalten nicht
     zu bestärken.
 </p>
@@ -868,7 +868,7 @@ herangezogen; hier sind
 </p>
 <p>
     So wird jede Frage im Quiz als individuelle Lerneinheit kompakt
-    und übersichtlich auf einem einzigen Screen dargestellt, ohne dass
+    und über-sichtlich auf einem einzigen Screen dargestellt, ohne dass
     der Nutzer auf dem Bildschirm scrollen oder anderweitig nach
     benötigten Informationen suchen muss. Eine Frage muss erst gelöst
     werden, bevor die nächste angezeigt wird und das Quiz kann
@@ -884,7 +884,7 @@ herangezogen; hier sind
     der Audiofunktion zum Vorlesen der ostwestfälischen Begriffe
     kommen diesen beiden Prinzipien zugute, indem sie einerseit
     Abwechslung schaffen und so einer <i>Reizmonotonie</i> vorbeugen,
-    und andererseits unterschiedliche Arten der Wahrnehmung und
+    und andererseits unterschiedliche Arten der Wahr-nehmung und
     Verarbeitung von Informationen (Text, Bild und Ton) anbieten, die
     zudem die Verknüpfung der Lerninhalte mit bereits <i>vorhandenem
     Vorwissen</i> unterstützen (dem Lernenden mag ein Begriff noch
@@ -907,18 +907,18 @@ herangezogen; hier sind
 </p>
 <p>
     Das Prinzip <i>Wissen überprüfen und verbessern</i> wird mit dem
-    Quiz als Kernelement der App natürlich in vollem Umfang umgesetzt;
+    Quiz als Kern-element der App natürlich in vollem Umfang umgesetzt;
     es wird dem Nutzer nicht nur ermöglicht, eine Lernkontrolle
-    durchzuführen, diese ist sogar der Hauptmechanismus des
+    durchzuführen, diese ist sogar der Haupt-mechanismus des
     Lernprozesses. Hier überschneiden sich die Konzepte des
-    <i>Behaviorismus</i> und die Erkenntnisse des <i>Kognitivismus</i>.
+    <i>Beha-viorismus</i> und die Erkenntnisse des <i>Kognitivismus</i>.
 </p>
     <!-- Kapitel 2.5 -->
 <h3 id="chapter-2-5">Ostwestfälische Begriffe</h3>
 <p>
     Zum Abschluss dieses Kapitels folgt noch eine Auflistung aller 30
-    in der finalen Version von <i>OWLisch</i> enthaltenen
-    ostwestfälischen Begriffe mitsamt Übersetzung und Artikel:
+    in der fi-nalen Version von <i>OWLisch</i> enthaltenen
+    ostwestfälischen Begriffe mitsamt Über-setzung und Artikel:
 </p>
 <div class="columns columns-2">
     <ol>
@@ -1041,7 +1041,7 @@ herangezogen; hier sind
     Farben für Hervorhebungen von speziellen Funktionen. Dabei wird
     das <i>Grün</i> sowohl als Grundfarbe der App, als auch als
     Bestätigungsfarbe im Quiz verwendet und soll eine positive und
-    entspannte Grundstimmung bei der Verwendung der App erzeugen,
+    entspannte Grundstimmung bei der Verwendung der App erzeu-gen,
     während das <i>Rot</i> als starker Kontrast zu den restlichen
     Farben eine besondere Signalwirkung entfaltet.
 </p>
@@ -1059,7 +1059,7 @@ herangezogen; hier sind
     klassischen Schema von <i>Erfolg</i> und <i>Misserfolg</i>, durch
     den zusätzlichen Einsatz des gleichen <i>Grüns</i> als Hauptfarbe
     für die App wird der <i>Erfolg</i> jedoch zur Grundsituation bei
-    der Benutzung von <i>OWLisch</i> erhoben, sodass der Kontrast des
+    der Benut-zung von <i>OWLisch</i> erhoben, sodass der Kontrast des
     <i>Rot</i> stärker wahrgenommen wird und ein schnelles Erkennen
     von Fehlern im Quiz ermöglicht. Es wurde jedoch darauf geachtet,
     dass die beiden Farben in diesem Kontext stets von Symbolen
@@ -1068,7 +1068,7 @@ herangezogen; hier sind
 </p>
 <p>
     Die Farben <i>Gelb</i> und <i>Violett</i> dienen als
-    visueller Hinweis für bestimmte Funktionalitäten innerhalb der App
+    visueller Hinweis für bestimmte Funk-tionalitäten innerhalb der App
     und werden nur in ihrem entsprechenden Kontext verwendet. Das
     <i>Gelb</i> steht dabei stets in Zusammenhang mit dem Fortschritt
     des Nutzers und taucht sowohl bei den Sternen, die die aktuelle
@@ -1094,7 +1094,7 @@ herangezogen; hier sind
     <i>Lato</i> (polnisch für <i>Sommer</i>) verwendet
     <a href="#figure-16">siehe Abbildung 16</a>; es handelt sich dabei
     um eine serifenlose Open-Source Schriftart, die im Jahr 2010 vom
-    Gestalter <i>Łukasz Dziedzic</i> in Warschau entwickelt und in
+    Gestalter <i>Łukasz Dzi-edzic</i> in Warschau entwickelt und in
     Kooperation mit <i>Google</i> und der polnischen Schriftgießerei
     <i>tyPoland</i> veröffentlicht wurde.<cite class="line">
     Vgl. Dziedzic, Łukasz, 2017: Lato.<br/>
@@ -1150,22 +1150,22 @@ herangezogen; hier sind
 <p>
     Die Entscheidung, eine eigene Schriftart in <i>OWLisch</i> zu
     implementieren, enstand aus dem Vorhaben, die App auf mehreren
-    Plattformen (<i>iOS</i>, <i>Android</i>, diverse Browser) zu
-    unterstützen. Die Plattformen und unterschiedlichen Betriebssysteme
+    Plattformen (<i>iOS</i>, <i>Android</i>, di-verse Browser) zu
+    unterstützen. Die Plattformen und unterschiedlichen Betriebs-systeme
     unterstützen jedoch nicht die selben Standard-Schriftarten; um
-    eine einheitliche Gestaltung zu erreichen, wurde daher <i>Lato</i>
+    eine ein-heitliche Gestaltung zu erreichen, wurde daher <i>Lato</i>
     mit dem <i>CSS Font-Face</i> Feature implementiert.
 </p>
 <p>
     Die Wahl von <i>Lato</i> stützt sich dabei auf zwei Haupt-Kriterien:
     Einerseits ist die Schriftart unter der <i>SIL Open Font</i> Lizenz
     veröffentlicht und ist daher kostenlos und frei in Projekten
-    verwendbar, andererseits handelt es sich um einen modernen,
+    verwendbar, andererseits handelt es sich um einen moder-nen,
     unauffälligen und gut lesbaren Font, der für die Darstellung auf
     Bildschirmen (insbesondere für Apps und Websites) optimiert ist.
     Dezente Rundungen in der Schriftart geben ein Gefühl von Wärme,
     während die Geradlinigkeit und Struktur des Fonts Stabilität
-    und Ernsthaftigkeit vermitteln, ohne dass diese Charakteristiken
+    und Ernsthaftigkeit vermitteln, ohne dass diese Charak-teristiken
     bewusst ins Auge fallen und den Nutzer vom eigentlichen Inhalt
     ablenken, was für die App, die in der Gestaltung ein besonderes
     Augenmerk auf Übersichtlichkeit und Simplizität legt, passende
@@ -1234,7 +1234,7 @@ herangezogen; hier sind
 </p>
 <p>
     Ein weiterer Vorteil ist die Unabhängigkeit von der Pixeldichte
-    des Bildschirms, auf dem die <i>Webfont-Icons</i> dargestellt werden;
+    des Bild-schirms, auf dem die <i>Webfont-Icons</i> dargestellt werden;
     herkömmliche Grafiken müssen so z.B. für <i>Retina Displays</i> oder
     andere Bildschirme mit hoher Pixeldichte zusätzlich in hochauflösenden
     Versionen bereitgestellt werden, um eine optimale Darstellung zu
@@ -1246,7 +1246,7 @@ herangezogen; hier sind
     <i>Entypo</i> von <i>Daniel Bruce</i> und <i>Font Awesome</i> von
     <i>Dave Gandy</i>, beide unter der <i>SIL Open Font</i> Lizenz
     veröffentlicht und daher frei und kostenlos verwendbar.
-    Die Icon-Pakete haben große Ähnlichkeit zueinander und lassen sich
+    Die Icon-Pakete haben große Ähnlich-keit zueinander und lassen sich
     daher gut kombinieren; die Entscheidung, zwei Pakete zu benutzen,
     stammt aus der Tatsache, das keines der beiden alleinstehend
     alle gewünschten Icons für <i>OWLisch</i> enthält.
@@ -1270,7 +1270,7 @@ herangezogen; hier sind
 </p>
 <p>
     Stilistisch passen die Symbole sowohl zur Schriftart <i>Lato</i>,
-    als auch zur restlichen Gestaltung von <i>OWLisch</i>; sie sind simpel
+    als auch zur rest-lichen Gestaltung von <i>OWLisch</i>; sie sind simpel
     und klar definiert, teilen sich die subtilen Rundungen mit <i>Lato</i>
     und vermitteln ihre Bedeutung auf den ersten Blick. Dabei dienen
     die Symbole einerseits dazu, dass Interface der App durch Details
@@ -1284,7 +1284,7 @@ herangezogen; hier sind
 <h3 id="chapter-3-4">Gestaltungselemente</h3>
 <p>
     Es folgt eine detaillierte Betrachtung individueller
-    Gestaltungselemente innerhalb der App und eine Einordnung
+    Gestaltungselemente in-nerhalb der App und eine Einordnung
     dieser Elemente in den Gesamtkontext ihrer Verwendung
     und Funktion.
 </p>
@@ -1292,8 +1292,8 @@ herangezogen; hier sind
 <h4 id="chapter-3-4-1">Tab Bar</h4>
 <p>
     Die Gestaltung der <i>Tab Bar</i> entspricht im Wesentlichen
-    dem bereits erwähten Konzept <a href="#chapter-2-3-4">siehe 2.3.4</a>,
-    wurde jedoch um zwei Elemente erweitert: Ein zusätzlicher
+    dem bereits erwähn-ten Konzept <a href="#chapter-2-3-4">siehe 2.3.4</a>,
+    wurde jedoch um zwei Elemente erweitert: Ein zusätz-licher
     Indikator in Form eines grünen Balkens über dem aktiven
     Menüpunkt und unterstützende Beschriftungen der Symbole
     <a href="#figure-18">siehe Abbildung 18</a>.
@@ -1308,7 +1308,7 @@ herangezogen; hier sind
 </p>
 <p>
     Typisch für <i>iOS</i> sind hierbei inaktive Punkte in grau
-    und der aktive Menüpunkt in der Hauptfarbe der App (in diesem Fall
+    und der aktive Menü-punkt in der Hauptfarbe der App (in diesem Fall
     grün) dargestellt. Am oberen Rand der <i>Tab Bar</i> wurde eine dunkle
     Linie platziert, die zur besseren visuellen Trennung des Inhalts
     von der <i>Tab Bar</i> dient.
@@ -1324,9 +1324,9 @@ herangezogen; hier sind
 </div>
 <p>
     Die Anordnung der Menüpunkte innerhalb der <i>Tab Bar</i>
-    folgt sowohl logischen, als auch ästhetischen Gesichtspunkten.
+    folgt sowohl logi-schen, als auch ästhetischen Gesichtspunkten.
     Der erste Menüpunkt, der beim Starten der App angezeigt wird,
-    ist der <i>Begriff des Tages</i>, der aufgrund des begrenzten
+    ist der <i>Begriff des Tages</i>, der aufgrund des be-grenzten
     Platzes in <i>Heute</i> umbenannt wurde und auch an erster Stelle,
     ganz links, platziert wurde. Der Punkt <i>Mehr</i>, hinter dem
     sich alle Menüpunkte mit niedriger Priorität verbergen, wurde
@@ -1400,8 +1400,8 @@ herangezogen; hier sind
 <p>
     Zusätzlich dazu kann die Liste mit einem weiteren Button auf der
     rechten Seite der <i>Navigation Bar</i> sortiert werden; dabei wird
-    eine Auswahlliste eingeblendet <a href="#chapter-3-4-5">siehe 3.4.5</a>,
-    die es dem Nutzer ermöglicht, das <i>Wörterbuch</i> sowohl alphabetisch,
+    eine Auswahlliste einge-blendet <a href="#chapter-3-4-5">siehe 3.4.5</a>,
+    die es dem Nutzer ermöglicht, das <i>Wörterbuch</i> sowohl alpha-betisch,
     als auch nach Stufe des Begriffes zu sortieren, jeweils auf- und
     absteigend. Beide Möglichkeiten lassen sich dabei gleichzeitig
     einsetzen, sodass auch eine bereits gefilterte Liste zusätzlich
@@ -1411,8 +1411,8 @@ herangezogen; hier sind
 <h4 id="chapter-3-4-3">Titel & Texte</h4>
 <p>
     <i>OWLisch</i> ist eine sehr textlastige App, <i>Titel und Texte</i>
-    tauchen daher in diversen Variationen überall in der App auf;
-    die gängigsten Varianten sind nebenstehend vergrößert dargestellt
+    tauchen daher in diver-sen Variationen überall in der App auf;
+    die gängigsten Varianten sind neben-stehend vergrößert dargestellt
     <a href="#figure-20">siehe Abbildung 20</a>. Dabei findet eine
     Unter-scheidung zwischen <i>Titeln</i>, <i>Statustexten</i>,
     <i>Fließtexten</i> und <i>Hinweisen</i> statt:
@@ -1430,7 +1430,7 @@ herangezogen; hier sind
 </p>
 <p>
     <i>Statustexte</i> sind eine Form von Untertiteln, die zusätzliche
-    hilfreiche Informationen im aktuellen Kontext darstellen, meistens
+    hilfreiche Infor-mationen im aktuellen Kontext darstellen, meistens
     am oberen Rand der <i>View</i> positioniert. Hier finden sich in
     der Regel numerische Angaben, z.B. zur Anzahl der vorhandenen Begriffe
     im <i>Wörterbuch</i>, die Anzahl der Fragen im <i>Quiz</i> oder das
@@ -1440,13 +1440,13 @@ herangezogen; hier sind
     Seite die entsprechende numerische Angabe in einem grauen, abgerundeten
     Kasten. Eine weitere Art des <i>Statustextes</i> ist die
     Fortschritts-Leiste im <i>Quiz</i>; sie stellt in Form eines Diagramms
-    die bisherigen Ergebnisse des Nutzers in der aktuellen Quiz-Runde dar
+    die bis-herigen Ergebnisse des Nutzers in der aktuellen Quiz-Runde dar
     und bietet somit zu jeder Zeit während eines Spiels eine Übersicht
     zum Fortschritt und den noch ausstehenden Fragen.
 </p>
 <p>
     Die einzelnen Elemente innerhalb der Fortschrittsleiste können in
-    fünf verschiedenen Varianten dargestellt werden, die sich alle die
+    fünf ver-schiedenen Varianten dargestellt werden, die sich alle die
     Charakteristik teilen, aus einem weißem Kreis mit grauen Rahmen zu
     bestehen, positioniert auf einer durchgehenden grauen Linie.
 </p>
@@ -1482,18 +1482,18 @@ herangezogen; hier sind
     Kreis angezeigt, während sowohl die aktuelle, als auch bereits
     beantwortete Fragen größer gestaltet sind. Die aktuelle Frage
     hat hierbei noch einen leeren, weißen Hintergrund, bei Beantwortung
-    wird dieser Hintergrund mit einem entsprechenden Symbol gefüllt;
+    wird dieser Hintergrund mit einem entspre-chenden Symbol gefüllt;
     ein grüner Haken für eine korrekte Antwort, ein rotes Kreuz für
     eine falsche, und eine graue Linie für eine übersprungene Frage.
 </p>
 <p>
     <i>Fließtexte</i> und <i>Hinweise</i> sind sich strukturell ähnlich,
-    werden aber unterschiedlich stark hervorgehoben. Gewöhnliche Texte
+    werden aber unter-schiedlich stark hervorgehoben. Gewöhnliche Texte
     werden auf weißem Grund, in schwarzer Schrift und linksbündig
     dargestellt, während <i>Hinweise</i> in grauer Schrift auf dem
     ebenfalls grauen Hintergrund der <i>View</i>, zentriert und kursiv
     gestaltet sind, um sie in den Hintergrund zu rücken und nicht
-    unnötig Aufmerk-samkeit auf sie zu lenken. <i>Hinweise</i> dienen
+    unnötig Aufmerksamkeit auf sie zu lenken. <i>Hinweise</i> dienen
     als kleine zusätzliche Informations-Häppchen, die die Funktionsweise
     der App für neue Nutzer kurz und knapp am entsprechenden Ort erklären
     sollen, ohne zwingend die ausführlichere Hilfe der App aufrufen zu
@@ -1510,10 +1510,10 @@ herangezogen; hier sind
     im <i>Quiz</i> anzufinden und dienen dem Nutzer als
     Eingabe-Oberfläche zur Beantwortung von Fragen und Steuerung
     des Quiz-Verlaufs. Buttons sind dabei in verschiedenen Varianten
-    mit unterschiedlichen Funktionen gestaltet: <i>Antwort</i>-Buttons
+    mit unter-schiedlichen Funktionen gestaltet: <i>Antwort</i>-Buttons
     verfügen stets über einen weißen Hintergrund (bei <i>Bilder</i>-Buttons)
     oder einem schwachen Verlauf von weiß nach hellgrau (bei
-    <i>Text</i>-Buttons), mit einem grauen Rahmen und einem Schlagschatten,
+    <i>Text</i>-Buttons), mit einem grauen Rahmen und einem Schlag-schatten,
     was ihnen als interaktives Element eine gewisse Räumlichkeit verleiht
     und somit stärker vom Hintergrund abhebt
     <a href="#figure-21">siehe Abbildung 21</a>.
@@ -1543,7 +1543,7 @@ herangezogen; hier sind
     gefärbten Symbol auf der linken Seite die Korrektheit der Antwort,
     indem die richtige Antwort grün und die falsche rot gefärbt wird.
     Dabei wird die falsche Antwort nur dann hevorgehoben, wenn sie vom
-    Nutzer gegeben wurde, sodass zu sehen ist, welche Antwort ausgewählt
+    Nutzer gegeben wurde, sodass zu sehen ist, welche Antwort ausge-wählt
     wurde und welche richtig gewesen wäre.
 </p>
 <p>
@@ -1554,7 +1554,7 @@ herangezogen; hier sind
     oder die aktuelle Frage zu lösen, falls es sich um eine Frage mit einer
     Texteingabe handelt. Durch die unterschiedliche Färbung dieser Buttons
     heben sie sich von den gewöhnlichen <i>Antwort</i>-Buttons ab und
-    verdeutlichen, dass sie sich in ihrer Funktion unterscheiden.
+    verdeut-lichen, dass sie sich in ihrer Funktion unterscheiden.
     Eine Außname unter den <i>Aktions</i>-Buttons stellt die Schaltfläche
     zum Starten des <i>Quiz</i> dar: Sie ist, im Gegensatz zu allen anderen
     Buttons, rund und besonders groß, was ihre spezielle Funktion
@@ -1563,23 +1563,23 @@ herangezogen; hier sind
 <p>
     <i>Inputs</i>, also Eingabefelder, gleichen in ihrer Gestaltung
     den <i>Buttons</i>; während Schaltflächen jedoch nach <i>außen</i> gewölbt
-    erscheinen, sind <i>Inputs</i> durch ihren Verlauf von hellgrau nach
+    erscheinen, sind <i>Inputs</i> durch ihren Ver-lauf von hellgrau nach
     weiß nach <i>innen</i> gewölbt. <i>Inputs</i> tauchen in zwei Varianten
     auf: <i>Freitext</i>-Felder, in denen der Nutzer per eingeblendeter
     Tastatur beliebig Text eingeben kann, und indirekt gesteuerte und in
-    einzelne Kästen aufgeteilte <i>Buchstaben</i>-Felder, die durch
+    einzelne Kästen aufgeteilte <i>Buch-staben</i>-Felder, die durch
     Interaktion mit damit verbundenen Buttons sequentiell befüllt oder
     entleert werden können <a href="#figure-22">siehe Abbildung 22</a>.
 </p>
 <p>
     Auch diese Eingabefelder können, analog zu den <i>Antwort</i>-Buttons,
     nach einer erfolgten Interaktion des Nutzers verschiedene Zustände
-    annehmen, die die Korrektheit der gegebenen Antwort mittels Farben
+    annehmen, die die Kor-rektheit der gegebenen Antwort mittels Farben
     und Symbolen signalisieren.
 </p>
 <p>
     Hier findet der gleiche gefärbte Rahmen Anwendung, ergänzend kommt
-    jedoch eine eingeblendete Meldung mit einem entsprechenden Symbol
+    je-doch eine eingeblendete Meldung mit einem entsprechenden Symbol
     (grüner Haken oder rotes Kreuz) und der richtigen Antwort hinzu,
     um den Nutzer über seinen Erfolg oder Misserfolg aufzuklären.
     Vorhandene Buttons zum Befüllen des <i>Inputs</i> mit
@@ -1611,18 +1611,18 @@ herangezogen; hier sind
     Mit Hilfe von <i>Navigations</i>-Listen kann der Nutzer dabei
     innerhalb der aktuellen <i>View</i> in einen anderen Kontext navigieren,
     beispielsweise aus der <i>Wörterbuch-Übersicht</i> heraus zu den
-    Details eines ausgewählten Begriffs, oder aus der Übersicht
+    Details eines ausge-wählten Begriffs, oder aus der Übersicht
     des Menüpunktes <i>Mehr</i> zu den dort vorhandenen zusätzlichen
     Optionen.
 </p>
 <p>
     Jedes Listen-Element einer solchen <i>Liste</i> ist dabei identisch
     gestaltet; auf der linken Seite befindet sich (optional) ein
-    Icon, das entweder zusätzliche Informationen bietet (wie die Stufe
+    Icon, das entweder zusätzliche Infor-mationen bietet (wie die Stufe
     des Begriffes im Falle des <i>Wörterbuches</i>) oder den Listen-Punkt
     repräsentiert. Daneben ist die eigentliche Bezeichnung des Elements
     platziert, während sich auf der rechten Seite ein Pfeil-Symbol befindet,
-    das signalisiert, dass durch Interaktion mit dem Listen-Element
+    das signa-lisiert, dass durch Interaktion mit dem Listen-Element
     innerhalb der App zu einem anderen Screen navigiert wird.
 </p>
 <p>
@@ -1640,11 +1640,11 @@ herangezogen; hier sind
     <i>Auswahl</i>-Listen dienen in der App dazu, aus mehreren gegebenen
     Optionen eine davon als aktiv zu setzen; dies findet beim Sortieren
     der <i>Wörterbuch-Übersicht</i> <a href="#chapter-3-4-2">siehe 3.4.2</a>
-    und beim Wechsel des Wörterbuches Anwendung. Zur besseren Unterscheidung
+    und beim Wechsel des Wörterbuches Anwendung. Zur besseren Un-terscheidung
     zu anderen Listen fehlt hier der erwähnte Verlauf. Inaktive Listen-Punkte
     verfügen über einen grauen Text, während der aktive Punkt einen grauen
     Hintergrund, schwarzen Text und einen grünen Haken hat, um ihn eindeutig
-    identifizieren zu können.
+    iden-tifizieren zu können.
 </p>
 <div class="page-break"></div>
 <div class="center">
@@ -1669,26 +1669,26 @@ herangezogen; hier sind
 <p>
     <i>Diagramme</i> dienen in <i>OWLisch</i> als Visualisierung
     von numerischen Daten, in erster Linie in Verbindung
-    mit den erzielten Ergebnissen im <i>Quiz</i> und dem erreichten
+    mit den erzielten Ergebnissen im <i>Quiz</i> und dem er-reichten
     Fortschritt des Nutzers in der <i>Statistik</i>. Zum Einsatz kommen
-    dabei lediglich Balken-Diagramme, sowohl mit horizontalen, als auch
-    vertikalen Balken, in zwei verschiedenen Farben
-    <a href="#figure-24">siehe Abbildung 24</a>.
+    dabei so-wohl Balken-, als auch Säulendiagramme, in zwei verschiedenen
+    Farben.
 </p>
 <p>
     Die Balken selbst verfügen dabei über einen farbigen Hintergrund
     mit Verlauf, einen dunkleren Rahmen und einen Schlagschatten, um
-    sie vom Hintergrund, der mit Hilfslinien versehen ist, plastisch
-    abzuheben. Die unterschiedlichen Farben symbolisieren dabei
-    verschiedene Kontexte: Grüne Diagramme stellen die erzielten Punkte
+    sie vom Hinter-grund, der mit Hilfslinien versehen ist, plastisch
+    abzuheben <a href="#figure-24">siehe Abbildung 24</a>. Die
+    unterschiedlichen Farben symbolisieren dabei verschiedene Kontexte:
+    Grüne Diagramme stellen die erzielten Punkte
     in der aktuellen Quiz-Runde (am Ende jener Runde) oder die erzielten
     Punkte der letzten zehn Spiele dar. Da es sich beim erstgenannten Diagramm
     lediglich um einen Datenpunkt handelt, wurde hier ein horizontales
-    Balken-Diagramm gewählt, während beim zweiten ein vertikales zum Einsatz
-    kommt, um mehrere Datenpunkte nebeneinander darzustellen und optisch
-    eine Kurve zu erzeugen, die die Leistung des Nutzers in den letzten
+    Balkendiagramm gewählt, während beim zweiten ein vertikales Säulendiagramm
+    zum Einsatz kommt, um mehrere Datenpunkte nebeneinander darzustellen und
+    optisch eine Kurve zu erzeugen, die die Leistung des Nutzers in den letzten
     Spielen visualisiert. Um die Punktzahlen auf den ersten Blick exakt
-    bestimmen zu können, sind die einzelnen Balken zusätzlich mit eben
+    bestimmen zu können, sind die einzelnen Säulen zusätzlich mit eben
     jener Punktzahl beschriftet, im Falle des horizontalen <i>Diagramms</i>
     zusätzlich auch mit einer Prozentangabe.
 </p>
@@ -1698,7 +1698,7 @@ herangezogen; hier sind
     erwähten Sternen <a href="#chapter-3-2">siehe 3.2</a>. Hier wurden
     horizontale Diagramme gewählt, die mit zusätzlichen Informationen
     beschriftet sind; die Anzahl der Stufen wird so z.B. noch einmal
-    mit den Sternsymbolen selbst symbolisiert und die exakten und relativen
+    mit den Stern-symbolen selbst symbolisiert und die exakten und relativen
     Prozentzahlen finden sich, analog zu den grünen <i>Diagrammen</i>,
     ebenfalls als Achsenbeschriftungen im <i>Diagramm</i> wieder.
 </p>
@@ -1731,7 +1731,7 @@ herangezogen; hier sind
     der Hauptfarbe der App, ergänzt durch einen flachen Schattenwurf
     <a href="#figure-25">siehe Abbildung 25</a>. Zur Verdeutlichung des
     Namens <i>OWLisch</i> wurde der Schriftzug in seine zwei Bestandteile
-    <i>OWL</i> und <i>isch</i> aufgespalten; <i>OWL</i> wurde dabei oben
+    <i>OWL</i> und <i>isch</i> aufge-spalten; <i>OWL</i> wurde dabei oben
     in <i>Lato Black</i> platziert, während sich <i>isch</i> in <i>Lato
     Light Italic</i> darunter befindet und so visuell vom darüber
     befindlichen Schriftzug abgrenzt. Für die optimale Darstellung auf
@@ -1771,8 +1771,8 @@ herangezogen; hier sind
 </div>
 <p>
     Da <i>OWLisch</i> jedoch ebenfalls auf allen gängigen Web-Browsern
-    funk-tionieren soll, wurde noch ein sogenanntes <i>Favicon</i>
-    ergänzt; dieses wird von Browsern in der Adressleiste
+    funktio-nieren soll, wurde noch ein sogenanntes <i>Favicon</i>
+    ergänzt; dieses wird von Brow-sern in der Adressleiste
     oder im entsprechenden Tab als Symbol für eine Website dargestellt
     und ist im Falle der App identisch mit dem eigentlichen <i>App-Icon</i>.
     Auch das <i>Favicon</i> muss in diversen Größen und Versionen zur
@@ -1805,7 +1805,7 @@ herangezogen; hier sind
 </p>
 <p>
     Bei <i>OWLisch</i> kam zusätzlich zu gewöhnlichem CSS noch
-    <i>LESS CSS</i> zum Einsatz; dabei handelt es sich um einen sogenannten
+    <i>LESS CSS</i> zum Ein-satz; dabei handelt es sich um einen sogenannten
     <i>CSS-Präprozessor</i>, der CSS um eine Reihe von neuen Features
     erweitert und eine effizientere und flexiblere Entwicklung ermöglicht.
     Dabei fügt <i>LESS</i> der Sprache keine neuen Eigenschaften im
@@ -1833,24 +1833,24 @@ herangezogen; hier sind
 </p>
 <p>
     Um CSS in Kombination mit HTML einsetzen zu können, bedarf es
-    sogenannter <i>Selektoren</i>, mit denen CSS-Eigenschaften auf
-    ausgewählte HTML-Elemente angewandt werden können. In <i>OWLisch</i>
+    soge-nannter <i>Selektoren</i>, mit denen CSS-Eigenschaften auf
+    ausgewählte HTML-Ele-mente angewandt werden können. In <i>OWLisch</i>
     wurden ausschließlich <i>Klassen</i>-Selektoren verwendet, z.B.
     <code>&lt;nav class="tabbar"&gt;</code>, was mittels CSS mit
     <code>.tabbar { ... }</code> selektiert werden kann. Ein allgemeines
-    Problem beim Entwickeln einer Website oder App ist dabei die Benennung
+    Problem beim Ent-wickeln einer Website oder App ist dabei die Benennung
     dieser Klassen; hier kann sehr schnell Chaos und Unübersichtlichkeit
     entstehen, wenn keine konsistente Namenskonvention verwendet wird.
 </p>
 <p>
     In <i>OWLisch</i> wurde daher auf die bekannte Namenskonvention
     <i>BEM</i>, kurz für <i>Block Element Modifier</i>, zurückgegriffen.
-    Mit dieser Methode werden überge-ordnete Elemente als <i>Blöcke</i>
+    Mit dieser Methode werden übergeord-nete Elemente als <i>Blöcke</i>
     definiert, die in sich geschlossen und unabhängig von anderen
     <i>Blöcken</i> gestaltet werden und als eigenständige und
     wiederverwendbare Entitäten gelten. Innerhalb dieser <i>Blöcke</i>
     gibt es <i>Elemente</i>, die nicht eigenständig existieren können
-    und stets zu ihrem übergeordneten <i>Block</i> gehören. Und schließlich
+    und stets zu ihrem übergeordneten <i>Block</i> gehören. Und schließ-lich
     gibt es <i>Modifikatoren</i>, die einen <i>Block</i> oder ein
     <i>Element</i> modifizieren, ohne eine neue Entität zu
     definieren:<cite class="line">
@@ -2041,7 +2041,7 @@ herangezogen; hier sind
     Open-Source Framework, veröffentlicht unter der <i>Apache-2.0</i> Lizenz,
     das eine mit JavaScript, HTML und CSS programmierte Webapp als native
     App verpackt und dabei alle verbeiteten Plattformen und mobilen
-    Betriebs-systeme wie <i>iOS</i>, <i>Android</i> und <i>Windows Phone</i>
+    Betriebssys-teme wie <i>iOS</i>, <i>Android</i> und <i>Windows Phone</i>
     unterstützt.<cite class="line">
     Vgl. The Apache Software Foundation, 2017: Apache Cordova.<br/>
     <a href="https://cordova.apache.org">
@@ -2128,8 +2128,8 @@ herangezogen; hier sind
     Diese <i>Module</i> wurden im sogenannten <i>Revealing Module Pattern</i>
     program-miert; die Variablen, Methoden und Funktionen der <i>Module</i>
     sind dadurch vor Zugriff von außen geschützt, es sei denn, sie werden
-    über eine öffentliche Schnittstelle offenbart. Eine Implementierung
-    dieser Methode sieht beispielhaft folgendermaßen aus:
+    über eine öffentliche Schnitt-stelle offenbart. Eine Implementierung
+    dieser Methode sieht beispielhaft folgen-dermaßen aus:
 </p>
 <pre>
 var Modul = (function() {
@@ -2217,9 +2217,9 @@ var Modul = (function() {
 <h3 id="chapter-4-3">Daten & Dateien</h3>
 <p>
     Neben den bisher beschriebenen JavaScript-Dateien, die den
-    Kern des Programms bilden, und den in vorigen Kapiteln beschriebenen
+    Kern des Pro-gramms bilden, und den in vorigen Kapiteln beschriebenen
     Favicons/App-Icons und CSS-Dateien werden sowohl beim Start, als auch
-    während der Aus-führung der App zusätzliche Dateien geladen und
+    während der Ausführung der App zusätzliche Dateien geladen und
     Daten geschrieben.
 </p>
 <p>
