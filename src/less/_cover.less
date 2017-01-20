@@ -1,0 +1,84 @@
+/*
+ * Modul: Cover.
+ * Definiert das Layout des Covers.
+ * @author Jakob Metzger <jakob.me@gmail.com>
+ * @copyright 2016 Jakob Metzger
+ * @license MIT
+ */
+
+// Cover
+.cover {
+
+    // Überschrift
+    &-heading {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        color: @color-main;
+        text-transform: uppercase;
+        font-size: @font-size-h1;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    // Titel
+    &-title {
+        margin: 0;
+        padding: 0;
+        line-height: 1.2;
+        font-weight: normal;
+        text-align: center;
+        font-style: italic;
+        color: @color-text;
+        font-size: @font-size-h2;
+
+        // Linien
+        &:before {
+            content: "";
+            display: block;
+            width: 20%;
+            height: (@size-line * 2);
+            margin: @margin-title-h auto;
+            background: @color-line;
+            border-radius: @size-radius;
+        }
+    }
+
+    // Untertitel
+    &-subtitle {
+        text-align: center;
+        color: @color-main;
+        font-weight: bold;
+        font-size: @font-size-h3;
+        line-height: 1.2;
+        margin-top: @margin-figure-v;
+    }
+
+    // Body
+    &-body {
+        text-align: center;
+        color: @color-pale;
+        font-weight: normal;
+        font-size: @font-size-h4;
+        line-height: 1.2;
+    }
+
+    // Footer
+    &-footer {
+        width: auto;
+        font-style: italic;
+        box-sizing: border-box;
+        padding: @margin-figure-h (@margin-figure-h * 2);
+        color: @color-pale;
+        font-size: @font-size-small;
+        background: @color-box;
+        border-radius: @size-radius;
+        left: @margin-figure-v;
+        right: @margin-figure-v;
+        bottom: @margin-title-h;
+    }
+
+    // Links & Rechts
+    &-left { text-align: left; font-weight: bold; }
+    &-right { text-align: right; }
+}
